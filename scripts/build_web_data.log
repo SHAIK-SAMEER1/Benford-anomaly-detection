@@ -1,0 +1,22 @@
+12:04:58 building usaspending ...
+12:05:08   done in 9.6 s
+12:05:08 building creditcard ...
+Growing trees.. Progress: 69%. Estimated remaining time: 14 seconds.
+12:06:21   done in 73.2 s
+12:06:21 building paysim ...
+12:13:44   done in 443.1 s
+12:13:44 building retail ...
+12:14:19   done in 34.4 s
+12:14:19 building wdi ...
+12:14:24   done in 5.2 s
+12:14:30 wrote web/assets/js/data.js (1.12 MB)
+
+Dataset summary
+  usaspending  rows=111,908   cols=297  label=unlabelled candidates=8056   model=-
+  creditcard   rows=284,807   cols=33   label=labelled candidates=0      model=trained
+  paysim       rows=6,362,620 cols=12   label=labelled candidates=0      model=trained
+  retail       rows=541,909   cols=11   label=unlabelled candidates=18392  model=-
+  wdi          rows=105,346   cols=25   label=unlabelled candidates=879    model=-
+Done. Open web/index.html in a browser.
+There were 50 or more warnings (use warnings() to see the first 50)
+EXIT:0

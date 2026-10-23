@@ -1,0 +1,6599 @@
+{
+  "available": true,
+  "dataset": "creditcard",
+  "label": "Credit-card fraud benchmark",
+  "target": "Class",
+  "positiveClass": "1 (fraud)",
+  "prevalence": 0.001727,
+  "split": {
+    "strategy": "Stratified 70 / 15 / 15 split, fixed seed 2025; exact duplicate rows removed before splitting.",
+    "train": 198608,
+    "validation": 42557,
+    "test": 42561,
+    "trainFraud": 331,
+    "validationFraud": 70,
+    "testFraud": 72,
+    "trainPrevalence": 0.001667,
+    "testPrevalence": 0.001692
+  },
+  "features": ["Time", "V1", "V2", "V3", "V4", "V5", "V6", "V7", "V8", "V9", "V10", "V11", "V12", "V13", "V14", "V15", "V16", "V17", "V18", "V19", "V20", "V21", "V22", "V23", "V24", "V25", "V26", "V27", "V28", "Amount"],
+  "excluded": ["Class (target)", "No identifiers present"],
+  "seed": 2025,
+  "trainedAt": "2026-10-19 12:06",
+  "models": {
+    "logistic": {
+      "name": "Logistic regression",
+      "role": "Interpretable baseline",
+      "threshold": 0.99,
+      "metrics": {
+        "threshold": 0.99,
+        "tp": 55,
+        "fp": 51,
+        "tn": 42438,
+        "fn": 17,
+        "precision": 0.518868,
+        "recall": 0.763889,
+        "f1": 0.617978,
+        "specificity": 0.9988,
+        "accuracy": 0.998402,
+        "balancedAccuracy": 0.881344,
+        "predictedPositive": 106,
+        "n": 42561,
+        "roc_auc": 0.960424,
+        "pr_auc": 0.711641
+      },
+      "curve": {
+        "roc": {
+          "fpr": [1, 0.9927746, 0.98557274, 0.97837087, 0.97116901, 0.96396714, 0.95674174, 0.94953988, 0.94233802, 0.93513615, 0.92793429, 0.92070889, 0.91350703, 0.90630516, 0.8991033, 0.89190143, 0.88469957, 0.87747417, 0.87027231, 0.86311751, 0.85591565, 0.84871378, 0.84148839, 0.83428652, 0.82708466, 0.81988279, 0.81268093, 0.80545553, 0.79825367, 0.7910518, 0.78384994, 0.77664807, 0.76944621, 0.76222081, 0.75501895, 0.74781708, 0.74061522, 0.73341335, 0.72618795, 0.71898609, 0.71178423, 0.70458236, 0.6973805, 0.6901551, 0.68295323, 0.67575137, 0.66854951, 0.66134764, 0.65414578, 0.64692038, 0.63971852, 0.63251665, 0.62531479, 0.61811292, 0.61088752, 0.60368566, 0.5964838, 0.58928193, 0.58208007, 0.57485467, 0.5676528, 0.56045094, 0.55324908, 0.54604721, 0.53884535, 0.53161995, 0.52441808, 0.51721622, 0.51001436, 0.50281249, 0.49558709, 0.48838523, 0.48118337, 0.4739815, 0.46677964, 0.45955424, 0.45235237, 0.44515051, 0.43794865, 0.43074678, 0.42354492, 0.41631952, 0.40911765, 0.40191579, 0.39471393, 0.38751206, 0.38028666, 0.3730848, 0.36588293, 0.35868107, 0.35147921, 0.34425381, 0.33705194, 0.32987361, 0.32267175, 0.31546989, 0.30826802, 0.30104262, 0.29384076, 0.28663889, 0.27943703, 0.27223517, 0.26500977, 0.25783144, 0.25062957, 0.24342771, 0.23622585, 0.22900045, 0.22179858, 0.21462025, 0.20741839, 0.20021653, 0.19301466, 0.18578926, 0.1785874, 0.17138554, 0.16418367, 0.15698181, 0.14975641, 0.14255454, 0.13535268, 0.12815082, 0.12094895, 0.11372355, 0.10654522, 0.09934336, 0.0921415, 0.08493963, 0.07773777, 0.07051237, 0.06333404, 0.05613218, 0.04895385, 0.04175198, 0.03452658, 0.02732472, 0.02012286, 0.01292099, 0.0058368, 0.00009414],
+          "tpr": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.95833333, 0.95833333, 0.95833333, 0.95833333, 0.95833333, 0.95833333, 0.95833333, 0.95833333, 0.95833333, 0.95833333, 0.94444444, 0.94444444, 0.94444444, 0.94444444, 0.94444444, 0.94444444, 0.93055556, 0.93055556, 0.93055556, 0.93055556, 0.93055556, 0.93055556, 0.93055556, 0.93055556, 0.93055556, 0.93055556, 0.93055556, 0.93055556, 0.93055556, 0.93055556, 0.93055556, 0.91666667, 0.91666667, 0.91666667, 0.91666667, 0.91666667, 0.91666667, 0.90277778, 0.90277778, 0.88888889, 0.88888889, 0.88888889, 0.88888889, 0.88888889, 0.88888889, 0.81944444, 0.23611111]
+        },
+        "pr": {
+          "recall": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.97222222, 0.95833333, 0.95833333, 0.95833333, 0.95833333, 0.95833333, 0.95833333, 0.95833333, 0.95833333, 0.95833333, 0.95833333, 0.94444444, 0.94444444, 0.94444444, 0.94444444, 0.94444444, 0.94444444, 0.93055556, 0.93055556, 0.93055556, 0.93055556, 0.93055556, 0.93055556, 0.93055556, 0.93055556, 0.93055556, 0.93055556, 0.93055556, 0.93055556, 0.93055556, 0.93055556, 0.93055556, 0.91666667, 0.91666667, 0.91666667, 0.91666667, 0.91666667, 0.91666667, 0.90277778, 0.90277778, 0.88888889, 0.88888889, 0.88888889, 0.88888889, 0.88888889, 0.88888889, 0.81944444, 0.23611111],
+          "precision": [0.00169169, 0.00170398, 0.00171641, 0.00172902, 0.00174182, 0.00175481, 0.00176804, 0.00178143, 0.00179502, 0.00180882, 0.00182283, 0.00183711, 0.00185157, 0.00186625, 0.00188117, 0.00189633, 0.00191174, 0.00192745, 0.00194337, 0.00190512, 0.00192112, 0.00193739, 0.001954, 0.00197083, 0.00198796, 0.00200539, 0.00202312, 0.00204123, 0.00205961, 0.00207832, 0.00209738, 0.00211679, 0.00213656, 0.00215677, 0.00217729, 0.00219822, 0.00221954, 0.00224129, 0.00226354, 0.00228616, 0.00230924, 0.00233279, 0.00235682, 0.00238144, 0.00240649, 0.00243208, 0.00245821, 0.00248491, 0.0025122, 0.00254019, 0.00256871, 0.00259788, 0.00262773, 0.00265826, 0.00268962, 0.00272162, 0.00275439, 0.00278796, 0.00282235, 0.00285773, 0.00289388, 0.00293096, 0.002969, 0.00300804, 0.00304812, 0.00308942, 0.00313171, 0.00317518, 0.00321987, 0.00326584, 0.0033133, 0.00336199, 0.00341214, 0.0034638, 0.00351706, 0.00357216, 0.00362882, 0.00368732, 0.00374772, 0.00381015, 0.00387468, 0.00394166, 0.00401077, 0.00408235, 0.00415652, 0.00423344, 0.00431353, 0.00439643, 0.00448258, 0.00457218, 0.00466542, 0.00476288, 0.00486415, 0.00489883, 0.00500762, 0.00512135, 0.00524037, 0.00536547, 0.00549626, 0.00563357, 0.00577793, 0.00592987, 0.00609056, 0.00616892, 0.00634506, 0.00653155, 0.00672934, 0.00694019, 0.00716393, 0.00729371, 0.00754505, 0.00781432, 0.00810353, 0.00841603, 0.00875245, 0.00911689, 0.00951299, 0.00994508, 0.01041991, 0.01094056, 0.01151598, 0.0121553, 0.01286977, 0.01367626, 0.01436969, 0.01539538, 0.01657875, 0.01795918, 0.01959038, 0.02155454, 0.02358491, 0.02653061, 0.02985075, 0.03482046, 0.04180274, 0.0522449, 0.06964091, 0.10440457, 0.19218241, 0.80952381],
+          "baseline": 0.00169169
+        }
+      },
+      "importance": {
+        "name": ["Amount", "V2", "V4", "V5", "V18", "V10", "V14", "V1", "V11", "V6", "V22", "V16"],
+        "value": [2.671776, 2.170826, 2.013393, 1.943405, 1.576755, 1.501418, 1.248067, 1.144253, 1.074861, 1.004006, 0.993577, 0.970489]
+      },
+      "importanceLabel": "Absolute standardised coefficient",
+      "note": "Balanced class weights in training only; the test prevalence is unchanged."
+    },
+    "forest": {
+      "name": "Random forest (ranger)",
+      "role": "Non-linear benchmark",
+      "threshold": 0.49,
+      "metrics": {
+        "threshold": 0.49,
+        "tp": 53,
+        "fp": 5,
+        "tn": 42484,
+        "fn": 19,
+        "precision": 0.913793,
+        "recall": 0.736111,
+        "f1": 0.815385,
+        "specificity": 0.999882,
+        "accuracy": 0.999436,
+        "balancedAccuracy": 0.867997,
+        "predictedPositive": 58,
+        "n": 42561,
+        "roc_auc": 0.954284,
+        "pr_auc": 0.802198
+      },
+      "curve": {
+        "roc": {
+          "fpr": [1, 0.05629692, 0.04965991, 0.04222269, 0.03476194, 0.02777189, 0.02440632, 0.01303867, 0.00586034, 0],
+          "tpr": [1, 0.91666667, 0.91666667, 0.91666667, 0.90277778, 0.88888889, 0.88888889, 0.88888889, 0.81944444, 0.01388889]
+        },
+        "pr": {
+          "recall": [1, 0.91666667, 0.91666667, 0.91666667, 0.90277778, 0.88888889, 0.88888889, 0.88888889, 0.81944444, 0.01388889],
+          "precision": [0.00169169, 0.0268511, 0.03033088, 0.03548387, 0.04215305, 0.05144695, 0.05812897, 0.10355987, 0.19155844, 1],
+          "baseline": 0.00169169
+        }
+      },
+      "importance": [],
+      "importanceLabel": "Gini variable importance",
+      "note": "200 trees, minimum node size 10, class-weighted; threshold tuned on validation only."
+    }
+  },
+  "sample": [
+    {
+      "row": 5875,
+      "ref": "CC-030332",
+      "trueLabel": 0,
+      "pLogistic": 0.002938,
+      "pForest": 0,
+      "amount": 5.51,
+      "date": "hour 09",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V2",
+          "contribution": 1.854654,
+          "value": 0.854354
+        },
+        {
+          "feature": "V18",
+          "contribution": 1.338897,
+          "value": -0.849147
+        },
+        {
+          "feature": "V14",
+          "contribution": -1.03526,
+          "value": 0.82949
+        }
+      ]
+    },
+    {
+      "row": 23574,
+      "ref": "CC-010399",
+      "trueLabel": 0,
+      "pLogistic": 6e-06,
+      "pForest": 0.002083,
+      "amount": 286.2,
+      "date": "hour 04",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V5",
+          "contribution": -3.607888,
+          "value": -1.856478
+        },
+        {
+          "feature": "V2",
+          "contribution": -3.22068,
+          "value": -1.483619
+        },
+        {
+          "feature": "V17",
+          "contribution": -2.252361,
+          "value": 2.515299
+        }
+      ]
+    },
+    {
+      "row": 2412,
+      "ref": "CC-279084",
+      "trueLabel": 0,
+      "pLogistic": 0.002229,
+      "pForest": 0,
+      "amount": 1.56,
+      "date": "hour 22",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V5",
+          "contribution": 5.039921,
+          "value": 2.593346
+        },
+        {
+          "feature": "V4",
+          "contribution": -3.632854,
+          "value": -1.804344
+        },
+        {
+          "feature": "V6",
+          "contribution": -2.264812,
+          "value": 2.255775
+        }
+      ]
+    },
+    {
+      "row": 57,
+      "ref": "CC-009253",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.890868,
+      "amount": 1,
+      "date": "hour 03",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 23.658446,
+          "value": -18.956064
+        },
+        {
+          "feature": "V10",
+          "contribution": 18.321604,
+          "value": -12.202869
+        },
+        {
+          "feature": "V17",
+          "contribution": 15.6719,
+          "value": -17.501418
+        }
+      ]
+    },
+    {
+      "row": 37,
+      "ref": "CC-018473",
+      "trueLabel": 1,
+      "pLogistic": 0.999997,
+      "pForest": 0.484191,
+      "amount": 0.68,
+      "date": "hour 08",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 9.583612,
+          "value": -7.678761
+        },
+        {
+          "feature": "V17",
+          "contribution": -6.918242,
+          "value": 7.725869
+        },
+        {
+          "feature": "V4",
+          "contribution": 6.211743,
+          "value": 3.085211
+        }
+      ]
+    },
+    {
+      "row": 29,
+      "ref": "CC-231979",
+      "trueLabel": 1,
+      "pLogistic": 0.73482,
+      "pForest": 0.009826,
+      "amount": 8,
+      "date": "hour 16",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 4.835272,
+          "value": -3.874207
+        },
+        {
+          "feature": "V2",
+          "contribution": 3.472201,
+          "value": 1.599483
+        },
+        {
+          "feature": "V18",
+          "contribution": -3.181659,
+          "value": 2.017853
+        }
+      ]
+    },
+    {
+      "row": 31249,
+      "ref": "CC-145396",
+      "trueLabel": 0,
+      "pLogistic": 0.056919,
+      "pForest": 0,
+      "amount": 2.58,
+      "date": "hour 00",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V5",
+          "contribution": 1.672424,
+          "value": 0.860564
+        },
+        {
+          "feature": "V2",
+          "contribution": 1.24724,
+          "value": 0.574546
+        },
+        {
+          "feature": "V22",
+          "contribution": -1.181935,
+          "value": -1.189576
+        }
+      ]
+    },
+    {
+      "row": 64,
+      "ref": "CC-077683",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.967865,
+      "amount": 1,
+      "date": "hour 15",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V10",
+          "contribution": 13.014831,
+          "value": -8.668361
+        },
+        {
+          "feature": "V17",
+          "contribution": 12.882578,
+          "value": -14.386473
+        },
+        {
+          "feature": "V14",
+          "contribution": 9.35927,
+          "value": -7.49901
+        }
+      ]
+    },
+    {
+      "row": 10793,
+      "ref": "CC-276699",
+      "trueLabel": 0,
+      "pLogistic": 0.026769,
+      "pForest": 0,
+      "amount": 3.57,
+      "date": "hour 22",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V11",
+          "contribution": 1.236161,
+          "value": 1.150067
+        },
+        {
+          "feature": "V2",
+          "contribution": 0.984737,
+          "value": 0.453623
+        },
+        {
+          "feature": "Amount",
+          "contribution": -0.905917,
+          "value": -0.339069
+        }
+      ]
+    },
+    {
+      "row": 27073,
+      "ref": "CC-148833",
+      "trueLabel": 0,
+      "pLogistic": 0.129599,
+      "pForest": 0,
+      "amount": 108.83,
+      "date": "hour 01",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": 2.357459,
+          "value": 1.170888
+        },
+        {
+          "feature": "V12",
+          "contribution": 2.247493,
+          "value": -2.644422
+        },
+        {
+          "feature": "V9",
+          "contribution": 2.161134,
+          "value": 2.238564
+        }
+      ]
+    },
+    {
+      "row": 54,
+      "ref": "CC-189588",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.913681,
+      "amount": 67.9,
+      "date": "hour 11",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 11.232306,
+          "value": -8.999759
+        },
+        {
+          "feature": "V10",
+          "contribution": 6.365805,
+          "value": -4.239863
+        },
+        {
+          "feature": "V4",
+          "contribution": 4.624684,
+          "value": 2.29696
+        }
+      ]
+    },
+    {
+      "row": 8592,
+      "ref": "CC-080076",
+      "trueLabel": 0,
+      "pLogistic": 0.061581,
+      "pForest": 0,
+      "amount": 1,
+      "date": "hour 16",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V18",
+          "contribution": 1.736592,
+          "value": -1.101371
+        },
+        {
+          "feature": "V2",
+          "contribution": 1.519728,
+          "value": 0.700069
+        },
+        {
+          "feature": "V19",
+          "contribution": -1.458799,
+          "value": -1.578709
+        }
+      ]
+    },
+    {
+      "row": 34766,
+      "ref": "CC-119805",
+      "trueLabel": 0,
+      "pLogistic": 0.018859,
+      "pForest": 0,
+      "amount": 13.99,
+      "date": "hour 20",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V18",
+          "contribution": 2.224166,
+          "value": -1.410597
+        },
+        {
+          "feature": "V4",
+          "contribution": 0.94585,
+          "value": 0.469779
+        },
+        {
+          "feature": "V13",
+          "contribution": -0.843869,
+          "value": 0.925725
+        }
+      ]
+    },
+    {
+      "row": 16,
+      "ref": "CC-063635",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.756307,
+      "amount": 99.99,
+      "date": "hour 14",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V5",
+          "contribution": -10.13086,
+          "value": -5.212943
+        },
+        {
+          "feature": "V14",
+          "contribution": 9.542049,
+          "value": -7.645459
+        },
+        {
+          "feature": "V2",
+          "contribution": 9.354999,
+          "value": 4.309418
+        }
+      ]
+    },
+    {
+      "row": 11541,
+      "ref": "CC-106725",
+      "trueLabel": 0,
+      "pLogistic": 0.025492,
+      "pForest": 0,
+      "amount": 120.75,
+      "date": "hour 19",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V18",
+          "contribution": 3.659444,
+          "value": -2.320871
+        },
+        {
+          "feature": "V16",
+          "contribution": -1.663781,
+          "value": -1.714373
+        },
+        {
+          "feature": "V6",
+          "contribution": -1.467018,
+          "value": 1.461164
+        }
+      ]
+    },
+    {
+      "row": 796,
+      "ref": "CC-040736",
+      "trueLabel": 0,
+      "pLogistic": 0.00319,
+      "pForest": 0,
+      "amount": 9.02,
+      "date": "hour 11",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": -2.225719,
+          "value": -1.105457
+        },
+        {
+          "feature": "V10",
+          "contribution": 1.445111,
+          "value": -0.962498
+        },
+        {
+          "feature": "V13",
+          "contribution": -1.32237,
+          "value": 1.450641
+        }
+      ]
+    },
+    {
+      "row": 10022,
+      "ref": "CC-141944",
+      "trueLabel": 0,
+      "pLogistic": 0.006896,
+      "pForest": 0,
+      "amount": 17.99,
+      "date": "hour 23",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V2",
+          "contribution": 1.8691,
+          "value": 0.861009
+        },
+        {
+          "feature": "V13",
+          "contribution": -1.214585,
+          "value": 1.332402
+        },
+        {
+          "feature": "V10",
+          "contribution": 1.083687,
+          "value": -0.721776
+        }
+      ]
+    },
+    {
+      "row": 30548,
+      "ref": "CC-118603",
+      "trueLabel": 0,
+      "pLogistic": 0.287449,
+      "pForest": 0,
+      "amount": 29.56,
+      "date": "hour 20",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 1.798013,
+          "value": -1.440637
+        },
+        {
+          "feature": "V11",
+          "contribution": 1.601624,
+          "value": 1.490076
+        },
+        {
+          "feature": "V4",
+          "contribution": 1.4726,
+          "value": 0.731402
+        }
+      ]
+    },
+    {
+      "row": 32315,
+      "ref": "CC-191244",
+      "trueLabel": 0,
+      "pLogistic": 0.003535,
+      "pForest": 0,
+      "amount": 16.98,
+      "date": "hour 11",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V5",
+          "contribution": 4.32016,
+          "value": 2.222985
+        },
+        {
+          "feature": "V6",
+          "contribution": -2.661678,
+          "value": 2.651058
+        },
+        {
+          "feature": "V2",
+          "contribution": 1.765057,
+          "value": 0.813081
+        }
+      ]
+    },
+    {
+      "row": 18668,
+      "ref": "CC-116169",
+      "trueLabel": 0,
+      "pLogistic": 0.016477,
+      "pForest": 0,
+      "amount": 1.98,
+      "date": "hour 20",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V22",
+          "contribution": -1.32384,
+          "value": -1.332398
+        },
+        {
+          "feature": "V11",
+          "contribution": -1.140225,
+          "value": -1.060812
+        },
+        {
+          "feature": "Amount",
+          "contribution": -0.922882,
+          "value": -0.345419
+        }
+      ]
+    },
+    {
+      "row": 21292,
+      "ref": "CC-008558",
+      "trueLabel": 0,
+      "pLogistic": 0.046477,
+      "pForest": 0,
+      "amount": 30.2,
+      "date": "hour 03",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V9",
+          "contribution": 2.956719,
+          "value": 3.062653
+        },
+        {
+          "feature": "V5",
+          "contribution": -2.468577,
+          "value": -1.270233
+        },
+        {
+          "feature": "V12",
+          "contribution": 1.501629,
+          "value": -1.766831
+        }
+      ]
+    },
+    {
+      "row": 34433,
+      "ref": "CC-233397",
+      "trueLabel": 0,
+      "pLogistic": 1e-06,
+      "pForest": 0,
+      "amount": 232.54,
+      "date": "hour 16",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V2",
+          "contribution": -2.876464,
+          "value": -1.325055
+        },
+        {
+          "feature": "V4",
+          "contribution": -2.330961,
+          "value": -1.157728
+        },
+        {
+          "feature": "V10",
+          "contribution": -2.292605,
+          "value": 1.52696
+        }
+      ]
+    },
+    {
+      "row": 19743,
+      "ref": "CC-087911",
+      "trueLabel": 0,
+      "pLogistic": 0.151883,
+      "pForest": 0,
+      "amount": 0,
+      "date": "hour 17",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": 3.563024,
+          "value": 1.769661
+        },
+        {
+          "feature": "V13",
+          "contribution": 0.975284,
+          "value": -1.069888
+        },
+        {
+          "feature": "Amount",
+          "contribution": -0.944009,
+          "value": -0.353326
+        }
+      ]
+    },
+    {
+      "row": 27801,
+      "ref": "CC-253705",
+      "trueLabel": 0,
+      "pLogistic": 0.198656,
+      "pForest": 0,
+      "amount": 13.99,
+      "date": "hour 19",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V13",
+          "contribution": 2.616132,
+          "value": -2.8699
+        },
+        {
+          "feature": "V4",
+          "contribution": 1.722715,
+          "value": 0.855628
+        },
+        {
+          "feature": "V14",
+          "contribution": -1.593934,
+          "value": 1.277122
+        }
+      ]
+    },
+    {
+      "row": 27022,
+      "ref": "CC-025566",
+      "trueLabel": 0,
+      "pLogistic": 0.006662,
+      "pForest": 0,
+      "amount": 49.51,
+      "date": "hour 09",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V18",
+          "contribution": 2.140574,
+          "value": -1.357582
+        },
+        {
+          "feature": "V10",
+          "contribution": 1.778348,
+          "value": -1.184446
+        },
+        {
+          "feature": "V4",
+          "contribution": -1.759328,
+          "value": -0.873812
+        }
+      ]
+    },
+    {
+      "row": 27084,
+      "ref": "CC-187250",
+      "trueLabel": 0,
+      "pLogistic": 0.022766,
+      "pForest": 0,
+      "amount": 9.99,
+      "date": "hour 11",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V9",
+          "contribution": 1.288073,
+          "value": 1.334223
+        },
+        {
+          "feature": "V1",
+          "contribution": 1.154115,
+          "value": 1.008619
+        },
+        {
+          "feature": "V22",
+          "contribution": 1.147013,
+          "value": 1.154428
+        }
+      ]
+    },
+    {
+      "row": 20706,
+      "ref": "CC-265854",
+      "trueLabel": 0,
+      "pLogistic": 0.000292,
+      "pForest": 0,
+      "amount": 9.99,
+      "date": "hour 21",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V2",
+          "contribution": 2.589463,
+          "value": 1.192846
+        },
+        {
+          "feature": "V11",
+          "contribution": -1.381697,
+          "value": -1.285466
+        },
+        {
+          "feature": "V18",
+          "contribution": 1.377671,
+          "value": -0.873739
+        }
+      ]
+    },
+    {
+      "row": 12066,
+      "ref": "CC-264537",
+      "trueLabel": 0,
+      "pLogistic": 0.079078,
+      "pForest": 0,
+      "amount": 9.08,
+      "date": "hour 20",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": 3.928985,
+          "value": 1.951424
+        },
+        {
+          "feature": "V5",
+          "contribution": 1.989775,
+          "value": 1.02386
+        },
+        {
+          "feature": "V2",
+          "contribution": 1.678831,
+          "value": 0.77336
+        }
+      ]
+    },
+    {
+      "row": 18,
+      "ref": "CC-181967",
+      "trueLabel": 1,
+      "pLogistic": 0.998486,
+      "pForest": 0.7394,
+      "amount": 40,
+      "date": "hour 10",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 8.380119,
+          "value": -6.714476
+        },
+        {
+          "feature": "V10",
+          "contribution": 4.403077,
+          "value": -2.932613
+        },
+        {
+          "feature": "V16",
+          "contribution": -3.620282,
+          "value": -3.730367
+        }
+      ]
+    },
+    {
+      "row": 40496,
+      "ref": "CC-167881",
+      "trueLabel": 0,
+      "pLogistic": 0.050826,
+      "pForest": 0,
+      "amount": 17.9,
+      "date": "hour 09",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V2",
+          "contribution": 1.609934,
+          "value": 0.741623
+        },
+        {
+          "feature": "V5",
+          "contribution": 1.559538,
+          "value": 0.802477
+        },
+        {
+          "feature": "V14",
+          "contribution": -1.517644,
+          "value": 1.215995
+        }
+      ]
+    },
+    {
+      "row": 29640,
+      "ref": "CC-282055",
+      "trueLabel": 0,
+      "pLogistic": 0.014492,
+      "pForest": 0,
+      "amount": 181.8,
+      "date": "hour 23",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V10",
+          "contribution": 1.661346,
+          "value": -1.106518
+        },
+        {
+          "feature": "V2",
+          "contribution": 1.423414,
+          "value": 0.655701
+        },
+        {
+          "feature": "V14",
+          "contribution": 1.248579,
+          "value": -1.00041
+        }
+      ]
+    },
+    {
+      "row": 13444,
+      "ref": "CC-249367",
+      "trueLabel": 0,
+      "pLogistic": 0.879003,
+      "pForest": 0,
+      "amount": 23.08,
+      "date": "hour 18",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 4.10944,
+          "value": -3.292643
+        },
+        {
+          "feature": "V18",
+          "contribution": -3.830132,
+          "value": 2.429124
+        },
+        {
+          "feature": "V4",
+          "contribution": 2.232975,
+          "value": 1.10906
+        }
+      ]
+    },
+    {
+      "row": 15048,
+      "ref": "CC-159562",
+      "trueLabel": 0,
+      "pLogistic": 0.027172,
+      "pForest": 0,
+      "amount": 422.47,
+      "date": "hour 07",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "Amount",
+          "contribution": 3.56377,
+          "value": 1.333858
+        },
+        {
+          "feature": "V2",
+          "contribution": -2.324709,
+          "value": -1.070886
+        },
+        {
+          "feature": "V18",
+          "contribution": 2.322639,
+          "value": -1.47305
+        }
+      ]
+    },
+    {
+      "row": 6456,
+      "ref": "CC-184673",
+      "trueLabel": 0,
+      "pLogistic": 0,
+      "pForest": 0,
+      "amount": 16.98,
+      "date": "hour 11",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V18",
+          "contribution": -2.838071,
+          "value": 1.799944
+        },
+        {
+          "feature": "V4",
+          "contribution": -2.291208,
+          "value": -1.137983
+        },
+        {
+          "feature": "V22",
+          "contribution": -1.342119,
+          "value": -1.350795
+        }
+      ]
+    },
+    {
+      "row": 40704,
+      "ref": "CC-094783",
+      "trueLabel": 0,
+      "pLogistic": 0.137592,
+      "pForest": 0.002143,
+      "amount": 23.14,
+      "date": "hour 18",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V11",
+          "contribution": 1.536967,
+          "value": 1.429922
+        },
+        {
+          "feature": "V18",
+          "contribution": -1.366539,
+          "value": 0.866678
+        },
+        {
+          "feature": "V22",
+          "contribution": 1.312523,
+          "value": 1.321008
+        }
+      ]
+    },
+    {
+      "row": 7687,
+      "ref": "CC-278086",
+      "trueLabel": 0,
+      "pLogistic": 0.009006,
+      "pForest": 0,
+      "amount": 10.39,
+      "date": "hour 22",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 1.940346,
+          "value": -1.55468
+        },
+        {
+          "feature": "V10",
+          "contribution": 1.601658,
+          "value": -1.066764
+        },
+        {
+          "feature": "V18",
+          "contribution": -1.532559,
+          "value": 0.971971
+        }
+      ]
+    },
+    {
+      "row": 41891,
+      "ref": "CC-232722",
+      "trueLabel": 0,
+      "pLogistic": 0.007598,
+      "pForest": 0,
+      "amount": 9.82,
+      "date": "hour 16",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V10",
+          "contribution": -2.606288,
+          "value": 1.735885
+        },
+        {
+          "feature": "V2",
+          "contribution": 2.234362,
+          "value": 1.029268
+        },
+        {
+          "feature": "V18",
+          "contribution": 1.656508,
+          "value": -1.05058
+        }
+      ]
+    },
+    {
+      "row": 11400,
+      "ref": "CC-093685",
+      "trueLabel": 0,
+      "pLogistic": 0.025945,
+      "pForest": 0,
+      "amount": 49.95,
+      "date": "hour 17",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V18",
+          "contribution": 2.583425,
+          "value": -1.638445
+        },
+        {
+          "feature": "V4",
+          "contribution": 1.154086,
+          "value": 0.573205
+        },
+        {
+          "feature": "V5",
+          "contribution": -0.88857,
+          "value": -0.457223
+        }
+      ]
+    },
+    {
+      "row": 1779,
+      "ref": "CC-057477",
+      "trueLabel": 0,
+      "pLogistic": 1e-06,
+      "pForest": 0,
+      "amount": 25.87,
+      "date": "hour 13",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V19",
+          "contribution": -3.520318,
+          "value": -3.809679
+        },
+        {
+          "feature": "V4",
+          "contribution": -2.588089,
+          "value": -1.285436
+        },
+        {
+          "feature": "V18",
+          "contribution": -1.496604,
+          "value": 0.949168
+        }
+      ]
+    },
+    {
+      "row": 40,
+      "ref": "CC-017318",
+      "trueLabel": 1,
+      "pLogistic": 0.999972,
+      "pForest": 0.836314,
+      "amount": 99.99,
+      "date": "hour 07",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V5",
+          "contribution": -28.717704,
+          "value": -14.777003
+        },
+        {
+          "feature": "V2",
+          "contribution": 20.568339,
+          "value": 9.474889
+        },
+        {
+          "feature": "V1",
+          "contribution": -16.36124,
+          "value": -14.298626
+        }
+      ]
+    },
+    {
+      "row": 49,
+      "ref": "CC-151808",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.738616,
+      "amount": 33.59,
+      "date": "hour 02",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": 9.513296,
+          "value": 4.725006
+        },
+        {
+          "feature": "V10",
+          "contribution": 7.90097,
+          "value": -5.26234
+        },
+        {
+          "feature": "V2",
+          "contribution": 7.159081,
+          "value": 3.29786
+        }
+      ]
+    },
+    {
+      "row": 60,
+      "ref": "CC-008618",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.944596,
+      "amount": 1,
+      "date": "hour 03",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 12.373822,
+          "value": -9.914385
+        },
+        {
+          "feature": "V4",
+          "contribution": 10.578062,
+          "value": 5.253847
+        },
+        {
+          "feature": "V12",
+          "contribution": 6.518132,
+          "value": -7.669298
+        }
+      ]
+    },
+    {
+      "row": 35,
+      "ref": "CC-150685",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.996354,
+      "amount": 1,
+      "date": "hour 02",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V17",
+          "contribution": 21.985402,
+          "value": -24.55195
+        },
+        {
+          "feature": "V10",
+          "contribution": 17.348349,
+          "value": -11.554644
+        },
+        {
+          "feature": "V18",
+          "contribution": 15.978795,
+          "value": -10.133977
+        }
+      ]
+    },
+    {
+      "row": 19731,
+      "ref": "CC-047336",
+      "trueLabel": 0,
+      "pLogistic": 0.000355,
+      "pForest": 0,
+      "amount": 25.35,
+      "date": "hour 11",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": -2.658546,
+          "value": -1.320431
+        },
+        {
+          "feature": "V10",
+          "contribution": 2.269514,
+          "value": -1.51158
+        },
+        {
+          "feature": "V19",
+          "contribution": 2.165224,
+          "value": 2.3432
+        }
+      ]
+    },
+    {
+      "row": 20543,
+      "ref": "CC-146260",
+      "trueLabel": 0,
+      "pLogistic": 0.029263,
+      "pForest": 0,
+      "amount": 14.96,
+      "date": "hour 00",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V2",
+          "contribution": 1.679521,
+          "value": 0.773678
+        },
+        {
+          "feature": "V22",
+          "contribution": 1.617001,
+          "value": 1.627454
+        },
+        {
+          "feature": "V14",
+          "contribution": -1.38163,
+          "value": 1.107015
+        }
+      ]
+    },
+    {
+      "row": 56,
+      "ref": "CC-123202",
+      "trueLabel": 1,
+      "pLogistic": 0.9816,
+      "pForest": 0.604258,
+      "amount": 1,
+      "date": "hour 21",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 6.624374,
+          "value": -5.307705
+        },
+        {
+          "feature": "V17",
+          "contribution": -4.280332,
+          "value": 4.780013
+        },
+        {
+          "feature": "V10",
+          "contribution": 3.004296,
+          "value": -2.000973
+        }
+      ]
+    },
+    {
+      "row": 11982,
+      "ref": "CC-070577",
+      "trueLabel": 0,
+      "pLogistic": 0.02245,
+      "pForest": 0,
+      "amount": 31,
+      "date": "hour 14",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V5",
+          "contribution": 5.179456,
+          "value": 2.665145
+        },
+        {
+          "feature": "V6",
+          "contribution": -2.669716,
+          "value": 2.659063
+        },
+        {
+          "feature": "V19",
+          "contribution": -1.114403,
+          "value": -1.206004
+        }
+      ]
+    },
+    {
+      "row": 6075,
+      "ref": "CC-189648",
+      "trueLabel": 0,
+      "pLogistic": 0.153644,
+      "pForest": 0,
+      "amount": 30.87,
+      "date": "hour 11",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": -1.731934,
+          "value": 1.387693
+        },
+        {
+          "feature": "V13",
+          "contribution": 1.613109,
+          "value": -1.769583
+        },
+        {
+          "feature": "V4",
+          "contribution": 1.556645,
+          "value": 0.773145
+        }
+      ]
+    },
+    {
+      "row": 24918,
+      "ref": "CC-253864",
+      "trueLabel": 0,
+      "pLogistic": 0.032554,
+      "pForest": 0,
+      "amount": 4.49,
+      "date": "hour 19",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V5",
+          "contribution": 1.675248,
+          "value": 0.862017
+        },
+        {
+          "feature": "V2",
+          "contribution": 1.29697,
+          "value": 0.597454
+        },
+        {
+          "feature": "V14",
+          "contribution": 1.140914,
+          "value": -0.914144
+        }
+      ]
+    },
+    {
+      "row": 35968,
+      "ref": "CC-245629",
+      "trueLabel": 0,
+      "pLogistic": 0.03458,
+      "pForest": 0,
+      "amount": 4.49,
+      "date": "hour 18",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V5",
+          "contribution": 1.707535,
+          "value": 0.87863
+        },
+        {
+          "feature": "V2",
+          "contribution": 1.22078,
+          "value": 0.562357
+        },
+        {
+          "feature": "V14",
+          "contribution": 1.145668,
+          "value": -0.917953
+        }
+      ]
+    },
+    {
+      "row": 6,
+      "ref": "CC-145801",
+      "trueLabel": 1,
+      "pLogistic": 0.870366,
+      "pForest": 0.0075,
+      "amount": 451.27,
+      "date": "hour 00",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": 3.971758,
+          "value": 1.972669
+        },
+        {
+          "feature": "Amount",
+          "contribution": 3.871068,
+          "value": 1.448874
+        },
+        {
+          "feature": "V19",
+          "contribution": 2.529349,
+          "value": 2.737256
+        }
+      ]
+    },
+    {
+      "row": 30053,
+      "ref": "CC-264206",
+      "trueLabel": 0,
+      "pLogistic": 0.026182,
+      "pForest": 0,
+      "amount": 119,
+      "date": "hour 20",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": 1.707754,
+          "value": 0.848197
+        },
+        {
+          "feature": "V18",
+          "contribution": -1.399632,
+          "value": 0.887667
+        },
+        {
+          "feature": "V12",
+          "contribution": -1.307298,
+          "value": 1.53818
+        }
+      ]
+    },
+    {
+      "row": 18164,
+      "ref": "CC-087099",
+      "trueLabel": 0,
+      "pLogistic": 0,
+      "pForest": 0,
+      "amount": 30,
+      "date": "hour 17",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V18",
+          "contribution": -3.148457,
+          "value": 1.996796
+        },
+        {
+          "feature": "V4",
+          "contribution": -1.852022,
+          "value": -0.919851
+        },
+        {
+          "feature": "V9",
+          "contribution": -1.629468,
+          "value": -1.687849
+        }
+      ]
+    },
+    {
+      "row": 27831,
+      "ref": "CC-192293",
+      "trueLabel": 0,
+      "pLogistic": 0.006366,
+      "pForest": 0,
+      "amount": 142.68,
+      "date": "hour 12",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": -2.93751,
+          "value": -1.458985
+        },
+        {
+          "feature": "V18",
+          "contribution": 2.905562,
+          "value": -1.842748
+        },
+        {
+          "feature": "V2",
+          "contribution": -2.00807,
+          "value": -0.925026
+        }
+      ]
+    },
+    {
+      "row": 18415,
+      "ref": "CC-074122",
+      "trueLabel": 0,
+      "pLogistic": 0.016517,
+      "pForest": 0,
+      "amount": 61.18,
+      "date": "hour 15",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V18",
+          "contribution": 2.130215,
+          "value": -1.351012
+        },
+        {
+          "feature": "V10",
+          "contribution": 1.774535,
+          "value": -1.181906
+        },
+        {
+          "feature": "V4",
+          "contribution": -1.398571,
+          "value": -0.694634
+        }
+      ]
+    },
+    {
+      "row": 68,
+      "ref": "CC-163150",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.857034,
+      "amount": 17.06,
+      "date": "hour 08",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V17",
+          "contribution": 10.168816,
+          "value": -11.355911
+        },
+        {
+          "feature": "V14",
+          "contribution": 7.55759,
+          "value": -6.055434
+        },
+        {
+          "feature": "V16",
+          "contribution": -5.468428,
+          "value": -5.634712
+        }
+      ]
+    },
+    {
+      "row": 59,
+      "ref": "CC-222420",
+      "trueLabel": 1,
+      "pLogistic": 0.160773,
+      "pForest": 0.003125,
+      "amount": 0,
+      "date": "hour 15",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": 3.99824,
+          "value": 1.985822
+        },
+        {
+          "feature": "V5",
+          "contribution": 2.505889,
+          "value": 1.289432
+        },
+        {
+          "feature": "V2",
+          "contribution": 1.816473,
+          "value": 0.836766
+        }
+      ]
+    },
+    {
+      "row": 15,
+      "ref": "CC-255557",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.953941,
+      "amount": 0.77,
+      "date": "hour 19",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 13.303681,
+          "value": -10.659425
+        },
+        {
+          "feature": "V4",
+          "contribution": 9.249452,
+          "value": 4.593961
+        },
+        {
+          "feature": "V10",
+          "contribution": 5.526061,
+          "value": -3.680562
+        }
+      ]
+    },
+    {
+      "row": 71,
+      "ref": "CC-006720",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.940595,
+      "amount": 1,
+      "date": "hour 02",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 15.130383,
+          "value": -12.123049
+        },
+        {
+          "feature": "V4",
+          "contribution": 9.680917,
+          "value": 4.808259
+        },
+        {
+          "feature": "V10",
+          "contribution": 9.497996,
+          "value": -6.326018
+        }
+      ]
+    },
+    {
+      "row": 34582,
+      "ref": "CC-182752",
+      "trueLabel": 0,
+      "pLogistic": 0.624102,
+      "pForest": 0.003125,
+      "amount": 1079.32,
+      "date": "hour 10",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "Amount",
+          "contribution": 10.572398,
+          "value": 3.957067
+        },
+        {
+          "feature": "V10",
+          "contribution": 3.203364,
+          "value": -2.133559
+        },
+        {
+          "feature": "V2",
+          "contribution": -3.052473,
+          "value": -1.406134
+        }
+      ]
+    },
+    {
+      "row": 63,
+      "ref": "CC-079526",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.951838,
+      "amount": 1,
+      "date": "hour 16",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 14.53654,
+          "value": -11.647239
+        },
+        {
+          "feature": "V10",
+          "contribution": 9.452689,
+          "value": -6.295842
+        },
+        {
+          "feature": "V4",
+          "contribution": 7.87365,
+          "value": 3.910636
+        }
+      ]
+    },
+    {
+      "row": 41119,
+      "ref": "CC-025897",
+      "trueLabel": 0,
+      "pLogistic": 0.182767,
+      "pForest": 0,
+      "amount": 15.21,
+      "date": "hour 09",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": 3.686404,
+          "value": 1.830941
+        },
+        {
+          "feature": "V11",
+          "contribution": -1.664811,
+          "value": -1.548862
+        },
+        {
+          "feature": "V22",
+          "contribution": -1.217652,
+          "value": -1.225523
+        }
+      ]
+    },
+    {
+      "row": 21552,
+      "ref": "CC-198612",
+      "trueLabel": 0,
+      "pLogistic": 0.048292,
+      "pForest": 0,
+      "amount": 100.61,
+      "date": "hour 12",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V5",
+          "contribution": 2.66867,
+          "value": 1.373193
+        },
+        {
+          "feature": "V4",
+          "contribution": -2.050569,
+          "value": -1.018464
+        },
+        {
+          "feature": "V10",
+          "contribution": 1.693872,
+          "value": -1.128181
+        }
+      ]
+    },
+    {
+      "row": 50,
+      "ref": "CC-154671",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.906319,
+      "amount": 104,
+      "date": "hour 04",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 16.926216,
+          "value": -13.56194
+        },
+        {
+          "feature": "V10",
+          "contribution": 12.542932,
+          "value": -8.354059
+        },
+        {
+          "feature": "V12",
+          "contribution": 9.099143,
+          "value": -10.706141
+        }
+      ]
+    },
+    {
+      "row": 51,
+      "ref": "CC-251882",
+      "trueLabel": 1,
+      "pLogistic": 0.966603,
+      "pForest": 0.051133,
+      "amount": 3.14,
+      "date": "hour 19",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": 5.946116,
+          "value": 2.95328
+        },
+        {
+          "feature": "V14",
+          "contribution": 3.872354,
+          "value": -3.10268
+        },
+        {
+          "feature": "V16",
+          "contribution": 2.097447,
+          "value": 2.161226
+        }
+      ]
+    },
+    {
+      "row": 39,
+      "ref": "CC-157586",
+      "trueLabel": 1,
+      "pLogistic": 0.246551,
+      "pForest": 0.00875,
+      "amount": 1,
+      "date": "hour 06",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": 5.68175,
+          "value": 2.821977
+        },
+        {
+          "feature": "V12",
+          "contribution": 2.372751,
+          "value": -2.791802
+        },
+        {
+          "feature": "V14",
+          "contribution": -2.058883,
+          "value": 1.649656
+        }
+      ]
+    },
+    {
+      "row": 25,
+      "ref": "CC-223367",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.792934,
+      "amount": 1,
+      "date": "hour 15",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 9.903618,
+          "value": -7.935162
+        },
+        {
+          "feature": "V4",
+          "contribution": 7.760702,
+          "value": 3.854538
+        },
+        {
+          "feature": "V10",
+          "contribution": 3.809802,
+          "value": -2.53747
+        }
+      ]
+    },
+    {
+      "row": 14,
+      "ref": "CC-151197",
+      "trueLabel": 1,
+      "pLogistic": 0.976371,
+      "pForest": 0.057413,
+      "amount": 571.48,
+      "date": "hour 02",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": 6.867786,
+          "value": 3.41105
+        },
+        {
+          "feature": "Amount",
+          "contribution": 5.153716,
+          "value": 1.928947
+        },
+        {
+          "feature": "V12",
+          "contribution": 2.407983,
+          "value": -2.833256
+        }
+      ]
+    },
+    {
+      "row": 641,
+      "ref": "CC-244623",
+      "trueLabel": 0,
+      "pLogistic": 0.037214,
+      "pForest": 0,
+      "amount": 5.99,
+      "date": "hour 18",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V22",
+          "contribution": -1.242864,
+          "value": -1.250899
+        },
+        {
+          "feature": "V1",
+          "contribution": 1.204448,
+          "value": 1.052607
+        },
+        {
+          "feature": "V14",
+          "contribution": 1.136524,
+          "value": -0.910627
+        }
+      ]
+    },
+    {
+      "row": 22795,
+      "ref": "CC-224630",
+      "trueLabel": 0,
+      "pLogistic": 0.132552,
+      "pForest": 0,
+      "amount": 5,
+      "date": "hour 15",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 2.781888,
+          "value": -2.228956
+        },
+        {
+          "feature": "V16",
+          "contribution": 2.051811,
+          "value": 2.114203
+        },
+        {
+          "feature": "V11",
+          "contribution": 1.355893,
+          "value": 1.261459
+        }
+      ]
+    },
+    {
+      "row": 40308,
+      "ref": "CC-212704",
+      "trueLabel": 0,
+      "pLogistic": 0.975749,
+      "pForest": 0,
+      "amount": 1500,
+      "date": "hour 14",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "Amount",
+          "contribution": 15.061077,
+          "value": 5.637103
+        },
+        {
+          "feature": "V23",
+          "contribution": -4.871919,
+          "value": -14.72503
+        },
+        {
+          "feature": "V4",
+          "contribution": 2.787372,
+          "value": 1.384415
+        }
+      ]
+    },
+    {
+      "row": 35461,
+      "ref": "CC-179921",
+      "trueLabel": 0,
+      "pLogistic": 0.004911,
+      "pForest": 0,
+      "amount": 0.89,
+      "date": "hour 10",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V2",
+          "contribution": 2.94429,
+          "value": 1.356299
+        },
+        {
+          "feature": "V14",
+          "contribution": -1.621064,
+          "value": 1.29886
+        },
+        {
+          "feature": "V12",
+          "contribution": -1.314012,
+          "value": 1.546079
+        }
+      ]
+    },
+    {
+      "row": 2822,
+      "ref": "CC-235107",
+      "trueLabel": 0,
+      "pLogistic": 0.009658,
+      "pForest": 0,
+      "amount": 5.75,
+      "date": "hour 17",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V22",
+          "contribution": 2.079828,
+          "value": 2.093272
+        },
+        {
+          "feature": "V13",
+          "contribution": -1.405616,
+          "value": 1.541963
+        },
+        {
+          "feature": "V11",
+          "contribution": -1.285273,
+          "value": -1.195758
+        }
+      ]
+    },
+    {
+      "row": 17429,
+      "ref": "CC-039288",
+      "trueLabel": 0,
+      "pLogistic": 0.001534,
+      "pForest": 0,
+      "amount": 108.39,
+      "date": "hour 11",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V2",
+          "contribution": 2.584565,
+          "value": 1.19059
+        },
+        {
+          "feature": "V11",
+          "contribution": -1.822414,
+          "value": -1.695488
+        },
+        {
+          "feature": "V14",
+          "contribution": -1.384136,
+          "value": 1.109024
+        }
+      ]
+    },
+    {
+      "row": 22894,
+      "ref": "CC-168000",
+      "trueLabel": 0,
+      "pLogistic": 0.355426,
+      "pForest": 0.001786,
+      "amount": 19.95,
+      "date": "hour 09",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V16",
+          "contribution": 2.45051,
+          "value": 2.525025
+        },
+        {
+          "feature": "V4",
+          "contribution": -2.213309,
+          "value": -1.099293
+        },
+        {
+          "feature": "V14",
+          "contribution": 1.979159,
+          "value": -1.585779
+        }
+      ]
+    },
+    {
+      "row": 43,
+      "ref": "CC-120506",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.91717,
+      "amount": 99.85,
+      "date": "hour 21",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V17",
+          "contribution": 11.38127,
+          "value": -12.709905
+        },
+        {
+          "feature": "V14",
+          "contribution": 11.348715,
+          "value": -9.09303
+        },
+        {
+          "feature": "V10",
+          "contribution": 8.990817,
+          "value": -5.988218
+        }
+      ]
+    },
+    {
+      "row": 10928,
+      "ref": "CC-098306",
+      "trueLabel": 0,
+      "pLogistic": 2e-06,
+      "pForest": 0,
+      "amount": 198,
+      "date": "hour 18",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V18",
+          "contribution": -2.50689,
+          "value": 1.589905
+        },
+        {
+          "feature": "V16",
+          "contribution": -1.604351,
+          "value": -1.653136
+        },
+        {
+          "feature": "V2",
+          "contribution": -1.527043,
+          "value": -0.703438
+        }
+      ]
+    },
+    {
+      "row": 65,
+      "ref": "CC-027739",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.870332,
+      "amount": 125.3,
+      "date": "hour 09",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 12.658573,
+          "value": -10.142539
+        },
+        {
+          "feature": "V17",
+          "contribution": 9.859916,
+          "value": -11.01095
+        },
+        {
+          "feature": "V12",
+          "contribution": 6.16852,
+          "value": -7.257941
+        }
+      ]
+    },
+    {
+      "row": 10009,
+      "ref": "CC-228828",
+      "trueLabel": 0,
+      "pLogistic": 0.003497,
+      "pForest": 0,
+      "amount": 20,
+      "date": "hour 16",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": -3.046936,
+          "value": -1.513333
+        },
+        {
+          "feature": "V5",
+          "contribution": 3.013058,
+          "value": 1.550401
+        },
+        {
+          "feature": "V19",
+          "contribution": 2.924006,
+          "value": 3.164352
+        }
+      ]
+    },
+    {
+      "row": 27807,
+      "ref": "CC-061546",
+      "trueLabel": 0,
+      "pLogistic": 0.006911,
+      "pForest": 0,
+      "amount": 1,
+      "date": "hour 13",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V5",
+          "contribution": 3.266956,
+          "value": 1.681047
+        },
+        {
+          "feature": "V6",
+          "contribution": -2.766139,
+          "value": 2.755102
+        },
+        {
+          "feature": "V4",
+          "contribution": -1.769911,
+          "value": -0.879069
+        }
+      ]
+    },
+    {
+      "row": 9,
+      "ref": "CC-044557",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.871701,
+      "amount": 1,
+      "date": "hour 11",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 9.497066,
+          "value": -7.609417
+        },
+        {
+          "feature": "V17",
+          "contribution": 9.40846,
+          "value": -10.506791
+        },
+        {
+          "feature": "V18",
+          "contribution": 8.64922,
+          "value": -5.485457
+        }
+      ]
+    },
+    {
+      "row": 16066,
+      "ref": "CC-196039",
+      "trueLabel": 0,
+      "pLogistic": 0.011676,
+      "pForest": 0,
+      "amount": 4.55,
+      "date": "hour 12",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V1",
+          "contribution": 1.2567,
+          "value": 1.098271
+        },
+        {
+          "feature": "V18",
+          "contribution": 1.221612,
+          "value": -0.774763
+        },
+        {
+          "feature": "V5",
+          "contribution": 1.14881,
+          "value": 0.591132
+        }
+      ]
+    },
+    {
+      "row": 28762,
+      "ref": "CC-132037",
+      "trueLabel": 0,
+      "pLogistic": 0.018372,
+      "pForest": 0,
+      "amount": 25,
+      "date": "hour 22",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V17",
+          "contribution": 1.689817,
+          "value": -1.887084
+        },
+        {
+          "feature": "V5",
+          "contribution": 1.244039,
+          "value": 0.640134
+        },
+        {
+          "feature": "V18",
+          "contribution": -1.128668,
+          "value": 0.715817
+        }
+      ]
+    },
+    {
+      "row": 38,
+      "ref": "CC-220726",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.33347,
+      "amount": 324.59,
+      "date": "hour 15",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": 7.782941,
+          "value": 3.865584
+        },
+        {
+          "feature": "V14",
+          "contribution": 6.753675,
+          "value": -5.411306
+        },
+        {
+          "feature": "V12",
+          "contribution": 2.771931,
+          "value": -3.261482
+        }
+      ]
+    },
+    {
+      "row": 21,
+      "ref": "CC-150667",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.985417,
+      "amount": 78,
+      "date": "hour 02",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V10",
+          "contribution": 21.255324,
+          "value": -14.156835
+        },
+        {
+          "feature": "V14",
+          "contribution": 19.599189,
+          "value": -15.70363
+        },
+        {
+          "feature": "V17",
+          "contribution": 16.460633,
+          "value": -18.382226
+        }
+      ]
+    },
+    {
+      "row": 5937,
+      "ref": "CC-022636",
+      "trueLabel": 0,
+      "pLogistic": 0.119377,
+      "pForest": 0,
+      "amount": 176.97,
+      "date": "hour 08",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V18",
+          "contribution": 2.996489,
+          "value": -1.900415
+        },
+        {
+          "feature": "V5",
+          "contribution": -2.979455,
+          "value": -1.533111
+        },
+        {
+          "feature": "V2",
+          "contribution": -1.868829,
+          "value": -0.860883
+        }
+      ]
+    },
+    {
+      "row": 38015,
+      "ref": "CC-082330",
+      "trueLabel": 0,
+      "pLogistic": 0.034105,
+      "pForest": 0,
+      "amount": 11.99,
+      "date": "hour 16",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V2",
+          "contribution": 1.674409,
+          "value": 0.771323
+        },
+        {
+          "feature": "Amount",
+          "contribution": -0.816075,
+          "value": -0.305443
+        },
+        {
+          "feature": "V6",
+          "contribution": 0.8001,
+          "value": -0.796907
+        }
+      ]
+    },
+    {
+      "row": 38023,
+      "ref": "CC-059548",
+      "trueLabel": 0,
+      "pLogistic": 0.003324,
+      "pForest": 0,
+      "amount": 39.99,
+      "date": "hour 13",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V6",
+          "contribution": -2.991084,
+          "value": 2.979149
+        },
+        {
+          "feature": "V5",
+          "contribution": 1.980456,
+          "value": 1.019065
+        },
+        {
+          "feature": "V17",
+          "contribution": 0.715924,
+          "value": -0.7995
+        }
+      ]
+    },
+    {
+      "row": 40652,
+      "ref": "CC-015963",
+      "trueLabel": 0,
+      "pLogistic": 4e-06,
+      "pForest": 0,
+      "amount": 79,
+      "date": "hour 07",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V16",
+          "contribution": -2.87016,
+          "value": -2.957436
+        },
+        {
+          "feature": "V19",
+          "contribution": -2.559174,
+          "value": -2.769531
+        },
+        {
+          "feature": "V11",
+          "contribution": 1.602459,
+          "value": 1.490853
+        }
+      ]
+    },
+    {
+      "row": 7881,
+      "ref": "CC-187207",
+      "trueLabel": 0,
+      "pLogistic": 2e-06,
+      "pForest": 0,
+      "amount": 111.1,
+      "date": "hour 11",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V18",
+          "contribution": -4.504381,
+          "value": 2.856742
+        },
+        {
+          "feature": "V19",
+          "contribution": -1.432704,
+          "value": -1.550469
+        },
+        {
+          "feature": "V17",
+          "contribution": 1.039513,
+          "value": -1.160864
+        }
+      ]
+    },
+    {
+      "row": 12,
+      "ref": "CC-042591",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.916875,
+      "amount": 5.3,
+      "date": "hour 11",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V17",
+          "contribution": 22.416481,
+          "value": -25.033353
+        },
+        {
+          "feature": "V14",
+          "contribution": 21.414003,
+          "value": -17.157729
+        },
+        {
+          "feature": "V10",
+          "contribution": 18.105293,
+          "value": -12.058798
+        }
+      ]
+    },
+    {
+      "row": 47,
+      "ref": "CC-191268",
+      "trueLabel": 1,
+      "pLogistic": 0.082179,
+      "pForest": 0,
+      "amount": 7.18,
+      "date": "hour 11",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": 4.083822,
+          "value": 2.028328
+        },
+        {
+          "feature": "V10",
+          "contribution": -2.392123,
+          "value": 1.593243
+        },
+        {
+          "feature": "V19",
+          "contribution": 2.034895,
+          "value": 2.202158
+        }
+      ]
+    },
+    {
+      "row": 7458,
+      "ref": "CC-196299",
+      "trueLabel": 0,
+      "pLogistic": 0.166631,
+      "pForest": 0,
+      "amount": 27.05,
+      "date": "hour 12",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": 5.416328,
+          "value": 2.690149
+        },
+        {
+          "feature": "V10",
+          "contribution": -1.981646,
+          "value": 1.31985
+        },
+        {
+          "feature": "V19",
+          "contribution": -1.694597,
+          "value": -1.833888
+        }
+      ]
+    },
+    {
+      "row": 22588,
+      "ref": "CC-183819",
+      "trueLabel": 0,
+      "pLogistic": 0,
+      "pForest": 0,
+      "amount": 9.2,
+      "date": "hour 10",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": -2.802566,
+          "value": -1.391961
+        },
+        {
+          "feature": "V18",
+          "contribution": -2.45859,
+          "value": 1.559272
+        },
+        {
+          "feature": "V19",
+          "contribution": -1.952196,
+          "value": -2.112661
+        }
+      ]
+    },
+    {
+      "row": 13863,
+      "ref": "CC-167952",
+      "trueLabel": 0,
+      "pLogistic": 0.017794,
+      "pForest": 0,
+      "amount": 234.95,
+      "date": "hour 09",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V22",
+          "contribution": 1.774675,
+          "value": 1.786148
+        },
+        {
+          "feature": "Amount",
+          "contribution": 1.562921,
+          "value": 0.584975
+        },
+        {
+          "feature": "V2",
+          "contribution": -1.341199,
+          "value": -0.617829
+        }
+      ]
+    },
+    {
+      "row": 39704,
+      "ref": "CC-086599",
+      "trueLabel": 0,
+      "pLogistic": 0.010447,
+      "pForest": 0,
+      "amount": 8.24,
+      "date": "hour 17",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V18",
+          "contribution": 1.481843,
+          "value": -0.939805
+        },
+        {
+          "feature": "V13",
+          "contribution": -0.915319,
+          "value": 1.004106
+        },
+        {
+          "feature": "Amount",
+          "contribution": -0.856087,
+          "value": -0.320419
+        }
+      ]
+    },
+    {
+      "row": 30202,
+      "ref": "CC-161308",
+      "trueLabel": 0,
+      "pLogistic": 0.050236,
+      "pForest": 0,
+      "amount": 0.99,
+      "date": "hour 07",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V2",
+          "contribution": 1.711998,
+          "value": 0.788639
+        },
+        {
+          "feature": "V22",
+          "contribution": -1.611013,
+          "value": -1.621427
+        },
+        {
+          "feature": "V5",
+          "contribution": 1.544375,
+          "value": 0.794675
+        }
+      ]
+    },
+    {
+      "row": 22323,
+      "ref": "CC-051897",
+      "trueLabel": 0,
+      "pLogistic": 0.003699,
+      "pForest": 0,
+      "amount": 72.36,
+      "date": "hour 12",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V5",
+          "contribution": -2.258502,
+          "value": -1.162136
+        },
+        {
+          "feature": "V4",
+          "contribution": 2.179316,
+          "value": 1.082409
+        },
+        {
+          "feature": "V2",
+          "contribution": 1.68096,
+          "value": 0.774341
+        }
+      ]
+    },
+    {
+      "row": 3569,
+      "ref": "CC-226494",
+      "trueLabel": 0,
+      "pLogistic": 0.010732,
+      "pForest": 0,
+      "amount": 9.99,
+      "date": "hour 16",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V18",
+          "contribution": -1.534423,
+          "value": 0.973153
+        },
+        {
+          "feature": "V1",
+          "contribution": 1.159638,
+          "value": 1.013446
+        },
+        {
+          "feature": "V22",
+          "contribution": 1.142012,
+          "value": 1.149394
+        }
+      ]
+    },
+    {
+      "row": 70,
+      "ref": "CC-254345",
+      "trueLabel": 1,
+      "pLogistic": 0.066351,
+      "pForest": 0,
+      "amount": 187.11,
+      "date": "hour 19",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 2.381064,
+          "value": -1.907801
+        },
+        {
+          "feature": "V10",
+          "contribution": 2.248732,
+          "value": -1.497739
+        },
+        {
+          "feature": "V5",
+          "contribution": 1.141451,
+          "value": 0.587346
+        }
+      ]
+    },
+    {
+      "row": 17501,
+      "ref": "CC-046638",
+      "trueLabel": 0,
+      "pLogistic": 0.155665,
+      "pForest": 0,
+      "amount": 10.62,
+      "date": "hour 11",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": 3.625157,
+          "value": 1.800521
+        },
+        {
+          "feature": "V19",
+          "contribution": -1.93459,
+          "value": -2.093609
+        },
+        {
+          "feature": "V10",
+          "contribution": -0.877291,
+          "value": 0.584309
+        }
+      ]
+    },
+    {
+      "row": 11361,
+      "ref": "CC-169403",
+      "trueLabel": 0,
+      "pLogistic": 0.013438,
+      "pForest": 0,
+      "amount": 8.98,
+      "date": "hour 09",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V2",
+          "contribution": 1.680126,
+          "value": 0.773957
+        },
+        {
+          "feature": "V10",
+          "contribution": 1.285045,
+          "value": -0.855887
+        },
+        {
+          "feature": "V11",
+          "contribution": 1.204809,
+          "value": 1.120898
+        }
+      ]
+    },
+    {
+      "row": 44,
+      "ref": "CC-123271",
+      "trueLabel": 1,
+      "pLogistic": 0.995096,
+      "pForest": 0.161783,
+      "amount": 1,
+      "date": "hour 21",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 5.805672,
+          "value": -4.651729
+        },
+        {
+          "feature": "V17",
+          "contribution": -4.219984,
+          "value": 4.71262
+        },
+        {
+          "feature": "V18",
+          "contribution": -3.315404,
+          "value": 2.102676
+        }
+      ]
+    },
+    {
+      "row": 42,
+      "ref": "CC-147549",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.938266,
+      "amount": 1.18,
+      "date": "hour 00",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 13.052968,
+          "value": -10.458544
+        },
+        {
+          "feature": "V17",
+          "contribution": 6.789808,
+          "value": -7.582442
+        },
+        {
+          "feature": "V16",
+          "contribution": -6.332926,
+          "value": -6.525498
+        }
+      ]
+    },
+    {
+      "row": 48,
+      "ref": "CC-102783",
+      "trueLabel": 1,
+      "pLogistic": 4e-06,
+      "pForest": 0,
+      "amount": 19.59,
+      "date": "hour 18",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V16",
+          "contribution": -2.396185,
+          "value": -2.469048
+        },
+        {
+          "feature": "V5",
+          "contribution": -2.025084,
+          "value": -1.042029
+        },
+        {
+          "feature": "V18",
+          "contribution": -1.574804,
+          "value": 0.998763
+        }
+      ]
+    },
+    {
+      "row": 36953,
+      "ref": "CC-028736",
+      "trueLabel": 0,
+      "pLogistic": 0.002396,
+      "pForest": 0,
+      "amount": 14,
+      "date": "hour 09",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": -1.396442,
+          "value": -0.693576
+        },
+        {
+          "feature": "V5",
+          "contribution": 1.361871,
+          "value": 0.700766
+        },
+        {
+          "feature": "V10",
+          "contribution": 1.346991,
+          "value": -0.897146
+        }
+      ]
+    },
+    {
+      "row": 11,
+      "ref": "CC-033277",
+      "trueLabel": 1,
+      "pLogistic": 0.999999,
+      "pForest": 0.547899,
+      "amount": 12.31,
+      "date": "hour 10",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 6.914093,
+          "value": -5.539839
+        },
+        {
+          "feature": "V2",
+          "contribution": -6.847478,
+          "value": -3.154318
+        },
+        {
+          "feature": "V4",
+          "contribution": 6.297987,
+          "value": 3.128046
+        }
+      ]
+    },
+    {
+      "row": 26,
+      "ref": "CC-042857",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.880089,
+      "amount": 173.07,
+      "date": "hour 11",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V17",
+          "contribution": 24.030169,
+          "value": -26.835421
+        },
+        {
+          "feature": "V10",
+          "contribution": 17.901812,
+          "value": -11.923271
+        },
+        {
+          "feature": "V18",
+          "contribution": 17.888683,
+          "value": -11.345254
+        }
+      ]
+    },
+    {
+      "row": 7133,
+      "ref": "CC-231393",
+      "trueLabel": 0,
+      "pLogistic": 0,
+      "pForest": 0,
+      "amount": 127.2,
+      "date": "hour 16",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V5",
+          "contribution": 3.286378,
+          "value": 1.691041
+        },
+        {
+          "feature": "V6",
+          "contribution": -2.557686,
+          "value": 2.547481
+        },
+        {
+          "feature": "V16",
+          "contribution": -2.49232,
+          "value": -2.568106
+        }
+      ]
+    },
+    {
+      "row": 53,
+      "ref": "CC-100624",
+      "trueLabel": 1,
+      "pLogistic": 0.04882,
+      "pForest": 0,
+      "amount": 549.06,
+      "date": "hour 18",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "Amount",
+          "contribution": 4.914493,
+          "value": 1.83941
+        },
+        {
+          "feature": "V5",
+          "contribution": -2.686583,
+          "value": -1.38241
+        },
+        {
+          "feature": "V10",
+          "contribution": 2.465549,
+          "value": -1.642147
+        }
+      ]
+    },
+    {
+      "row": 27765,
+      "ref": "CC-169288",
+      "trueLabel": 0,
+      "pLogistic": 0.130501,
+      "pForest": 0,
+      "amount": 21.35,
+      "date": "hour 09",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": 4.449086,
+          "value": 2.209745
+        },
+        {
+          "feature": "V2",
+          "contribution": 1.55644,
+          "value": 0.716981
+        },
+        {
+          "feature": "V19",
+          "contribution": -1.421451,
+          "value": -1.53829
+        }
+      ]
+    },
+    {
+      "row": 15998,
+      "ref": "CC-091777",
+      "trueLabel": 0,
+      "pLogistic": 0.00163,
+      "pForest": 0,
+      "amount": 0.77,
+      "date": "hour 17",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V10",
+          "contribution": -4.914133,
+          "value": 3.272995
+        },
+        {
+          "feature": "V2",
+          "contribution": 3.8716,
+          "value": 1.783468
+        },
+        {
+          "feature": "V4",
+          "contribution": -2.847089,
+          "value": -1.414075
+        }
+      ]
+    },
+    {
+      "row": 31,
+      "ref": "CC-154961",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.778455,
+      "amount": 2.27,
+      "date": "hour 04",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V10",
+          "contribution": 6.294175,
+          "value": -4.192154
+        },
+        {
+          "feature": "V14",
+          "contribution": 5.485024,
+          "value": -4.394813
+        },
+        {
+          "feature": "V12",
+          "contribution": 5.220457,
+          "value": -6.14244
+        }
+      ]
+    },
+    {
+      "row": 31691,
+      "ref": "CC-080028",
+      "trueLabel": 0,
+      "pLogistic": 0.007779,
+      "pForest": 0,
+      "amount": 89.99,
+      "date": "hour 16",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V2",
+          "contribution": 1.423923,
+          "value": 0.655936
+        },
+        {
+          "feature": "V5",
+          "contribution": -1.380295,
+          "value": -0.710246
+        },
+        {
+          "feature": "V11",
+          "contribution": 1.260337,
+          "value": 1.172559
+        }
+      ]
+    },
+    {
+      "row": 45,
+      "ref": "CC-083298",
+      "trueLabel": 1,
+      "pLogistic": 0.78353,
+      "pForest": 0.488842,
+      "amount": 319.2,
+      "date": "hour 16",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V2",
+          "contribution": -6.341388,
+          "value": -2.921186
+        },
+        {
+          "feature": "V1",
+          "contribution": -4.853626,
+          "value": -4.241744
+        },
+        {
+          "feature": "V14",
+          "contribution": 4.7942,
+          "value": -3.841299
+        }
+      ]
+    },
+    {
+      "row": 3,
+      "ref": "CC-101510",
+      "trueLabel": 1,
+      "pLogistic": 5e-06,
+      "pForest": 0,
+      "amount": 320,
+      "date": "hour 18",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "Amount",
+          "contribution": 2.47041,
+          "value": 0.924632
+        },
+        {
+          "feature": "V16",
+          "contribution": -1.83871,
+          "value": -1.894621
+        },
+        {
+          "feature": "V19",
+          "contribution": -1.765773,
+          "value": -1.910915
+        }
+      ]
+    },
+    {
+      "row": 931,
+      "ref": "CC-011807",
+      "trueLabel": 0,
+      "pLogistic": 0.054556,
+      "pForest": 0,
+      "amount": 41.39,
+      "date": "hour 05",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V13",
+          "contribution": -2.427258,
+          "value": 2.662705
+        },
+        {
+          "feature": "V12",
+          "contribution": 1.687455,
+          "value": -1.985476
+        },
+        {
+          "feature": "V4",
+          "contribution": 1.265031,
+          "value": 0.628308
+        }
+      ]
+    },
+    {
+      "row": 34373,
+      "ref": "CC-142993",
+      "trueLabel": 0,
+      "pLogistic": 0.052698,
+      "pForest": 0,
+      "amount": 1,
+      "date": "hour 23",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": 1.572663,
+          "value": 0.781101
+        },
+        {
+          "feature": "Amount",
+          "contribution": -0.933339,
+          "value": -0.349333
+        },
+        {
+          "feature": "V6",
+          "contribution": 0.88958,
+          "value": -0.88603
+        }
+      ]
+    },
+    {
+      "row": 15284,
+      "ref": "CC-010908",
+      "trueLabel": 0,
+      "pLogistic": 0.022679,
+      "pForest": 0,
+      "amount": 11.85,
+      "date": "hour 05",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V9",
+          "contribution": 2.5285,
+          "value": 2.619092
+        },
+        {
+          "feature": "V11",
+          "contribution": 2.248945,
+          "value": 2.092313
+        },
+        {
+          "feature": "V14",
+          "contribution": -1.963194,
+          "value": 1.572987
+        }
+      ]
+    },
+    {
+      "row": 23458,
+      "ref": "CC-139459",
+      "trueLabel": 0,
+      "pLogistic": 0.001195,
+      "pForest": 0,
+      "amount": 1,
+      "date": "hour 23",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": -2.707387,
+          "value": -1.344689
+        },
+        {
+          "feature": "V6",
+          "contribution": -2.591143,
+          "value": 2.580804
+        },
+        {
+          "feature": "V5",
+          "contribution": 1.869716,
+          "value": 0.962082
+        }
+      ]
+    },
+    {
+      "row": 34984,
+      "ref": "CC-255959",
+      "trueLabel": 0,
+      "pLogistic": 0.021516,
+      "pForest": 0,
+      "amount": 3.66,
+      "date": "hour 19",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V5",
+          "contribution": 1.839184,
+          "value": 0.946372
+        },
+        {
+          "feature": "V22",
+          "contribution": 1.719205,
+          "value": 1.730318
+        },
+        {
+          "feature": "V18",
+          "contribution": -1.688205,
+          "value": 1.070683
+        }
+      ]
+    },
+    {
+      "row": 30016,
+      "ref": "CC-068491",
+      "trueLabel": 0,
+      "pLogistic": 1e-06,
+      "pForest": 0,
+      "amount": 79,
+      "date": "hour 14",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V18",
+          "contribution": -4.40575,
+          "value": 2.794188
+        },
+        {
+          "feature": "V16",
+          "contribution": -1.544046,
+          "value": -1.590998
+        },
+        {
+          "feature": "V5",
+          "contribution": -1.33958,
+          "value": -0.689295
+        }
+      ]
+    },
+    {
+      "row": 46,
+      "ref": "CC-079537",
+      "trueLabel": 1,
+      "pLogistic": 0.999998,
+      "pForest": 0.519432,
+      "amount": 1,
+      "date": "hour 16",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 8.649799,
+          "value": -6.930554
+        },
+        {
+          "feature": "V17",
+          "contribution": -7.024628,
+          "value": 7.844674
+        },
+        {
+          "feature": "V4",
+          "contribution": 6.222477,
+          "value": 3.090542
+        }
+      ]
+    },
+    {
+      "row": 41906,
+      "ref": "CC-149699",
+      "trueLabel": 0,
+      "pLogistic": 0.015416,
+      "pForest": 0.001389,
+      "amount": 57.48,
+      "date": "hour 01",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": 2.377129,
+          "value": 1.180658
+        },
+        {
+          "feature": "V13",
+          "contribution": -2.299065,
+          "value": 2.522078
+        },
+        {
+          "feature": "V16",
+          "contribution": 2.170435,
+          "value": 2.236433
+        }
+      ]
+    },
+    {
+      "row": 72,
+      "ref": "CC-243750",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.96348,
+      "amount": 1,
+      "date": "hour 18",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 18.310103,
+          "value": -14.670764
+        },
+        {
+          "feature": "V4",
+          "contribution": 11.085892,
+          "value": 5.506073
+        },
+        {
+          "feature": "V12",
+          "contribution": 7.691074,
+          "value": -9.049393
+        }
+      ]
+    },
+    {
+      "row": 22882,
+      "ref": "CC-177847",
+      "trueLabel": 0,
+      "pLogistic": 0.169692,
+      "pForest": 0,
+      "amount": 255,
+      "date": "hour 10",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "Amount",
+          "contribution": 1.776856,
+          "value": 0.665047
+        },
+        {
+          "feature": "V14",
+          "contribution": 1.047786,
+          "value": -0.839527
+        },
+        {
+          "feature": "V4",
+          "contribution": 1.037989,
+          "value": 0.515542
+        }
+      ]
+    },
+    {
+      "row": 26444,
+      "ref": "CC-068829",
+      "trueLabel": 0,
+      "pLogistic": 0.237879,
+      "pForest": 0.007292,
+      "amount": 20.4,
+      "date": "hour 14",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 2.44307,
+          "value": -1.957482
+        },
+        {
+          "feature": "V10",
+          "contribution": 2.178346,
+          "value": -1.450859
+        },
+        {
+          "feature": "V2",
+          "contribution": 1.821172,
+          "value": 0.83893
+        }
+      ]
+    },
+    {
+      "row": 3947,
+      "ref": "CC-200449",
+      "trueLabel": 0,
+      "pLogistic": 0.159541,
+      "pForest": 0,
+      "amount": 89.4,
+      "date": "hour 13",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 2.445032,
+          "value": -1.959055
+        },
+        {
+          "feature": "V18",
+          "contribution": -2.328079,
+          "value": 1.4765
+        },
+        {
+          "feature": "V9",
+          "contribution": 1.722828,
+          "value": 1.784554
+        }
+      ]
+    },
+    {
+      "row": 24,
+      "ref": "CC-030385",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.927024,
+      "amount": 1,
+      "date": "hour 09",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V17",
+          "contribution": 15.161892,
+          "value": -16.931872
+        },
+        {
+          "feature": "V18",
+          "contribution": 10.86958,
+          "value": -6.89364
+        },
+        {
+          "feature": "V14",
+          "contribution": 10.344248,
+          "value": -8.288213
+        }
+      ]
+    },
+    {
+      "row": 22409,
+      "ref": "CC-147721",
+      "trueLabel": 0,
+      "pLogistic": 0.043545,
+      "pForest": 0,
+      "amount": 1,
+      "date": "hour 00",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V11",
+          "contribution": -2.013844,
+          "value": -1.873586
+        },
+        {
+          "feature": "V18",
+          "contribution": -1.856867,
+          "value": 1.177651
+        },
+        {
+          "feature": "V2",
+          "contribution": 1.433762,
+          "value": 0.660468
+        }
+      ]
+    },
+    {
+      "row": 22,
+      "ref": "CC-150645",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.889705,
+      "amount": 75.86,
+      "date": "hour 02",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V17",
+          "contribution": 22.679626,
+          "value": -25.327216
+        },
+        {
+          "feature": "V14",
+          "contribution": 20.050955,
+          "value": -16.065602
+        },
+        {
+          "feature": "V10",
+          "contribution": 16.751658,
+          "value": -11.157226
+        }
+      ]
+    },
+    {
+      "row": 9687,
+      "ref": "CC-068999",
+      "trueLabel": 0,
+      "pLogistic": 1e-06,
+      "pForest": 0,
+      "amount": 110.93,
+      "date": "hour 14",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V5",
+          "contribution": -2.085623,
+          "value": -1.073179
+        },
+        {
+          "feature": "V4",
+          "contribution": -2.053245,
+          "value": -1.019793
+        },
+        {
+          "feature": "V10",
+          "contribution": -1.944354,
+          "value": 1.295012
+        }
+      ]
+    },
+    {
+      "row": 36525,
+      "ref": "CC-120360",
+      "trueLabel": 0,
+      "pLogistic": 0.005429,
+      "pForest": 0,
+      "amount": 21.99,
+      "date": "hour 21",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V5",
+          "contribution": 2.589934,
+          "value": 1.332678
+        },
+        {
+          "feature": "V4",
+          "contribution": -2.585721,
+          "value": -1.28426
+        },
+        {
+          "feature": "V6",
+          "contribution": -2.192308,
+          "value": 2.183561
+        }
+      ]
+    },
+    {
+      "row": 41325,
+      "ref": "CC-089112",
+      "trueLabel": 0,
+      "pLogistic": 2e-06,
+      "pForest": 0,
+      "amount": 40.41,
+      "date": "hour 17",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V10",
+          "contribution": -2.256023,
+          "value": 1.502595
+        },
+        {
+          "feature": "V4",
+          "contribution": -2.155215,
+          "value": -1.070439
+        },
+        {
+          "feature": "V9",
+          "contribution": -2.006339,
+          "value": -2.078223
+        }
+      ]
+    },
+    {
+      "row": 1,
+      "ref": "CC-131273",
+      "trueLabel": 1,
+      "pLogistic": 0.300277,
+      "pForest": 0,
+      "amount": 0.2,
+      "date": "hour 22",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": 4.457947,
+          "value": 2.214146
+        },
+        {
+          "feature": "V22",
+          "contribution": 1.640685,
+          "value": 1.651291
+        },
+        {
+          "feature": "V2",
+          "contribution": 1.371366,
+          "value": 0.631725
+        }
+      ]
+    },
+    {
+      "row": 11820,
+      "ref": "CC-148741",
+      "trueLabel": 0,
+      "pLogistic": 0.034129,
+      "pForest": 0,
+      "amount": 1.54,
+      "date": "hour 01",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": -3.18302,
+          "value": 2.550359
+        },
+        {
+          "feature": "V5",
+          "contribution": 2.700356,
+          "value": 1.389497
+        },
+        {
+          "feature": "V12",
+          "contribution": 2.297791,
+          "value": -2.703603
+        }
+      ]
+    },
+    {
+      "row": 6598,
+      "ref": "CC-242543",
+      "trueLabel": 0,
+      "pLogistic": 0.003345,
+      "pForest": 0,
+      "amount": 8.9,
+      "date": "hour 18",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V2",
+          "contribution": 1.517745,
+          "value": 0.699155
+        },
+        {
+          "feature": "V18",
+          "contribution": 1.440137,
+          "value": -0.913355
+        },
+        {
+          "feature": "V11",
+          "contribution": -1.04943,
+          "value": -0.976341
+        }
+      ]
+    },
+    {
+      "row": 29685,
+      "ref": "CC-086022",
+      "trueLabel": 0,
+      "pLogistic": 0.445784,
+      "pForest": 0,
+      "amount": 850,
+      "date": "hour 16",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "Amount",
+          "contribution": 8.12554,
+          "value": 3.04125
+        },
+        {
+          "feature": "V2",
+          "contribution": -3.903004,
+          "value": -1.797934
+        },
+        {
+          "feature": "V4",
+          "contribution": 3.133437,
+          "value": 1.556296
+        }
+      ]
+    },
+    {
+      "row": 31826,
+      "ref": "CC-265895",
+      "trueLabel": 0,
+      "pLogistic": 0.033884,
+      "pForest": 0,
+      "amount": 6.14,
+      "date": "hour 21",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V19",
+          "contribution": 3.112661,
+          "value": 3.368514
+        },
+        {
+          "feature": "V4",
+          "contribution": 1.423375,
+          "value": 0.706953
+        },
+        {
+          "feature": "V13",
+          "contribution": 1.017669,
+          "value": -1.116385
+        }
+      ]
+    },
+    {
+      "row": 17407,
+      "ref": "CC-237189",
+      "trueLabel": 0,
+      "pLogistic": 0.032292,
+      "pForest": 0,
+      "amount": 1,
+      "date": "hour 17",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": 1.726246,
+          "value": 0.857381
+        },
+        {
+          "feature": "V1",
+          "contribution": 1.160767,
+          "value": 1.014432
+        },
+        {
+          "feature": "V11",
+          "contribution": -1.070703,
+          "value": -0.996132
+        }
+      ]
+    },
+    {
+      "row": 41547,
+      "ref": "CC-273201",
+      "trueLabel": 0,
+      "pLogistic": 0.008102,
+      "pForest": 0,
+      "amount": 1.29,
+      "date": "hour 21",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V18",
+          "contribution": 1.847861,
+          "value": -1.17194
+        },
+        {
+          "feature": "V1",
+          "contribution": 1.208487,
+          "value": 1.056136
+        },
+        {
+          "feature": "Amount",
+          "contribution": -0.930244,
+          "value": -0.348174
+        }
+      ]
+    },
+    {
+      "row": 17740,
+      "ref": "CC-164673",
+      "trueLabel": 0,
+      "pLogistic": 2e-06,
+      "pForest": 0,
+      "amount": 248.32,
+      "date": "hour 08",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V16",
+          "contribution": -2.430987,
+          "value": -2.504909
+        },
+        {
+          "feature": "Amount",
+          "contribution": 1.70558,
+          "value": 0.638369
+        },
+        {
+          "feature": "V18",
+          "contribution": -1.325853,
+          "value": 0.840875
+        }
+      ]
+    },
+    {
+      "row": 32,
+      "ref": "CC-016781",
+      "trueLabel": 1,
+      "pLogistic": 0.999995,
+      "pForest": 0.832483,
+      "amount": 99.99,
+      "date": "hour 07",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V5",
+          "contribution": -28.353088,
+          "value": -14.589386
+        },
+        {
+          "feature": "V2",
+          "contribution": 20.261985,
+          "value": 9.333765
+        },
+        {
+          "feature": "V1",
+          "contribution": -15.947421,
+          "value": -13.936977
+        }
+      ]
+    },
+    {
+      "row": 25791,
+      "ref": "CC-071273",
+      "trueLabel": 0,
+      "pLogistic": 8e-06,
+      "pForest": 0,
+      "amount": 0.77,
+      "date": "hour 15",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V2",
+          "contribution": 3.966424,
+          "value": 1.827149
+        },
+        {
+          "feature": "V5",
+          "contribution": -3.576821,
+          "value": -1.840492
+        },
+        {
+          "feature": "V1",
+          "contribution": -2.279055,
+          "value": -1.991742
+        }
+      ]
+    },
+    {
+      "row": 20679,
+      "ref": "CC-265537",
+      "trueLabel": 0,
+      "pLogistic": 0.014125,
+      "pForest": 0,
+      "amount": 10,
+      "date": "hour 20",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V18",
+          "contribution": 2.341667,
+          "value": -1.485118
+        },
+        {
+          "feature": "V22",
+          "contribution": 1.661844,
+          "value": 1.672587
+        },
+        {
+          "feature": "V4",
+          "contribution": -1.50677,
+          "value": -0.748373
+        }
+      ]
+    },
+    {
+      "row": 55,
+      "ref": "CC-077349",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.958668,
+      "amount": 0.01,
+      "date": "hour 15",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 8.092965,
+          "value": -6.484397
+        },
+        {
+          "feature": "V17",
+          "contribution": 6.947566,
+          "value": -7.758616
+        },
+        {
+          "feature": "V10",
+          "contribution": 6.806412,
+          "value": -4.533323
+        }
+      ]
+    },
+    {
+      "row": 26612,
+      "ref": "CC-229404",
+      "trueLabel": 0,
+      "pLogistic": 0.133756,
+      "pForest": 0,
+      "amount": 9.54,
+      "date": "hour 16",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V2",
+          "contribution": 2.379202,
+          "value": 1.095989
+        },
+        {
+          "feature": "V5",
+          "contribution": 2.283483,
+          "value": 1.174991
+        },
+        {
+          "feature": "V18",
+          "contribution": -2.043852,
+          "value": 1.29624
+        }
+      ]
+    },
+    {
+      "row": 36376,
+      "ref": "CC-009097",
+      "trueLabel": 0,
+      "pLogistic": 0.024493,
+      "pForest": 0,
+      "amount": 47.52,
+      "date": "hour 03",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V12",
+          "contribution": 2.078589,
+          "value": -2.445688
+        },
+        {
+          "feature": "V14",
+          "contribution": -1.914836,
+          "value": 1.534241
+        },
+        {
+          "feature": "V10",
+          "contribution": 1.643193,
+          "value": -1.094428
+        }
+      ]
+    },
+    {
+      "row": 382,
+      "ref": "CC-217631",
+      "trueLabel": 0,
+      "pLogistic": 0.01569,
+      "pForest": 0,
+      "amount": 306.47,
+      "date": "hour 15",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": -2.567819,
+          "value": -1.275369
+        },
+        {
+          "feature": "V2",
+          "contribution": -2.439467,
+          "value": -1.12375
+        },
+        {
+          "feature": "Amount",
+          "contribution": 2.326044,
+          "value": 0.870598
+        }
+      ]
+    },
+    {
+      "row": 18465,
+      "ref": "CC-249426",
+      "trueLabel": 0,
+      "pLogistic": 0.032591,
+      "pForest": 0,
+      "amount": 50,
+      "date": "hour 18",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V18",
+          "contribution": -1.824122,
+          "value": 1.156884
+        },
+        {
+          "feature": "V4",
+          "contribution": -1.517054,
+          "value": -0.753481
+        },
+        {
+          "feature": "V13",
+          "contribution": 1.298074,
+          "value": -1.423989
+        }
+      ]
+    },
+    {
+      "row": 11899,
+      "ref": "CC-134899",
+      "trueLabel": 0,
+      "pLogistic": 0.033967,
+      "pForest": 0,
+      "amount": 12.49,
+      "date": "hour 22",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": -2.672923,
+          "value": -1.327571
+        },
+        {
+          "feature": "V16",
+          "contribution": 2.386661,
+          "value": 2.459234
+        },
+        {
+          "feature": "V13",
+          "contribution": 1.979915,
+          "value": -2.171969
+        }
+      ]
+    },
+    {
+      "row": 41797,
+      "ref": "CC-208624",
+      "trueLabel": 0,
+      "pLogistic": 0.010357,
+      "pForest": 0,
+      "amount": 195.21,
+      "date": "hour 14",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V9",
+          "contribution": 2.142767,
+          "value": 2.219538
+        },
+        {
+          "feature": "V2",
+          "contribution": -1.833667,
+          "value": -0.844686
+        },
+        {
+          "feature": "V4",
+          "contribution": -1.832391,
+          "value": -0.910101
+        }
+      ]
+    },
+    {
+      "row": 2,
+      "ref": "CC-077388",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.870692,
+      "amount": 444.17,
+      "date": "hour 15",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 8.237175,
+          "value": -6.599944
+        },
+        {
+          "feature": "V10",
+          "contribution": 7.964635,
+          "value": -5.304743
+        },
+        {
+          "feature": "V17",
+          "contribution": 7.83165,
+          "value": -8.745907
+        }
+      ]
+    },
+    {
+      "row": 17008,
+      "ref": "CC-273980",
+      "trueLabel": 0,
+      "pLogistic": 0.000766,
+      "pForest": 0,
+      "amount": 33.18,
+      "date": "hour 22",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V2",
+          "contribution": 1.472784,
+          "value": 0.678444
+        },
+        {
+          "feature": "V4",
+          "contribution": -1.448508,
+          "value": -0.719436
+        },
+        {
+          "feature": "V10",
+          "contribution": 1.326529,
+          "value": -0.883518
+        }
+      ]
+    },
+    {
+      "row": 6871,
+      "ref": "CC-255976",
+      "trueLabel": 0,
+      "pLogistic": 0.006703,
+      "pForest": 0.001042,
+      "amount": 18.96,
+      "date": "hour 19",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": 6.889524,
+          "value": 3.421847
+        },
+        {
+          "feature": "V10",
+          "contribution": -2.585946,
+          "value": 1.722336
+        },
+        {
+          "feature": "V11",
+          "contribution": -2.318427,
+          "value": -2.156956
+        }
+      ]
+    },
+    {
+      "row": 13152,
+      "ref": "CC-057452",
+      "trueLabel": 0,
+      "pLogistic": 0.409538,
+      "pForest": 0,
+      "amount": 1099,
+      "date": "hour 13",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "Amount",
+          "contribution": 10.782384,
+          "value": 4.035661
+        },
+        {
+          "feature": "V2",
+          "contribution": -5.388309,
+          "value": -2.482146
+        },
+        {
+          "feature": "V18",
+          "contribution": 2.752233,
+          "value": -1.745505
+        }
+      ]
+    },
+    {
+      "row": 26305,
+      "ref": "CC-176816",
+      "trueLabel": 0,
+      "pLogistic": 0.014829,
+      "pForest": 0,
+      "amount": 64.99,
+      "date": "hour 10",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V18",
+          "contribution": -1.825955,
+          "value": 1.158047
+        },
+        {
+          "feature": "V17",
+          "contribution": 1.147679,
+          "value": -1.281658
+        },
+        {
+          "feature": "V1",
+          "contribution": 1.124011,
+          "value": 0.982311
+        }
+      ]
+    },
+    {
+      "row": 20488,
+      "ref": "CC-171274",
+      "trueLabel": 0,
+      "pLogistic": 0.565748,
+      "pForest": 0,
+      "amount": 381.41,
+      "date": "hour 09",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "Amount",
+          "contribution": 3.125658,
+          "value": 1.16988
+        },
+        {
+          "feature": "V18",
+          "contribution": -2.732208,
+          "value": 1.732805
+        },
+        {
+          "feature": "V22",
+          "contribution": 1.531009,
+          "value": 1.540906
+        }
+      ]
+    },
+    {
+      "row": 40822,
+      "ref": "CC-146221",
+      "trueLabel": 0,
+      "pLogistic": 0.001531,
+      "pForest": 0,
+      "amount": 283.86,
+      "date": "hour 00",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V2",
+          "contribution": -4.340486,
+          "value": -1.999462
+        },
+        {
+          "feature": "V18",
+          "contribution": 4.253986,
+          "value": -2.697938
+        },
+        {
+          "feature": "V4",
+          "contribution": -2.856232,
+          "value": -1.418616
+        }
+      ]
+    },
+    {
+      "row": 14877,
+      "ref": "CC-058347",
+      "trueLabel": 0,
+      "pLogistic": 0.133764,
+      "pForest": 0,
+      "amount": 14.88,
+      "date": "hour 13",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": 4.547293,
+          "value": 2.258522
+        },
+        {
+          "feature": "V2",
+          "contribution": 3.034352,
+          "value": 1.397786
+        },
+        {
+          "feature": "V10",
+          "contribution": -1.6475,
+          "value": 1.097296
+        }
+      ]
+    },
+    {
+      "row": 19343,
+      "ref": "CC-141489",
+      "trueLabel": 0,
+      "pLogistic": 7e-06,
+      "pForest": 0,
+      "amount": 1261.4,
+      "date": "hour 23",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "Amount",
+          "contribution": 12.515202,
+          "value": 4.684225
+        },
+        {
+          "feature": "V2",
+          "contribution": -7.046307,
+          "value": -3.24591
+        },
+        {
+          "feature": "V5",
+          "contribution": -3.786135,
+          "value": -1.948196
+        }
+      ]
+    },
+    {
+      "row": 67,
+      "ref": "CC-080761",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.844623,
+      "amount": 113.92,
+      "date": "hour 16",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V17",
+          "contribution": 6.517498,
+          "value": -7.278343
+        },
+        {
+          "feature": "V4",
+          "contribution": 6.186314,
+          "value": 3.072581
+        },
+        {
+          "feature": "V14",
+          "contribution": 6.174376,
+          "value": -4.947149
+        }
+      ]
+    },
+    {
+      "row": 19000,
+      "ref": "CC-152767",
+      "trueLabel": 0,
+      "pLogistic": 0.015727,
+      "pForest": 0,
+      "amount": 14.95,
+      "date": "hour 03",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V9",
+          "contribution": 2.410646,
+          "value": 2.497016
+        },
+        {
+          "feature": "V12",
+          "contribution": 2.115282,
+          "value": -2.488862
+        },
+        {
+          "feature": "V14",
+          "contribution": -1.558596,
+          "value": 1.248808
+        }
+      ]
+    },
+    {
+      "row": 19254,
+      "ref": "CC-123369",
+      "trueLabel": 0,
+      "pLogistic": 1e-06,
+      "pForest": 0,
+      "amount": 24.6,
+      "date": "hour 21",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V19",
+          "contribution": -1.82239,
+          "value": -1.972186
+        },
+        {
+          "feature": "V16",
+          "contribution": -1.80775,
+          "value": -1.86272
+        },
+        {
+          "feature": "V18",
+          "contribution": -1.378518,
+          "value": 0.874275
+        }
+      ]
+    },
+    {
+      "row": 1477,
+      "ref": "CC-161696",
+      "trueLabel": 0,
+      "pLogistic": 0.005804,
+      "pForest": 0,
+      "amount": 50,
+      "date": "hour 07",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V6",
+          "contribution": -3.006079,
+          "value": 2.994084
+        },
+        {
+          "feature": "V5",
+          "contribution": 2.67644,
+          "value": 1.377191
+        },
+        {
+          "feature": "V1",
+          "contribution": 1.089365,
+          "value": 0.952032
+        }
+      ]
+    },
+    {
+      "row": 8262,
+      "ref": "CC-279873",
+      "trueLabel": 0,
+      "pLogistic": 0.023512,
+      "pForest": 0,
+      "amount": 60,
+      "date": "hour 22",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V18",
+          "contribution": 1.564171,
+          "value": -0.992019
+        },
+        {
+          "feature": "V2",
+          "contribution": 1.146379,
+          "value": 0.528084
+        },
+        {
+          "feature": "V5",
+          "contribution": 1.122055,
+          "value": 0.577365
+        }
+      ]
+    },
+    {
+      "row": 42246,
+      "ref": "CC-255070",
+      "trueLabel": 0,
+      "pLogistic": 1e-06,
+      "pForest": 0,
+      "amount": 2.39,
+      "date": "hour 19",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V2",
+          "contribution": 8.314854,
+          "value": 3.830271
+        },
+        {
+          "feature": "V10",
+          "contribution": -4.956047,
+          "value": 3.300911
+        },
+        {
+          "feature": "V1",
+          "contribution": -4.121168,
+          "value": -3.601624
+        }
+      ]
+    },
+    {
+      "row": 13,
+      "ref": "CC-017454",
+      "trueLabel": 1,
+      "pLogistic": 0.993682,
+      "pForest": 0.776054,
+      "amount": 99.99,
+      "date": "hour 07",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V5",
+          "contribution": -30.579842,
+          "value": -15.735186
+        },
+        {
+          "feature": "V2",
+          "contribution": 21.670864,
+          "value": 9.982771
+        },
+        {
+          "feature": "V1",
+          "contribution": -17.552577,
+          "value": -15.339775
+        }
+      ]
+    },
+    {
+      "row": 41,
+      "ref": "CC-106680",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.773812,
+      "amount": 227.3,
+      "date": "hour 19",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 8.800205,
+          "value": -7.051065
+        },
+        {
+          "feature": "V17",
+          "contribution": 7.252936,
+          "value": -8.099635
+        },
+        {
+          "feature": "V10",
+          "contribution": 6.570162,
+          "value": -4.375972
+        }
+      ]
+    },
+    {
+      "row": 27,
+      "ref": "CC-108709",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.914216,
+      "amount": 426.4,
+      "date": "hour 19",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 8.421934,
+          "value": -6.74798
+        },
+        {
+          "feature": "V10",
+          "contribution": 6.963016,
+          "value": -4.637627
+        },
+        {
+          "feature": "V17",
+          "contribution": 6.746614,
+          "value": -7.534206
+        }
+      ]
+    },
+    {
+      "row": 8,
+      "ref": "CC-063422",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.791595,
+      "amount": 99.99,
+      "date": "hour 14",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 9.887781,
+          "value": -7.922473
+        },
+        {
+          "feature": "V5",
+          "contribution": -9.773314,
+          "value": -5.028964
+        },
+        {
+          "feature": "V2",
+          "contribution": 9.057068,
+          "value": 4.172175
+        }
+      ]
+    },
+    {
+      "row": 28,
+      "ref": "CC-199897",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.682148,
+      "amount": 1335,
+      "date": "hour 12",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "Amount",
+          "contribution": 13.300518,
+          "value": 4.978155
+        },
+        {
+          "feature": "V14",
+          "contribution": 6.291342,
+          "value": -5.040867
+        },
+        {
+          "feature": "V4",
+          "contribution": 5.230054,
+          "value": 2.597631
+        }
+      ]
+    },
+    {
+      "row": 20,
+      "ref": "CC-212645",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.878956,
+      "amount": 727.91,
+      "date": "hour 14",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 9.348434,
+          "value": -7.490328
+        },
+        {
+          "feature": "V10",
+          "contribution": 9.15465,
+          "value": -6.097337
+        },
+        {
+          "feature": "Amount",
+          "contribution": 6.822833,
+          "value": 2.553669
+        }
+      ]
+    },
+    {
+      "row": 23707,
+      "ref": "CC-117869",
+      "trueLabel": 0,
+      "pLogistic": 0,
+      "pForest": 0.01561,
+      "amount": 414.85,
+      "date": "hour 20",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V2",
+          "contribution": -12.582348,
+          "value": -5.796109
+        },
+        {
+          "feature": "V5",
+          "contribution": 8.93708,
+          "value": 4.59867
+        },
+        {
+          "feature": "V1",
+          "contribution": -4.83776,
+          "value": -4.227878
+        }
+      ]
+    },
+    {
+      "row": 35054,
+      "ref": "CC-106859",
+      "trueLabel": 0,
+      "pLogistic": 0.047236,
+      "pForest": 0,
+      "amount": 38.24,
+      "date": "hour 19",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V18",
+          "contribution": -2.101826,
+          "value": 1.333008
+        },
+        {
+          "feature": "V17",
+          "contribution": 1.279549,
+          "value": -1.428921
+        },
+        {
+          "feature": "V4",
+          "contribution": 1.108119,
+          "value": 0.550374
+        }
+      ]
+    },
+    {
+      "row": 4,
+      "ref": "CC-135719",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.549948,
+      "amount": 7.57,
+      "date": "hour 22",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V17",
+          "contribution": 6.830879,
+          "value": -7.628307
+        },
+        {
+          "feature": "V4",
+          "contribution": 5.490409,
+          "value": 2.726943
+        },
+        {
+          "feature": "V14",
+          "contribution": 3.672799,
+          "value": -2.942789
+        }
+      ]
+    },
+    {
+      "row": 69,
+      "ref": "CC-015507",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.976803,
+      "amount": 99.99,
+      "date": "hour 07",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V5",
+          "contribution": -23.241584,
+          "value": -11.959207
+        },
+        {
+          "feature": "V2",
+          "contribution": 17.051563,
+          "value": 7.854871
+        },
+        {
+          "feature": "V17",
+          "contribution": 13.819933,
+          "value": -15.433254
+        }
+      ]
+    },
+    {
+      "row": 1362,
+      "ref": "CC-030796",
+      "trueLabel": 0,
+      "pLogistic": 0.000744,
+      "pForest": 0,
+      "amount": 1.9,
+      "date": "hour 10",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V10",
+          "contribution": -11.911875,
+          "value": 7.933751
+        },
+        {
+          "feature": "V4",
+          "contribution": -5.012492,
+          "value": -2.489574
+        },
+        {
+          "feature": "V2",
+          "contribution": 4.983585,
+          "value": 2.295709
+        }
+      ]
+    },
+    {
+      "row": 18494,
+      "ref": "CC-003263",
+      "trueLabel": 0,
+      "pLogistic": 0.047834,
+      "pForest": 0,
+      "amount": 1,
+      "date": "hour 00",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": -3.055088,
+          "value": -1.517383
+        },
+        {
+          "feature": "V11",
+          "contribution": 1.799646,
+          "value": 1.674306
+        },
+        {
+          "feature": "V10",
+          "contribution": 1.414827,
+          "value": -0.942327
+        }
+      ]
+    },
+    {
+      "row": 9067,
+      "ref": "CC-081869",
+      "trueLabel": 0,
+      "pLogistic": 0.023046,
+      "pForest": 0,
+      "amount": 35.97,
+      "date": "hour 16",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": 1.501603,
+          "value": 0.745807
+        },
+        {
+          "feature": "V5",
+          "contribution": -0.995647,
+          "value": -0.512321
+        },
+        {
+          "feature": "V11",
+          "contribution": 0.947972,
+          "value": 0.881949
+        }
+      ]
+    },
+    {
+      "row": 7,
+      "ref": "CC-046999",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.653115,
+      "amount": 204.27,
+      "date": "hour 11",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V17",
+          "contribution": 7.067496,
+          "value": -7.892546
+        },
+        {
+          "feature": "V14",
+          "contribution": 5.263819,
+          "value": -4.217576
+        },
+        {
+          "feature": "V10",
+          "contribution": 4.129505,
+          "value": -2.750404
+        }
+      ]
+    },
+    {
+      "row": 1882,
+      "ref": "CC-089708",
+      "trueLabel": 0,
+      "pLogistic": 0,
+      "pForest": 0,
+      "amount": 120,
+      "date": "hour 17",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V18",
+          "contribution": -3.063413,
+          "value": 1.94286
+        },
+        {
+          "feature": "V4",
+          "contribution": -2.378712,
+          "value": -1.181444
+        },
+        {
+          "feature": "V5",
+          "contribution": -1.904635,
+          "value": -0.98005
+        }
+      ]
+    },
+    {
+      "row": 12819,
+      "ref": "CC-011348",
+      "trueLabel": 0,
+      "pLogistic": 0.094318,
+      "pForest": 0,
+      "amount": 49.99,
+      "date": "hour 05",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": -2.503075,
+          "value": 2.005561
+        },
+        {
+          "feature": "V13",
+          "contribution": -1.963047,
+          "value": 2.153465
+        },
+        {
+          "feature": "V4",
+          "contribution": 1.918196,
+          "value": 0.952718
+        }
+      ]
+    },
+    {
+      "row": 34,
+      "ref": "CC-116405",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.631585,
+      "amount": 311.28,
+      "date": "hour 20",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 6.068187,
+          "value": -4.862067
+        },
+        {
+          "feature": "V17",
+          "contribution": 4.895366,
+          "value": -5.466845
+        },
+        {
+          "feature": "V18",
+          "contribution": 4.817948,
+          "value": -3.05561
+        }
+      ]
+    },
+    {
+      "row": 17,
+      "ref": "CC-167185",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.790171,
+      "amount": 105.89,
+      "date": "hour 08",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 11.47609,
+          "value": -9.195088
+        },
+        {
+          "feature": "V4",
+          "contribution": 8.587759,
+          "value": 4.265316
+        },
+        {
+          "feature": "V2",
+          "contribution": 7.010011,
+          "value": 3.22919
+        }
+      ]
+    },
+    {
+      "row": 1505,
+      "ref": "CC-149006",
+      "trueLabel": 0,
+      "pLogistic": 0.065084,
+      "pForest": 0,
+      "amount": 2.09,
+      "date": "hour 01",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V12",
+          "contribution": 2.922975,
+          "value": -3.439201
+        },
+        {
+          "feature": "V14",
+          "contribution": -2.848387,
+          "value": 2.282238
+        },
+        {
+          "feature": "V5",
+          "contribution": 2.221454,
+          "value": 1.143073
+        }
+      ]
+    },
+    {
+      "row": 22160,
+      "ref": "CC-266219",
+      "trueLabel": 0,
+      "pLogistic": 0.020056,
+      "pForest": 0,
+      "amount": 0.12,
+      "date": "hour 21",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V11",
+          "contribution": -1.10782,
+          "value": -1.030664
+        },
+        {
+          "feature": "V10",
+          "contribution": 0.997961,
+          "value": -0.664679
+        },
+        {
+          "feature": "Amount",
+          "contribution": -0.942728,
+          "value": -0.352847
+        }
+      ]
+    },
+    {
+      "row": 22533,
+      "ref": "CC-187267",
+      "trueLabel": 0,
+      "pLogistic": 0.324037,
+      "pForest": 0,
+      "amount": 1,
+      "date": "hour 11",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V5",
+          "contribution": 3.197426,
+          "value": 1.64527
+        },
+        {
+          "feature": "V1",
+          "contribution": -1.382253,
+          "value": -1.207996
+        },
+        {
+          "feature": "V10",
+          "contribution": -1.174073,
+          "value": 0.781976
+        }
+      ]
+    },
+    {
+      "row": 18760,
+      "ref": "CC-082814",
+      "trueLabel": 0,
+      "pLogistic": 0.006277,
+      "pForest": 0,
+      "amount": 25.84,
+      "date": "hour 16",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V2",
+          "contribution": 1.378584,
+          "value": 0.63505
+        },
+        {
+          "feature": "V11",
+          "contribution": -1.178728,
+          "value": -1.096633
+        },
+        {
+          "feature": "V4",
+          "contribution": 1.12192,
+          "value": 0.557228
+        }
+      ]
+    },
+    {
+      "row": 28531,
+      "ref": "CC-066714",
+      "trueLabel": 0,
+      "pLogistic": 0.115692,
+      "pForest": 0,
+      "amount": 2.99,
+      "date": "hour 14",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V18",
+          "contribution": 4.164067,
+          "value": -2.64091
+        },
+        {
+          "feature": "V16",
+          "contribution": -2.652876,
+          "value": -2.733544
+        },
+        {
+          "feature": "V17",
+          "contribution": -1.463332,
+          "value": 1.634159
+        }
+      ]
+    },
+    {
+      "row": 22529,
+      "ref": "CC-122121",
+      "trueLabel": 0,
+      "pLogistic": 0.083579,
+      "pForest": 0,
+      "amount": 17.99,
+      "date": "hour 21",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V19",
+          "contribution": 1.878699,
+          "value": 2.033123
+        },
+        {
+          "feature": "V11",
+          "contribution": 1.515585,
+          "value": 1.410029
+        },
+        {
+          "feature": "V2",
+          "contribution": 1.432861,
+          "value": 0.660053
+        }
+      ]
+    },
+    {
+      "row": 5185,
+      "ref": "CC-069653",
+      "trueLabel": 0,
+      "pLogistic": 0.076735,
+      "pForest": 0,
+      "amount": 59.8,
+      "date": "hour 14",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": 2.24552,
+          "value": 1.115291
+        },
+        {
+          "feature": "V11",
+          "contribution": 2.04718,
+          "value": 1.9046
+        },
+        {
+          "feature": "V5",
+          "contribution": 1.677813,
+          "value": 0.863336
+        }
+      ]
+    },
+    {
+      "row": 29214,
+      "ref": "CC-281231",
+      "trueLabel": 0,
+      "pLogistic": 0.03056,
+      "pForest": 0,
+      "amount": 31.81,
+      "date": "hour 23",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V5",
+          "contribution": 1.99594,
+          "value": 1.027032
+        },
+        {
+          "feature": "V18",
+          "contribution": 1.826454,
+          "value": -1.158363
+        },
+        {
+          "feature": "V16",
+          "contribution": -1.815162,
+          "value": -1.870358
+        }
+      ]
+    },
+    {
+      "row": 19479,
+      "ref": "CC-231817",
+      "trueLabel": 0,
+      "pLogistic": 0.008712,
+      "pForest": 0,
+      "amount": 8.99,
+      "date": "hour 16",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V2",
+          "contribution": 2.105994,
+          "value": 0.970135
+        },
+        {
+          "feature": "V14",
+          "contribution": 1.969556,
+          "value": -1.578085
+        },
+        {
+          "feature": "V5",
+          "contribution": 1.676954,
+          "value": 0.862895
+        }
+      ]
+    },
+    {
+      "row": 3462,
+      "ref": "CC-192645",
+      "trueLabel": 0,
+      "pLogistic": 0.00127,
+      "pForest": 0.006875,
+      "amount": 512.81,
+      "date": "hour 12",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V2",
+          "contribution": -15.958632,
+          "value": -7.351408
+        },
+        {
+          "feature": "V1",
+          "contribution": -9.091898,
+          "value": -7.945709
+        },
+        {
+          "feature": "V10",
+          "contribution": -6.86905,
+          "value": 4.575043
+        }
+      ]
+    },
+    {
+      "row": 31965,
+      "ref": "CC-012058",
+      "trueLabel": 0,
+      "pLogistic": 0.183675,
+      "pForest": 0,
+      "amount": 89.99,
+      "date": "hour 05",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V18",
+          "contribution": 3.699821,
+          "value": -2.346478
+        },
+        {
+          "feature": "V14",
+          "contribution": -3.182062,
+          "value": 2.549592
+        },
+        {
+          "feature": "V19",
+          "contribution": -2.4413,
+          "value": -2.641968
+        }
+      ]
+    },
+    {
+      "row": 37977,
+      "ref": "CC-191376",
+      "trueLabel": 0,
+      "pLogistic": 0.130316,
+      "pForest": 0.000694,
+      "amount": 280,
+      "date": "hour 11",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "Amount",
+          "contribution": 2.043607,
+          "value": 0.764887
+        },
+        {
+          "feature": "V18",
+          "contribution": -1.690888,
+          "value": 1.072385
+        },
+        {
+          "feature": "V11",
+          "contribution": -1.252424,
+          "value": -1.165197
+        }
+      ]
+    },
+    {
+      "row": 11613,
+      "ref": "CC-121510",
+      "trueLabel": 0,
+      "pLogistic": 0.009423,
+      "pForest": 0,
+      "amount": 23.97,
+      "date": "hour 21",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V11",
+          "contribution": 1.347205,
+          "value": 1.253376
+        },
+        {
+          "feature": "V12",
+          "contribution": -0.948474,
+          "value": 1.115983
+        },
+        {
+          "feature": "V17",
+          "contribution": 0.814287,
+          "value": -0.909345
+        }
+      ]
+    },
+    {
+      "row": 10448,
+      "ref": "CC-203103",
+      "trueLabel": 0,
+      "pLogistic": 0.073842,
+      "pForest": 0,
+      "amount": 2.69,
+      "date": "hour 13",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V2",
+          "contribution": 1.244087,
+          "value": 0.573094
+        },
+        {
+          "feature": "V5",
+          "contribution": 1.186093,
+          "value": 0.610317
+        },
+        {
+          "feature": "V11",
+          "contribution": 1.057851,
+          "value": 0.984175
+        }
+      ]
+    },
+    {
+      "row": 19170,
+      "ref": "CC-251309",
+      "trueLabel": 0,
+      "pLogistic": 0.019423,
+      "pForest": 0,
+      "amount": 3.59,
+      "date": "hour 19",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V18",
+          "contribution": 1.196239,
+          "value": -0.758671
+        },
+        {
+          "feature": "V11",
+          "contribution": -1.141754,
+          "value": -1.062234
+        },
+        {
+          "feature": "V2",
+          "contribution": 1.054745,
+          "value": 0.485873
+        }
+      ]
+    },
+    {
+      "row": 19080,
+      "ref": "CC-089203",
+      "trueLabel": 0,
+      "pLogistic": 0.107094,
+      "pForest": 0,
+      "amount": 144.98,
+      "date": "hour 17",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V13",
+          "contribution": 1.567079,
+          "value": -1.719088
+        },
+        {
+          "feature": "V14",
+          "contribution": -0.94921,
+          "value": 0.760544
+        },
+        {
+          "feature": "V4",
+          "contribution": 0.879669,
+          "value": 0.436909
+        }
+      ]
+    },
+    {
+      "row": 1435,
+      "ref": "CC-144476",
+      "trueLabel": 0,
+      "pLogistic": 1e-06,
+      "pForest": 0,
+      "amount": 200,
+      "date": "hour 23",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V10",
+          "contribution": -4.734568,
+          "value": 3.153398
+        },
+        {
+          "feature": "V14",
+          "contribution": 3.345825,
+          "value": -2.680804
+        },
+        {
+          "feature": "V16",
+          "contribution": -2.807961,
+          "value": -2.893345
+        }
+      ]
+    },
+    {
+      "row": 13907,
+      "ref": "CC-166747",
+      "trueLabel": 0,
+      "pLogistic": 0.014836,
+      "pForest": 0,
+      "amount": 70,
+      "date": "hour 08",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V18",
+          "contribution": -1.405701,
+          "value": 0.891515
+        },
+        {
+          "feature": "V9",
+          "contribution": 1.323637,
+          "value": 1.371061
+        },
+        {
+          "feature": "V5",
+          "contribution": -1.252866,
+          "value": -0.644676
+        }
+      ]
+    },
+    {
+      "row": 2563,
+      "ref": "CC-075801",
+      "trueLabel": 0,
+      "pLogistic": 0.043652,
+      "pForest": 0,
+      "amount": 78.3,
+      "date": "hour 15",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": 2.78152,
+          "value": 1.381508
+        },
+        {
+          "feature": "V5",
+          "contribution": 1.592909,
+          "value": 0.819649
+        },
+        {
+          "feature": "V9",
+          "contribution": -1.487913,
+          "value": -1.541223
+        }
+      ]
+    },
+    {
+      "row": 31423,
+      "ref": "CC-065676",
+      "trueLabel": 0,
+      "pLogistic": 0.454108,
+      "pForest": 0.00625,
+      "amount": 19.12,
+      "date": "hour 14",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": 4.964243,
+          "value": 2.46561
+        },
+        {
+          "feature": "V19",
+          "contribution": -2.099051,
+          "value": -2.271588
+        },
+        {
+          "feature": "V10",
+          "contribution": -1.906906,
+          "value": 1.27007
+        }
+      ]
+    },
+    {
+      "row": 31179,
+      "ref": "CC-065439",
+      "trueLabel": 0,
+      "pLogistic": 0.039342,
+      "pForest": 0,
+      "amount": 9.84,
+      "date": "hour 14",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V2",
+          "contribution": 1.505009,
+          "value": 0.693288
+        },
+        {
+          "feature": "V22",
+          "contribution": -0.849858,
+          "value": -0.855352
+        },
+        {
+          "feature": "V6",
+          "contribution": 0.844137,
+          "value": -0.840769
+        }
+      ]
+    },
+    {
+      "row": 7989,
+      "ref": "CC-178611",
+      "trueLabel": 0,
+      "pLogistic": 0,
+      "pForest": 0,
+      "amount": 340,
+      "date": "hour 10",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V2",
+          "contribution": -3.464616,
+          "value": -1.595989
+        },
+        {
+          "feature": "V16",
+          "contribution": -3.147777,
+          "value": -3.243495
+        },
+        {
+          "feature": "Amount",
+          "contribution": 2.683811,
+          "value": 1.004504
+        }
+      ]
+    },
+    {
+      "row": 30,
+      "ref": "CC-280150",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.685089,
+      "amount": 77.89,
+      "date": "hour 23",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V17",
+          "contribution": 5.352011,
+          "value": -5.976798
+        },
+        {
+          "feature": "V14",
+          "contribution": 5.31805,
+          "value": -4.261028
+        },
+        {
+          "feature": "V10",
+          "contribution": 4.82957,
+          "value": -3.216673
+        }
+      ]
+    },
+    {
+      "row": 39649,
+      "ref": "CC-195473",
+      "trueLabel": 0,
+      "pLogistic": 0.082758,
+      "pForest": 0,
+      "amount": 13.49,
+      "date": "hour 12",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V18",
+          "contribution": -1.772764,
+          "value": 1.124312
+        },
+        {
+          "feature": "V10",
+          "contribution": 1.679747,
+          "value": -1.118774
+        },
+        {
+          "feature": "V22",
+          "contribution": 1.209034,
+          "value": 1.216849
+        }
+      ]
+    },
+    {
+      "row": 58,
+      "ref": "CC-074795",
+      "trueLabel": 1,
+      "pLogistic": 0.973021,
+      "pForest": 0.009375,
+      "amount": 311.91,
+      "date": "hour 15",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V2",
+          "contribution": -5.17638,
+          "value": -2.38452
+        },
+        {
+          "feature": "V5",
+          "contribution": 4.816622,
+          "value": 2.478445
+        },
+        {
+          "feature": "V1",
+          "contribution": -3.52983,
+          "value": -3.084835
+        }
+      ]
+    },
+    {
+      "row": 62,
+      "ref": "CC-074497",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.990402,
+      "amount": 0.83,
+      "date": "hour 15",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V17",
+          "contribution": 13.290068,
+          "value": -14.841534
+        },
+        {
+          "feature": "V14",
+          "contribution": 12.553151,
+          "value": -10.058071
+        },
+        {
+          "feature": "V10",
+          "contribution": 11.621015,
+          "value": -7.740027
+        }
+      ]
+    },
+    {
+      "row": 19,
+      "ref": "CC-251905",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.915608,
+      "amount": 94.82,
+      "date": "hour 19",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 11.220469,
+          "value": -8.990275
+        },
+        {
+          "feature": "V10",
+          "contribution": 8.304047,
+          "value": -5.530804
+        },
+        {
+          "feature": "V16",
+          "contribution": -5.419979,
+          "value": -5.58479
+        }
+      ]
+    },
+    {
+      "row": 10,
+      "ref": "CC-146791",
+      "trueLabel": 1,
+      "pLogistic": 0.821226,
+      "pForest": 0.002344,
+      "amount": 829.41,
+      "date": "hour 00",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "Amount",
+          "contribution": 7.905844,
+          "value": 2.959021
+        },
+        {
+          "feature": "V4",
+          "contribution": 3.901254,
+          "value": 1.937651
+        },
+        {
+          "feature": "V10",
+          "contribution": -2.774762,
+          "value": 1.848095
+        }
+      ]
+    },
+    {
+      "row": 33,
+      "ref": "CC-122480",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.751518,
+      "amount": 219.8,
+      "date": "hour 21",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V17",
+          "contribution": 11.278913,
+          "value": -12.5956
+        },
+        {
+          "feature": "V14",
+          "contribution": 10.165135,
+          "value": -8.1447
+        },
+        {
+          "feature": "V10",
+          "contribution": 9.149905,
+          "value": -6.094177
+        }
+      ]
+    },
+    {
+      "row": 6742,
+      "ref": "CC-201697",
+      "trueLabel": 0,
+      "pLogistic": 0.039021,
+      "pForest": 0,
+      "amount": 0.31,
+      "date": "hour 13",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V5",
+          "contribution": 1.669763,
+          "value": 0.859194
+        },
+        {
+          "feature": "V2",
+          "contribution": 1.60611,
+          "value": 0.739861
+        },
+        {
+          "feature": "V4",
+          "contribution": -1.597405,
+          "value": -0.793389
+        }
+      ]
+    },
+    {
+      "row": 52,
+      "ref": "CC-252125",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.96224,
+      "amount": 0.77,
+      "date": "hour 19",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 16.327324,
+          "value": -13.082085
+        },
+        {
+          "feature": "V10",
+          "contribution": 9.268322,
+          "value": -6.173047
+        },
+        {
+          "feature": "V4",
+          "contribution": 8.142297,
+          "value": 4.044067
+        }
+      ]
+    },
+    {
+      "row": 36,
+      "ref": "CC-149870",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.750087,
+      "amount": 18,
+      "date": "hour 01",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V10",
+          "contribution": 5.710772,
+          "value": -3.803586
+        },
+        {
+          "feature": "V12",
+          "contribution": 5.18356,
+          "value": -6.099028
+        },
+        {
+          "feature": "V14",
+          "contribution": 4.590009,
+          "value": -3.677693
+        }
+      ]
+    },
+    {
+      "row": 3075,
+      "ref": "CC-241529",
+      "trueLabel": 0,
+      "pLogistic": 0,
+      "pForest": 0,
+      "amount": 10,
+      "date": "hour 17",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V18",
+          "contribution": -3.281731,
+          "value": 2.08132
+        },
+        {
+          "feature": "V11",
+          "contribution": -3.092489,
+          "value": -2.877107
+        },
+        {
+          "feature": "V14",
+          "contribution": 2.081207,
+          "value": -1.667544
+        }
+      ]
+    },
+    {
+      "row": 32271,
+      "ref": "CC-251979",
+      "trueLabel": 0,
+      "pLogistic": 1e-06,
+      "pForest": 0,
+      "amount": 79,
+      "date": "hour 19",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V4",
+          "contribution": -2.667494,
+          "value": -1.324875
+        },
+        {
+          "feature": "V10",
+          "contribution": -2.367199,
+          "value": 1.576642
+        },
+        {
+          "feature": "V2",
+          "contribution": -2.287068,
+          "value": -1.053547
+        }
+      ]
+    },
+    {
+      "row": 66,
+      "ref": "CC-010802",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.951523,
+      "amount": 1,
+      "date": "hour 05",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V14",
+          "contribution": 19.747814,
+          "value": -15.822714
+        },
+        {
+          "feature": "V10",
+          "contribution": 19.066236,
+          "value": -12.698821
+        },
+        {
+          "feature": "V4",
+          "contribution": 16.049981,
+          "value": 7.971607
+        }
+      ]
+    },
+    {
+      "row": 28513,
+      "ref": "CC-279425",
+      "trueLabel": 0,
+      "pLogistic": 0.109514,
+      "pForest": 0,
+      "amount": 28.92,
+      "date": "hour 22",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V18",
+          "contribution": -2.581297,
+          "value": 1.637095
+        },
+        {
+          "feature": "V2",
+          "contribution": 2.04282,
+          "value": 0.941033
+        },
+        {
+          "feature": "V10",
+          "contribution": -1.245254,
+          "value": 0.829386
+        }
+      ]
+    },
+    {
+      "row": 5,
+      "ref": "CC-070142",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.563318,
+      "amount": 112.45,
+      "date": "hour 14",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V17",
+          "contribution": 5.93708,
+          "value": -6.630167
+        },
+        {
+          "feature": "V14",
+          "contribution": 3.871905,
+          "value": -3.102321
+        },
+        {
+          "feature": "V10",
+          "contribution": 3.771053,
+          "value": -2.511661
+        }
+      ]
+    },
+    {
+      "row": 4151,
+      "ref": "CC-091972",
+      "trueLabel": 0,
+      "pLogistic": 0.012492,
+      "pForest": 0,
+      "amount": 12.95,
+      "date": "hour 17",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V13",
+          "contribution": -1.813197,
+          "value": 1.98908
+        },
+        {
+          "feature": "V11",
+          "contribution": -1.423285,
+          "value": -1.324158
+        },
+        {
+          "feature": "V4",
+          "contribution": 1.114757,
+          "value": 0.553671
+        }
+      ]
+    },
+    {
+      "row": 15303,
+      "ref": "CC-115511",
+      "trueLabel": 0,
+      "pLogistic": 1e-06,
+      "pForest": 0,
+      "amount": 31.85,
+      "date": "hour 20",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V16",
+          "contribution": -3.142002,
+          "value": -3.237544
+        },
+        {
+          "feature": "V4",
+          "contribution": -2.263022,
+          "value": -1.123984
+        },
+        {
+          "feature": "V18",
+          "contribution": -1.792068,
+          "value": 1.136555
+        }
+      ]
+    },
+    {
+      "row": 22200,
+      "ref": "CC-037402",
+      "trueLabel": 0,
+      "pLogistic": 0.957079,
+      "pForest": 0,
+      "amount": 2106.94,
+      "date": "hour 10",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "Amount",
+          "contribution": 21.537162,
+          "value": 8.06099
+        },
+        {
+          "feature": "V5",
+          "contribution": -11.792056,
+          "value": -6.067729
+        },
+        {
+          "feature": "V6",
+          "contribution": -4.8305,
+          "value": 4.811225
+        }
+      ]
+    },
+    {
+      "row": 23975,
+      "ref": "CC-123545",
+      "trueLabel": 0,
+      "pLogistic": 4e-06,
+      "pForest": 0,
+      "amount": 606.98,
+      "date": "hour 21",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "Amount",
+          "contribution": 5.532503,
+          "value": 2.070721
+        },
+        {
+          "feature": "V5",
+          "contribution": -4.08792,
+          "value": -2.103483
+        },
+        {
+          "feature": "V4",
+          "contribution": -1.877557,
+          "value": -0.932533
+        }
+      ]
+    },
+    {
+      "row": 23,
+      "ref": "CC-144109",
+      "trueLabel": 1,
+      "pLogistic": 1,
+      "pForest": 0.958787,
+      "amount": 310.42,
+      "date": "hour 23",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V17",
+          "contribution": 11.84385,
+          "value": -13.226486
+        },
+        {
+          "feature": "V10",
+          "contribution": 8.119385,
+          "value": -5.407812
+        },
+        {
+          "feature": "V14",
+          "contribution": 7.096176,
+          "value": -5.685731
+        }
+      ]
+    },
+    {
+      "row": 34196,
+      "ref": "CC-085040",
+      "trueLabel": 0,
+      "pLogistic": 9e-06,
+      "pForest": 0,
+      "amount": 0.92,
+      "date": "hour 16",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V10",
+          "contribution": -7.240811,
+          "value": 4.822649
+        },
+        {
+          "feature": "V2",
+          "contribution": 5.76848,
+          "value": 2.657274
+        },
+        {
+          "feature": "V4",
+          "contribution": -3.516845,
+          "value": -1.746725
+        }
+      ]
+    },
+    {
+      "row": 20262,
+      "ref": "CC-092222",
+      "trueLabel": 0,
+      "pLogistic": 0.000363,
+      "pForest": 0,
+      "amount": 598.04,
+      "date": "hour 17",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "Amount",
+          "contribution": 5.437112,
+          "value": 2.035018
+        },
+        {
+          "feature": "V4",
+          "contribution": 4.650843,
+          "value": 2.309952
+        },
+        {
+          "feature": "V6",
+          "contribution": -4.571891,
+          "value": 4.553648
+        }
+      ]
+    },
+    {
+      "row": 61,
+      "ref": "CC-149146",
+      "trueLabel": 1,
+      "pLogistic": 0.757439,
+      "pForest": 0.007292,
+      "amount": 6.99,
+      "date": "hour 01",
+      "groupLabel": "fraud label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V2",
+          "contribution": 4.933516,
+          "value": 2.272644
+        },
+        {
+          "feature": "V18",
+          "contribution": -3.586593,
+          "value": 2.274668
+        },
+        {
+          "feature": "V17",
+          "contribution": -3.530172,
+          "value": 3.942279
+        }
+      ]
+    },
+    {
+      "row": 17661,
+      "ref": "CC-051670",
+      "trueLabel": 0,
+      "pLogistic": 0.077477,
+      "pForest": 0,
+      "amount": 26.68,
+      "date": "hour 12",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V18",
+          "contribution": 2.067163,
+          "value": -1.311024
+        },
+        {
+          "feature": "V13",
+          "contribution": 1.624372,
+          "value": -1.781939
+        },
+        {
+          "feature": "V4",
+          "contribution": 1.158629,
+          "value": 0.575461
+        }
+      ]
+    },
+    {
+      "row": 29057,
+      "ref": "CC-205441",
+      "trueLabel": 0,
+      "pLogistic": 0.032062,
+      "pForest": 0,
+      "amount": 2.69,
+      "date": "hour 13",
+      "groupLabel": "genuine label",
+      "extra": "",
+      "drivers": [
+        {
+          "feature": "V5",
+          "contribution": 2.236191,
+          "value": 1.150656
+        },
+        {
+          "feature": "V14",
+          "contribution": 1.748817,
+          "value": -1.40122
+        },
+        {
+          "feature": "V2",
+          "contribution": 1.365416,
+          "value": 0.628984
+        }
+      ]
+    }
+  ],
+  "limitations": ["Metrics describe this benchmark's held-out test split, not real-world fraud detection.", "The test set is kept at its original prevalence; it is never balanced to improve the reported numbers.", "A threshold tuned on validation maximises F1 and is then frozen for the test evaluation.", "Identifiers and outcome-derived fields are excluded from the predictors."]
+}

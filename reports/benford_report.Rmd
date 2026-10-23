@@ -1,0 +1,684 @@
+---
+title: "Can Statistics Detect Fake Data?"
+subtitle: "Identifying Anomalies and Outliers in Real Datasets Using Benford's Law and Chi-Square Goodness-of-Fit"
+author: "Shaik Sameer (24BDS1154) and Joshita Chowdary (24BRS1313)"
+date: "`r format(Sys.Date(), '%d %B %Y')`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    toc_depth: 3
+    number_sections: true
+    theme: flatly
+  word_document:
+    toc: true
+params:
+  out_dir: "outputs"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE,
+                      fig.align = "center", fig.width = 9, fig.height = 5.5)
+OUT <- params$out_dir
+tb <- function(f) {
+  p <- file.path(OUT, "tables", f)
+  if (!file.exists(p))
+    stop("missing output table: ", p, " - run 'Rscript scripts/run_all.R' first")
+  utils::read.csv(p, check.names = FALSE, stringsAsFactors = FALSE,
+                  na.strings = c("", "NA"))
+}
+fg <- function(f) file.path(OUT, "figures", f)
+show_fig <- function(f) {
+  p <- fg(f)
+  if (file.exists(p)) knitr::include_graphics(p) else cat(paste0("*(figure not available: ", f, ")*"))
+}
+# '-' marks a quantity that does not exist for that row (for example the statistic of a test
+# that was not run because the validity guard rejected the sample).
+fmt <- function(x, d = 4) ifelse(is.na(x), "-", formatC(x, format = "f", digits = d))
+fp  <- function(x) {
+  ifelse(is.na(x), "-",
+         ifelse(x < 1e-4, formatC(x, format = "e", digits = 2), formatC(x, format = "f", digits = 4)))
+}
+sig_flag <- function(p, alpha = 0.05) ifelse(is.na(p), "not run", ifelse(p < alpha, "yes", "no"))
+num <- function(x) ifelse(is.na(x), "-", as.character(x))
+
+chi     <- tb("chi_square_results.csv")
+freq    <- tb("first_digit_frequency.csv")
+desc    <- tb("descriptive_statistics.csv")
+suit    <- tb("suitability_summary.csv")
+clean   <- tb("cleaning_exclusions.csv")
+flags   <- tb("anomaly_flags.csv")
+twodig  <- tb("two_digit_results.csv")
+exp_sum <- tb("experiment_summary.csv")
+exp_rep <- tb("experiment_replicates.csv")
+anova   <- tb("anova_results.csv")
+regr    <- tb("regression_results.csv")
+prob    <- tb("benford_expected_probabilities.csv")
+man     <- tb("data_manifest.csv")
+mget <- function(k) {
+  v <- man$value[man$field == k]
+  if (length(v)) v[1] else "not recorded"
+}
+IS_SYN <- identical(toupper(mget("is_synthetic")), "TRUE")
+ALPHA  <- if (nrow(chi)) stats::median(chi$alpha, na.rm = TRUE) else 0.05
+SRC    <- mget("source_name")
+
+latest <- chi[chi$unit_type == "latest_year", ]
+pooled <- chi[chi$unit_type == "pooled", ]
+byyear <- chi[chi$unit_type == "year", ]
+byreg  <- chi[chi$unit_type == "region", ]
+order_by <- function(d) {
+  if (!nrow(d) || is.null(d$indicator_code)) return(d)
+  d[order(d$indicator_code), , drop = FALSE]
+}
+latest <- order_by(latest); pooled <- order_by(pooled)
+
+n_units     <- nrow(chi)
+n_sig_pool  <- sum(!is.na(pooled$p_bh) & pooled$p_bh < ALPHA)
+n_mat_pool  <- sum(pooled$flag == "Statistical deviation: significant AND practically material", na.rm = TRUE)
+n_small_pool<- sum(pooled$flag == "Statistically significant but small deviation", na.rm = TRUE)
+n_none_pool <- sum(pooled$flag == "No significant deviation detected", na.rm = TRUE)
+n_unsuit    <- sum(pooled$flag == "Not assessed - unsuitable data", na.rm = TRUE)
+n_notrun    <- sum(pooled$flag == "Not assessed - insufficient sample", na.rm = TRUE)
+```
+
+```{r watermark, echo=FALSE, results='asis'}
+if (IS_SYN) {
+  cat('<div style="position:fixed;top:40%;left:8%;font-size:52px;color:rgba(190,30,30,0.13);transform:rotate(-24deg);z-index:9999;pointer-events:none">SYNTHETIC &ndash; NOT REAL DATA</div>')
+}
+```
+
+<div style="border:3px solid #B22222;padding:10px;margin:10px 0;background:#FFF5F5">
+<b>BOUNDARY STATEMENT (read before any result below).</b>
+A statistically significant deviation from Benford's Law is <b>NOT</b> proof of fraud,
+fabrication or manipulation. It is a diagnostic flag for further review. Legitimate
+explanations &ndash; constrained ranges, psychological price thresholds, caps, rounding and
+non-multiplicative processes &ndash; must be considered. This project reports <i>statistically
+unusual first-digit patterns</i>; it does not allege wrongdoing.
+</div>
+
+```{r synth-banner, echo=FALSE, results='asis'}
+if (IS_SYN) {
+  cat('<div style="border:3px solid #B22222;background:#FFECEC;padding:10px;margin:10px 0">',
+      '<b>SYNTHETIC &ndash; NOT REAL DATA.</b> No World Bank WDI file was available when this ',
+      'report was generated, so every number below comes from a clearly labelled synthetic ',
+      'fallback panel. These are <b>not</b> real-world findings and must not be reported as such.</div>')
+}
+```
+
+<div style="text-align:center;border:1px solid #999;padding:12px;margin:12px 0">
+<p><b>VIT Vellore &ndash; School of Advanced Sciences / School of Computer Science and Engineering</b></p>
+<p><b>Course:</b> BMAT202L Probability and Statistics (Theory) + BMAT202P Probability and Statistics Lab &nbsp;|&nbsp; <b>Slot:</b> F1</p>
+<p><b>Faculty:</b> Dr. Tharasi Dilleswar</p>
+<p><b>Students:</b> Shaik Sameer (24BDS1154) &nbsp;&middot;&nbsp; Joshita Chowdary (24BRS1313)</p>
+<p><b>Stage:</b> Review 2 &rarr; final deliverable (data cleaning in R, first-digit extraction, test statistic, diagnostics)</p>
+</div>
+
+# Executive summary
+
+This report tests whether the first significant digit of nine curated World Bank
+**World Development Indicators** columns conforms to **Benford's Law**
+$P(d)=\log_{10}(1+1/d)$ using the **Pearson chi-square goodness-of-fit** test at
+$\alpha = `r ALPHA`$. On the current run the analysis covered `r n_units` analysis units
+(latest-complete-year cross-sections, pooled country-years, per-year subsets and per-region
+subsets) built from **`r SRC`**.
+
+* Pooled country-years: `r n_mat_pool` of `r nrow(pooled)` indicators show a *significant and
+  practically material* deviation, `r n_small_pool` show a *significant but small* deviation,
+  `r n_none_pool` show *no significant deviation*, `r n_unsuit` were **not assessed** because the
+  suitability screening rejected the column, and `r n_notrun` were not assessed for want of sample.
+* Chi-square alone becomes oversensitive as $N$ grows, so every result is reported together with
+  the **mean absolute deviation (MAD)**, the Nigrini conformity band, standardised per-digit
+  residuals and Cohen's $w$.
+* A controlled **synthetic** manipulation experiment shows how the method behaves when a known
+  fraction of records is altered; it also shows honestly that small, multiplicative alterations
+  are hard to detect.
+
+**A significant result is a flag for review, not evidence of fraud.**
+
+# 1. Research question and objectives
+
+**Research question.** Real datasets contain far too many numbers to audit by eye.
+Can statistics flag numerical data whose first-digit pattern differs from the Benford
+expectation?
+
+**Objectives.**
+
+1. Select real, openly published numerical datasets with genuinely Benford-plausible columns.
+2. Prepare the data in R: import, type conversion, removal of aggregates, tidy reshaping.
+3. Explore the data (distributions, descriptive statistics, suitability for Benford analysis).
+4. Extract the first (and second, and first two) significant digits.
+5. Compute the Benford expected distribution from the formula - never from the data.
+6. Test the observed distribution against the expected one with the chi-square goodness-of-fit
+   statistic, including the validity conditions for the test.
+7. Flag anomalies using a transparent, pre-declared rule that combines significance with a
+   practical effect-size measure.
+8. Interpret the output carefully, with the established boundary that deviation is not fraud, and
+   quantify how well (and how badly) the method detects known alteration in a controlled
+   synthetic experiment.
+
+## 1.1 The eight-stage flow (fixed in Review 1)
+
+1. Dataset selection &nbsp;2.&nbsp; Data preparation in R &nbsp;3.&nbsp; Exploratory analysis
+&nbsp;4.&nbsp; First-digit extraction &nbsp;5.&nbsp; Benford expected distribution
+&nbsp;6.&nbsp; Chi-square goodness-of-fit &nbsp;7.&nbsp; Anomaly flagging &nbsp;8.&nbsp; Interpretation.
+
+# 2. Syllabus mapping
+
+| BMAT202P / BMAT202L topic | Coverage | Where |
+|---|---|---|
+| Data import and data types | Direct | `data/processed/wdi_clean.csv`, import section |
+| Summary statistics | Direct | Descriptive statistics table |
+| Graphical representation | Direct | Histograms, log histograms, bar charts, boxplots |
+| Probability distributions (Benford as reference null) | Related / application | Expected-distribution table |
+| Hypothesis testing | Direct | H0/H1, alpha, decision rule |
+| Chi-square goodness-of-fit | Direct / core | Main test statistic |
+| Correlation and regression | Optional (used) | MAD vs alteration rate |
+| t-test / ANOVA | Optional (used) | One-way ANOVA of MAD across alteration levels |
+
+# 3. Data sources and manifest summary
+
+The primary dataset is the World Bank **World Development Indicators** (WDI) bulk CSV,
+analysed from the local copy described below. The full manifest is shipped as
+`data/DATA_MANIFEST.md` and `outputs/tables/data_manifest.csv`.
+
+```{r manifest-table}
+mt <- man
+mt$value <- substr(gsub("\\|", "/", mt$value), 1, 300)
+knitr::kable(mt, col.names = c("Field", "Value"), caption = "Data manifest (machine-readable copy in outputs/tables/data_manifest.csv)")
+```
+
+**Indicators analysed.**
+
+```{r indicator-table}
+it <- unique(pooled[, c("indicator_code", "indicator_label", "indicator_role")])
+knitr::kable(it, col.names = c("Indicator code", "Indicator", "Role"),
+             caption = "Curated indicator panel. Negative controls are bounded or narrow-range variables that are EXPECTED to deviate: they demonstrate that a flag means 'unusual first-digit pattern', not wrongdoing.")
+```
+
+# 4. Methodology
+
+## 4.1 The Benford reference distribution
+
+For the first significant digit $d \in \{1,\dots,9\}$,
+
+$$P(d) = \log_{10}\!\left(1 + \frac{1}{d}\right), \qquad E(d) = N \cdot P(d).$$
+
+The expected proportions and the Review-1 reference example are reproduced below straight from
+`outputs/tables/benford_expected_probabilities.csv`, and the code derives them from the formula
+(they are never read from the data).
+
+```{r prob-table}
+p1 <- prob[prob$kind == "first_digit", ]
+knitr::kable(data.frame(digit = p1$digit,
+                        probability = fmt(p1$probability, 5),
+                        percent = fmt(100 * p1$probability, 2),
+                        expected_counts_N_10000 = fmt(10000 * p1$probability, 1)),
+             caption = "Benford first-digit probabilities with the Review-1 worked example (N = 10,000).",
+             row.names = FALSE)
+```
+
+## 4.2 Hypotheses and decision rule
+
+$$H_0: \text{the observed first-digit distribution is consistent with the Benford distribution}$$
+$$H_1: \text{the observed first-digit distribution differs from the Benford distribution}$$
+
+with the Pearson statistic
+
+$$X^2 = \sum_{d=1}^{9} \frac{(O_d - E_d)^2}{E_d}, \qquad \mathrm{df} = 9 - 1 = 8,$$
+
+and $H_0$ rejected when $p < \alpha = `r ALPHA`$. Two distributions are kept strictly separate
+throughout: the **observed** distribution comes from the data, the **expected** distribution
+comes from the formula.
+
+## 4.3 Validity rules (never silently violated)
+
+* **Reliable** - every expected count $E \ge 5$.
+* **Caution** - every $E \ge 1$ and at most 20% of the classes have $E < 5$ (Cochran's rule).
+* **Not run** - any $E < 1$, or $N < 50$, or more than 20% of classes with $E < 5$; the statistic
+  and p-value are returned as `NA` together with a plain-language reason.
+
+Because the smallest first-digit probability is $P(9) = `r fmt(min(p1$probability), 5)`$, the
+first-digit test needs $N \ge `r ceiling(5 / min(p1$probability))`$ for every expected count to
+reach 5, and $N \ge `r ceiling(1 / min(p1$probability))`$ for every expected count to reach 1.
+The corresponding thresholds for the first-two-digit and second-digit tests are computed in code
+from their own probability vectors.
+
+## 4.4 Practical deviation measures
+
+Chi-square becomes oversensitive for large $N$, so every result also reports
+
+* per-digit observed and expected proportions, their difference and the standardised (Pearson)
+  residual $(O-E)/\sqrt{E}$, with $|\,$residual$| > 1.96$ marked as notable (a screening heuristic);
+* the mean absolute deviation $\mathrm{MAD} = \frac{1}{9}\sum |p_{\text{obs}} - p_{\text{exp}}|$
+  with the **Nigrini first-digit bands** (close conformity $\le 0.006$, acceptable $\le 0.012$,
+  marginal $\le 0.015$, nonconformity above 0.015) - these bands apply to the **first digit only**,
+  so only the raw MAD is reported for the other digit classes;
+* Cohen's $w = \sqrt{X^2/N}$ as the effect size.
+
+## 4.5 Multiple testing
+
+Results are grouped into pre-declared families: latest-complete-year cross-sections, pooled
+country-years, all per-year subsets, and all per-region subsets. Within each family, raw, Holm and
+Benjamini-Hochberg adjusted p-values are reported and **the flags use the BH-adjusted p-value**.
+The family definition is stored in the `family` column of `chi_square_results.csv`.
+
+## 4.6 Anomaly flag (single decision function)
+
+The flag is one of exactly five categories: *not assessed - unsuitable data*, *not assessed -
+insufficient sample*, *statistical deviation: significant AND practically material* (adjusted
+$p < \alpha$ **and** MAD above the 0.006 conformity band), *statistically significant but small
+deviation*, or *no significant deviation detected*. Each flag carries a one-sentence
+interpretation that repeats the boundary statement.
+
+## 4.7 Suitability screening
+
+Every column is screened before testing: sample size, dynamic range in orders of magnitude,
+positive skew, uniqueness, integer/code-like structure, bounded or percentage-like ranges, hard
+ceilings, heavy rounding and identifier-like column names. Columns that fail are **not** flagged;
+they are explained.
+
+# 5. Results
+
+## 5.1 Data cleaning
+
+```{r cleaning-table}
+cl <- clean[clean$unit_type == "pooled", , drop = FALSE]
+cl <- cl[order(cl$indicator_code), ]
+if (nrow(cl)) {
+  keep <- c("indicator_code", "total_values", "missing_NA_NaN", "non_finite_Inf",
+            "invalid_non_numeric", "zero_excluded", "negative_used_as_magnitude", "eligible_values")
+  knitr::kable(cl[, keep], caption = paste("Cleaning decisions per indicator (pooled country-years).",
+                                           "The panel keeps only real countries: rows whose Country Code has a non-empty Region in WDICountry.csv."),
+               row.names = FALSE)
+} else cat("*No cleaning output available.*")
+```
+
+## 5.2 Descriptive statistics
+
+The table below is the pooled country-year summary for each indicator (the complete per-unit
+version, including every year and region, is in `outputs/tables/descriptive_statistics.csv`).
+
+```{r desc-table}
+dp <- desc[desc$unit_type == "pooled", , drop = FALSE]
+dp <- dp[order(dp$indicator_code), ]
+knitr::kable(data.frame(Indicator = dp$indicator_label,
+                        N = dp$n,
+                        Min = signif(dp$min, 5),
+                        Median = signif(dp$median, 5),
+                        Mean = signif(dp$mean, 5),
+                        Max = signif(dp$max, 5),
+                        SD = signif(dp$sd, 4),
+                        Q1 = signif(dp$q1, 5),
+                        Q3 = signif(dp$q3, 5),
+                        Skewness = signif(dp$skewness, 3),
+                        Range_orders = signif(dp$range_orders, 2),
+                        pct_unique = signif(dp$pct_unique, 3)),
+             caption = "Descriptive statistics of the pooled country-year values (base-R moment skewness).",
+             row.names = FALSE)
+```
+
+Distribution shape is shown graphically; a Benford-conforming variable is roughly uniform on the
+log scale, which is exactly the point of the law.
+
+```{r fig-hist, fig.cap="Histograms of the curated columns (pooled country-years)."}
+show_fig("fig_descriptives_histograms.png")
+```
+
+```{r fig-loghist, fig.cap="The same columns on a log10 scale: Benford-conforming variables are roughly uniform on this scale."}
+show_fig("fig_descriptives_log_histograms.png")
+```
+
+## 5.3 Suitability screening
+
+```{r suit-table}
+sp <- suit[suit$unit_type == "pooled", , drop = FALSE]
+sp <- sp[order(sp$indicator_code), ]
+knitr::kable(data.frame(Indicator = sp$indicator_label,
+                        Role = sp$indicator_role,
+                        N = sp$n_eligible,
+                        Range_orders = signif(sp$range_orders, 2),
+                        Score = sprintf("%d/%d", sp$score, sp$max_score),
+                        Verdict = sp$verdict,
+                        Hard_failures = sp$hard_failures),
+             caption = "Suitability verdict per indicator. A column that fails the screening is not flagged, only explained.",
+             row.names = FALSE)
+```
+
+```{r suit-reasons, echo=FALSE, results='asis'}
+for (i in seq_len(nrow(sp))) {
+  cat(sprintf("\n**%s** (%s).\n\n", sp$indicator_label[i], sp$verdict[i]))
+  cat(paste0("  - ", strsplit(sp$reasons[i], " \\\\| ")[[1]], "\n", collapse = ""))
+}
+```
+
+## 5.4 First-digit chi-square results
+
+The headline table reports both analysis units that matter most: the **latest complete-year
+cross-section** (independent across countries, $N \approx 200$) and the **pooled country-years**
+(large $N$, but the same country appears many times, so those p-values are optimistic).
+
+```{r main-table}
+mk <- function(d, lbl) {
+  if (!nrow(d)) return(NULL)
+  data.frame(Unit = lbl,
+             Indicator = d$indicator_label,
+             N = d$n,
+             X2 = fmt(d$x2, 3),
+             df = d$df,
+             p_raw = fp(d$p_raw),
+             p_Holm = fp(d$p_holm),
+             p_BH = fp(d$p_bh),
+             Tier = d$validity_tier,
+             MAD = fmt(d$mad, 4),
+             Nigrini_band = d$nigrini_band,
+             Cohens_w = fmt(d$cohens_w, 4))
+}
+main_tbl <- rbind(mk(latest, "latest year"), mk(pooled, "pooled"))
+knitr::kable(main_tbl, caption = "First-digit chi-square goodness-of-fit against Benford's Law. p_BH is the Benjamini-Hochberg adjusted p-value used for flagging.", row.names = FALSE)
+```
+
+Decision, in the words of the analysis itself:
+
+```{r decisions, echo=FALSE, results='asis'}
+for (i in seq_len(nrow(pooled))) {
+  cat(sprintf("\n* **%s** (pooled): %s\n", pooled$indicator_label[i], pooled$decision[i]))
+  cat(sprintf("  %s\n", pooled$validity_note[i]))
+}
+```
+
+### 5.4.1 Observed versus expected, per digit
+
+```{r obs-vs-exp, fig.cap="Observed first-digit proportions (bars) against the Benford expected proportions (line and points), pooled country-years."}
+show_fig("fig_observed_vs_expected.png")
+```
+
+The numerical version for the first indicator in the table (all indicators are in
+`outputs/tables/first_digit_frequency.csv`):
+
+```{r freq-detail}
+code1 <- pooled$indicator_code[1]
+fd <- freq[freq$unit_type == "pooled" & freq$indicator_code == code1, ]
+knitr::kable(data.frame(Digit = fd$digit,
+                        Observed_count = fd$observed_count,
+                        Observed_prop = fmt(fd$observed_proportion, 4),
+                        Expected_prop = fmt(fd$expected_proportion, 4),
+                        Expected_count = fmt(fd$expected_count, 1),
+                        Difference = fmt(fd$difference, 4),
+                        Pearson_residual = fmt(fd$pearson_residual, 3),
+                        Notable = ifelse(fd$notable_residual == 1, yes = "yes", no = "no")),
+             caption = paste("Per-digit detail for", pooled$indicator_label[1], "(pooled country-years)."),
+             row.names = FALSE)
+```
+
+Standardised residuals for every indicator, with the $\pm 1.96$ screening lines:
+
+```{r residuals, fig.cap="Standardised (Pearson) residuals by first digit. A residual beyond +/-1.96 is a screening heuristic, not a test of fraud."}
+show_fig("fig_residuals_by_digit.png")
+```
+
+### 5.4.2 Practical deviation: MAD, Nigrini bands and effect size
+
+```{r mad-fig, fig.cap="First-digit MAD against the Nigrini conformity bands (pooled country-years). The bands apply to the first digit only."}
+show_fig("fig_mad_comparison.png")
+```
+
+```{r mad-table}
+knitr::kable(data.frame(Indicator = pooled$indicator_label,
+                        MAD = fmt(pooled$mad, 4),
+                        Band = pooled$nigrini_band,
+                        Cohens_w = fmt(pooled$cohens_w, 4),
+                        Flag = pooled$flag,
+                        MAD_CI = ifelse(is.na(pooled$mad_ci_lower), "-",
+                                        paste0("[", fmt(pooled$mad_ci_lower, 4), ", ",
+                                               fmt(pooled$mad_ci_upper, 4), "]"))),
+             caption = "Practical deviation measures for the pooled country-years. The MAD confidence interval is a non-parametric bootstrap of the pooled values.",
+             row.names = FALSE)
+```
+
+## 5.5 Anomaly flags and their interpretation
+
+```{r flags-table}
+fl <- flags[flags$unit_type %in% c("latest_year", "pooled"), , drop = FALSE]
+fl <- fl[order(fl$unit_type, fl$indicator_code), ]
+knitr::kable(data.frame(Unit = fl$unit_type,
+                        Indicator = fl$indicator_label,
+                        N = fl$n,
+                        p_raw = fp(fl$p_raw),
+                        p_BH = fp(fl$p_bh),
+                        Flag = fl$flag),
+             caption = "Anomaly flags. Flags are review prompts; a flag is never a statement about fraud.",
+             row.names = FALSE)
+```
+
+```{r flag-text, echo=FALSE, results='asis'}
+for (i in seq_len(nrow(flags))) {
+  cat(sprintf("\n* **%s - %s**: %s\n", flags$unit_type[i], flags$indicator_label[i],
+              flags$interpretation[i]))
+}
+```
+
+Summarising the pooled family: of `r nrow(pooled)` indicators,
+`r n_mat_pool` show a significant and practically material deviation,
+`r n_small_pool` show a significant but small deviation,
+`r n_none_pool` show no significant deviation,
+`r n_unsuit` were unsuitable for the test and `r n_notrun` had insufficient sample.
+
+## 5.6 Comparison across subsets (year and region)
+
+```{r subset-table}
+yr <- byyear
+yr_tab <- data.frame(Indicator = unique(yr$indicator_code) |> sort(),
+                     Years_tested = vapply(unique(yr$indicator_code) |> sort(),
+                                           function(cd) sum(yr$indicator_code == cd & yr$validity_tier == "Reliable"), integer(1)),
+                     Years_significant = vapply(unique(yr$indicator_code) |> sort(),
+                                                function(cd) sum(yr$indicator_code == cd & !is.na(yr$p_bh) & yr$p_bh < ALPHA), integer(1)),
+                     Median_year_MAD = vapply(unique(yr$indicator_code) |> sort(),
+                                              function(cd) round(stats::median(yr$mad[yr$indicator_code == cd], na.rm = TRUE), 4), numeric(1)))
+knitr::kable(yr_tab, caption = "Per-year subsets: only years with at least 110 eligible values were tested (validity guard).", row.names = FALSE)
+```
+
+```{r region-table}
+rg <- byreg
+rg <- rg[order(rg$indicator_code, rg$group_value), ]
+knitr::kable(data.frame(Indicator = rg$indicator_label,
+                        Region = rg$group_value,
+                        N = rg$n,
+                        X2 = fmt(rg$x2, 3),
+                        p_BH = fp(rg$p_bh),
+                        MAD = fmt(rg$mad, 4),
+                        Flag = rg$flag),
+             caption = "Per-region subsets of the pooled country-years. Small regions are skipped by the minimum-sample guard.",
+             row.names = FALSE)
+```
+
+```{r region-fig, fig.cap="MAD by region and indicator; '+' marks subsets whose BH-adjusted p-value is below alpha."}
+show_fig("fig_region_mad.png")
+```
+
+## 5.7 Extended digit classes
+
+The first-two-digit test (df = `r if (nrow(twodig)) max(twodig$df[twodig$digit_kind == 'first2']) else 89`) and the
+second-digit test (df = `r if (nrow(twodig)) max(twodig$df[twodig$digit_kind == 'second']) else 9`) share the same validity logic.
+They are reported only when valid, and because their class probabilities are far smaller they need
+much larger samples.
+
+```{r twodig-table}
+td <- twodig[twodig$unit_type == "pooled", , drop = FALSE]
+td <- td[order(td$digit_kind, td$indicator_code), ]
+knitr::kable(data.frame(Indicator = td$indicator_label,
+                        Digits = td$digit_kind,
+                        N = td$n,
+                        df = td$df,
+                        X2 = fmt(td$x2, 3),
+                        p_BH_raw = fp(td$p_raw),
+                        Tier = td$validity_tier,
+                        MAD = fmt(td$mad, 5),
+                        Min_N_reliable = td$min_n_reliable),
+             caption = "Extended digit tests on the pooled country-years. 'Not run' rows (X2 and p shown as '-') are the validity guard working: no invalid p-value is reported.",
+             row.names = FALSE)
+```
+
+# 6. Controlled synthetic manipulation experiment
+
+This part is **entirely synthetic** (`r exp_sum$n_replicates[1]` replicates per cell). It measures how the
+first-digit test behaves when a known fraction of records is altered. The control sample is
+`r if (nrow(exp_rep)) exp_rep$base_n[1] else NA` values drawn from $10^{U(0,6)}$, which conforms to Benford's Law. Three
+manipulations are applied to a **copy** of the control: round-number substitution, leading-digit
+bias towards digits 5-9, and a multiplicative partial alteration (0.8-1.2x) that is deliberately
+hard to detect. The true alteration rate is stored in its own column and never mixed with the
+statistical results.
+
+```{r exp-summary}
+knitr::kable(data.frame(Manipulation = exp_sum$manipulation,
+                        True_rate = sprintf("%.0f%%", 100 * exp_sum$true_alteration_rate),
+                        Replicates = exp_sum$n_replicates,
+                        Mean_MAD = fmt(exp_sum$mean_mad, 4),
+                        Median_MAD = fmt(exp_sum$median_mad, 4),
+                        Mean_X2 = fmt(exp_sum$mean_x2, 2),
+                        Detection_rate = fmt(exp_sum$detection_rate, 3),
+                        SE = fmt(exp_sum$detection_se, 3)),
+             caption = "Detection rate = proportion of replicates with p < alpha. At 0% alteration this is the empirical type-I error rate; it is reported as observed and is not claimed to equal alpha exactly.",
+             row.names = FALSE)
+```
+
+```{r fig-detect, fig.cap="Detection rate versus true alteration rate (SYNTHETIC experiment)."}
+show_fig("fig_experiment_detection_curves.png")
+```
+
+```{r fig-madbox, fig.cap="MAD versus true alteration level by manipulation type (SYNTHETIC experiment)."}
+show_fig("fig_experiment_mad_boxplots.png")
+```
+
+```{r fig-regplot, fig.cap="Regression of MAD on the true alteration rate (SYNTHETIC): the dose-response of the screening measure."}
+show_fig("fig_experiment_regression.png")
+```
+
+## 6.1 One-way ANOVA of MAD on the alteration level (BMAT202P Experiment 11)
+
+Unit of analysis: one simulated replicate. Response = MAD, factor = alteration level, separately
+for each manipulation type (completely randomised design). Normality of the residuals is checked
+with Shapiro-Wilk and homogeneity of variance with Bartlett's test; when those assumptions are
+clearly violated, Kruskal-Wallis and a pairwise Wilcoxon (Holm) follow-up are reported and used.
+
+```{r anova-table}
+an <- anova[anova$test != "Tukey HSD post-hoc", , drop = FALSE]
+knitr::kable(data.frame(Manipulation = an$manipulation,
+                        Test = an$test,
+                        Statistic = fmt(an$statistic, 3),
+                        df = num(an$df),
+                        df2 = num(an$df2),
+                        p_value = fp(an$p_value)),
+             caption = "ANOVA, assumption checks and the non-parametric alternative (SYNTHETIC experiment).",
+             row.names = FALSE)
+```
+
+```{r posthoc, echo=FALSE, results='asis'}
+ph <- anova[grepl("post-hoc", anova$test), ]
+if (nrow(ph)) {
+  cat("\nPost-hoc comparisons (only the significant ones are listed):\n\n")
+  sigp <- ph[!is.na(ph$p_value) & ph$p_value < ALPHA, ]
+  if (nrow(sigp)) {
+    cat(paste0("  - ", sigp$manipulation, ": ", sigp$term, " (p = ",
+               vapply(sigp$p_value, fp, character(1)), ")\n", collapse = ""))
+  } else cat("  - none\n")
+  cat(sprintf("\n%d of %d post-hoc comparisons are significant at alpha = %s.\n",
+              nrow(sigp), nrow(ph), ALPHA))
+}
+```
+
+## 6.2 Regression and correlation of MAD on the true alteration rate (BMAT202P Experiment 3)
+
+```{r reg-table}
+knitr::kable(data.frame(Manipulation = regr$manipulation,
+                        n = regr$n,
+                        Intercept = fmt(regr$intercept, 5),
+                        Slope = fmt(regr$slope, 4),
+                        Slope_SE = fmt(regr$slope_se, 5),
+                        R_squared = fmt(regr$r_squared, 3),
+                        F = fmt(regr$f_statistic, 2),
+                        df_1 = num(regr$df), df_2 = num(regr$df2),
+                        p_value = fp(regr$p_value),
+                        Pearson_r = fmt(regr$pearson_r, 3),
+                        Pearson_p = fp(regr$pearson_p)),
+             caption = "Simple linear regression of MAD on the true alteration rate, plus Pearson correlation (SYNTHETIC).",
+             row.names = FALSE)
+```
+
+The slope is the dose-response of the screening measure: for manipulation types that the test can
+see, MAD rises with the altered fraction. For the partial 0.8-1.2x alteration the slope and R2 are
+near the noise floor, which is an honest statement about the limits of the method - a small
+multiplicative change can move MAD very little.
+
+# 7. Interpretation
+
+* Every first-digit result is reported with its validity tier, so no p-value is quoted outside the
+  conditions under which it is meaningful.
+* Where a significant deviation appears, the practical measures (MAD band, per-digit residuals,
+  Cohen's $w$) decide whether it is material or merely the arithmetic consequence of a large $N$.
+* The two negative controls (life expectancy and fertility rate) are bounded, narrow-range
+  variables. They deviate strongly and are screened out as unsuitable - the method is
+  discriminating between suitable and unsuitable data, not detecting wrongdoing.
+* **Boundary (restated):** a statistically significant deviation from Benford's Law is not proof of
+  fraud, fabrication or manipulation. It is a diagnostic flag for further review. Constrained
+  ranges, psychological price thresholds, caps, rounding and non-multiplicative processes are all
+  legitimate explanations.
+
+# 8. Limitations
+
+1. **Non-independence.** The same country appears in many years, so pooled country-year tests are
+   not independent and their p-values are optimistic. The latest-year cross-section is the
+   independent-across-countries unit and is reported alongside.
+2. **Aggregates removed.** WDI mixes real countries with World / region / income-group aggregates;
+   only rows whose Country Code has a non-empty Region in the country metadata are kept. If the
+   metadata file is missing, the analysis says so instead of guessing.
+3. **Bounded and engineered variables.** Percentages, shares, indices, land area and life
+   expectancy are not multiplicative-scale quantities, so Benford is the wrong reference for them.
+   The suitability screening and the negative controls make this explicit.
+4. **Large-N oversensitivity.** With tens of thousands of values, trivial departures become
+   significant; that is why MAD, residuals and Cohen's $w$ are always reported.
+5. **Rounding and reporting practice.** Published figures are rounded and revised; heavy rounding
+   pushes first digits away from Benford.
+6. **Benford's Law is a screening heuristic.** It flags unusual digit patterns. It cannot identify
+   who altered what, and it cannot prove intent. Detection rates from the synthetic experiment
+   (`r sprintf('%.2f-%.2f', min(exp_sum$detection_rate), max(exp_sum$detection_rate))` across levels) show that
+   insensitive alterations can pass unnoticed.
+
+# 9. Conclusion
+
+The pipeline tests the first-digit pattern of every suitable column against the Benford
+distribution, quantifies the deviation in three independent ways (chi-square p-value with a
+multiple-testing adjustment, MAD with Nigrini bands, and per-digit Pearson residuals), and flags
+only those cases that are both statistically significant and practically material. The synthetic
+experiment shows the method works well against round-number substitution and leading-digit bias
+once the altered fraction is large enough, and that it is weak against small multiplicative
+changes. The deliverable is therefore a *triage* tool: it points at columns and subsets that
+deserve human review, and it never claims to detect fraud.
+
+# 10. Reproducing this report
+
+```sh
+Rscript -e "install.packages(c('shiny','bslib','readr','dplyr','tidyr','ggplot2','DT','testthat','rmarkdown','knitr','jsonlite'))"
+Rscript scripts/run_all.R
+Rscript -e "shiny::runApp('app.R')"
+Rscript -e "testthat::test_dir('tests/testthat')"
+```
+
+Every table and figure in this report is read at render time from `outputs/tables/` and
+`outputs/figures/`; no result is typed into the document.
+
+# References
+
+1. National Institute of Standards and Technology. *Benford's Law.*
+   https://xlinux.nist.gov/dads/HTML/benfordslaw.html
+2. NIST/SEMATECH e-Handbook of Statistical Methods, section 1.3.5.15 (chi-square goodness-of-fit).
+   https://www.itl.nist.gov/div898/handbook/eda/section3/eda35f.htm
+3. Benford, F. (1938). The Law of Anomalous Numbers. *Proceedings of the American Philosophical
+   Society*, 78(4), 551-572.
+4. Nigrini, M. J. (2012). *Benford's Law: Applications for Forensic Accounting, Auditing, and
+   Fraud Detection.* Wiley.
+5. Schmuller, J. (2017). *Statistical Analysis with R.* Wiley (BMAT202P textbook).
+6. World Bank. *World Development Indicators.*
+   https://databank.worldbank.org/source/world-development-indicators
+
+*Prepared for BMAT202L / BMAT202P, Slot F1, Dr. Tharasi Dilleswar (VIT Vellore).*

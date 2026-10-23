@@ -1,0 +1,230 @@
+dataset,dataset_name,digit_class,family,group,n,chi2,df,p_raw,mad,band,tier,min_E,cohen_w,flag
+usaspending,Federal Contract Transactions,first,Award type (first digit),DELIVERY ORDER,35179,2009.267626,8,0,0.023607,Nonconformity,Reliable,1609.70276,0.238989,Statistical deviation: significant AND practically material
+usaspending,Federal Contract Transactions,first,Award type (first digit),PURCHASE ORDER,33488,4006.490213,8,0,0.032597,Nonconformity,Reliable,1532.326844,0.34589,Statistical deviation: significant AND practically material
+usaspending,Federal Contract Transactions,first,Award type (first digit),DEFINITIVE CONTRACT,7130,14.585164,8,0.067732,0.003747,Close conformity,Reliable,326.250908,0.045228,No significant deviation detected
+usaspending,Federal Contract Transactions,first,Award type (first digit),BPA CALL,5480,268.693999,8,0,0.022156,Nonconformity,Reliable,250.751048,0.221431,Statistical deviation: significant AND practically material
+usaspending,Federal Contract Transactions,first,Subagency (first digit),Department of Veterans Affairs,81277,5382.693991,8,0,0.024851,Nonconformity,Reliable,3719.03156,0.257345,Statistical deviation: significant AND practically material
+usaspending,Federal Contract Transactions,first,NAICS sector (first digit),33,36841,10705.23299,8,0,0.052247,Nonconformity,Reliable,1685.75171,0.539054,Statistical deviation: significant AND practically material
+usaspending,Federal Contract Transactions,first,NAICS sector (first digit),54,9315,16.081022,8,0.041235,0.00294,Close conformity,Reliable,426.231025,0.041549,Statistically significant but small deviation
+usaspending,Federal Contract Transactions,first,NAICS sector (first digit),62,6860,21.797692,8,0.005305,0.005573,Close conformity,Reliable,313.896385,0.056369,Statistically significant but small deviation
+usaspending,Federal Contract Transactions,first,NAICS sector (first digit),56,6090,9.997164,8,0.265225,0.003703,Close conformity,Reliable,278.663118,0.040516,No significant deviation detected
+usaspending,Federal Contract Transactions,first,NAICS sector (first digit),81,5730,20.186115,8,0.009654,0.005309,Close conformity,Reliable,262.190421,0.059354,Statistically significant but small deviation
+usaspending,Federal Contract Transactions,first,NAICS sector (first digit),23,5404,11.59602,8,0.170159,0.003657,Close conformity,Reliable,247.273479,0.046323,No significant deviation detected
+usaspending,Federal Contract Transactions,first,NAICS sector (first digit),32,3763,43.181168,8,1e-06,0.010901,Acceptable conformity,Reliable,172.185437,0.107122,Statistical deviation: significant AND practically material
+usaspending,Federal Contract Transactions,first,NAICS sector (first digit),51,2011,15.156359,8,0.056176,0.00692,Acceptable conformity,Reliable,92.018314,0.086814,No significant deviation detected
+usaspending,Federal Contract Transactions,first,NAICS sector (first digit),61,1146,15.407226,8,0.051694,0.009576,Acceptable conformity,Reliable,52.438084,0.11595,No significant deviation detected
+usaspending,Federal Contract Transactions,first,NAICS sector (first digit),49,989,14.098588,8,0.079232,0.010089,Acceptable conformity,Reliable,45.254158,0.119396,No significant deviation detected
+usaspending,Federal Contract Transactions,first,NAICS sector (first digit),53,858,15.522502,8,0.049747,0.009159,Acceptable conformity,Reliable,39.259927,0.134505,Statistical deviation: significant AND practically material
+usaspending,Federal Contract Transactions,first,NAICS sector (first digit),48,473,4.73445,8,0.785545,0.007623,Acceptable conformity,Reliable,21.643293,0.100047,No significant deviation detected
+usaspending,Federal Contract Transactions,first,NAICS sector (first digit),22,427,8.761233,8,0.362837,0.010087,Acceptable conformity,Reliable,19.538448,0.143241,No significant deviation detected
+usaspending,Federal Contract Transactions,first,NAICS sector (first digit),42,371,13.136575,8,0.107236,0.016862,Nonconformity,Reliable,16.976029,0.188172,No significant deviation detected
+usaspending,Federal Contract Transactions,first,NAICS sector (first digit),31,268,14.498996,8,0.069651,0.019657,Nonconformity,Reliable,12.263007,0.232596,No significant deviation detected
+usaspending,Federal Contract Transactions,first,NAICS sector (first digit),72,235,9.911772,8,0.271273,0.019634,Nonconformity,Reliable,10.75301,0.205372,No significant deviation detected
+usaspending,Federal Contract Transactions,first,NAICS sector (first digit),52,171,19.435993,8,0.012694,0.030653,Nonconformity,Reliable,7.824531,0.337136,Statistical deviation: significant AND practically material
+usaspending,Federal Contract Transactions,first,NAICS sector (first digit),71,96,,8,,0.03899,Nonconformity,Not run,4.392719,,Not assessed - unsuitable data
+usaspending,Federal Contract Transactions,first,NAICS sector (first digit),92,76,,8,,0.028679,Nonconformity,Not run,3.477569,,Not assessed - unsuitable data
+usaspending,Federal Contract Transactions,first,NAICS sector (first digit),44,59,,8,,0.028356,Nonconformity,Not run,2.699692,,Not assessed - unsuitable data
+usaspending,Federal Contract Transactions,first,NAICS sector (first digit),21,43,,8,,0.034539,Nonconformity,Not run,1.967572,,Not assessed - unsuitable data
+usaspending,Federal Contract Transactions,first,NAICS sector (first digit),45,25,,8,,0.046523,Nonconformity,Not run,1.143937,,Not assessed - unsuitable data
+usaspending,Federal Contract Transactions,first,NAICS sector (first digit),11,24,,8,,0.031044,Nonconformity,Not run,1.09818,,Not assessed - unsuitable data
+usaspending,Federal Contract Transactions,first,NAICS sector (first digit),NA,2,,8,,0.116195,Nonconformity,Not run,0.091515,,Not assessed - unsuitable data
+usaspending,Federal Contract Transactions,first,Subagency × award type (first digit),Department of Veterans Affairs · DELIVERY ORDER,35179,2009.267626,8,0,0.023607,Nonconformity,Reliable,1609.70276,0.238989,Statistical deviation: significant AND practically material
+usaspending,Federal Contract Transactions,first,Subagency × award type (first digit),Department of Veterans Affairs · PURCHASE ORDER,33488,4006.490213,8,0,0.032597,Nonconformity,Reliable,1532.326844,0.34589,Statistical deviation: significant AND practically material
+usaspending,Federal Contract Transactions,first,Subagency × award type (first digit),Department of Veterans Affairs · DEFINITIVE CONTRACT,7130,14.585164,8,0.067732,0.003747,Close conformity,Reliable,326.250908,0.045228,No significant deviation detected
+usaspending,Federal Contract Transactions,first,Subagency × award type (first digit),Department of Veterans Affairs · BPA CALL,5480,268.693999,8,0,0.022156,Nonconformity,Reliable,250.751048,0.221431,Statistical deviation: significant AND practically material
+usaspending,Federal Contract Transactions,first2,Award type (first two digits),DELIVERY ORDER,35179,2637.100656,89,0,0.002594,,Reliable,153.549489,0.273793,Statistically significant but small deviation
+usaspending,Federal Contract Transactions,first2,Award type (first two digits),PURCHASE ORDER,33488,4837.574055,89,0,0.003567,,Reliable,146.168603,0.380075,Statistically significant but small deviation
+usaspending,Federal Contract Transactions,first2,Award type (first two digits),DEFINITIVE CONTRACT,7130,151.338474,89,4.2e-05,0.001208,,Reliable,31.121063,0.14569,Statistically significant but small deviation
+usaspending,Federal Contract Transactions,first2,Award type (first two digits),BPA CALL,5480,656.61746,89,0,0.00311,,Reliable,23.919134,0.346151,Statistically significant but small deviation
+usaspending,Federal Contract Transactions,second,Award type (second digit),DELIVERY ORDER,35179,413.079567,9,0,0.008222,,Reliable,2990.121848,0.108362,Statistical deviation: significant AND practically material
+usaspending,Federal Contract Transactions,second,Award type (second digit),PURCHASE ORDER,33488,410.954611,9,0,0.010125,,Reliable,2846.391326,0.110778,Statistical deviation: significant AND practically material
+usaspending,Federal Contract Transactions,second,Award type (second digit),DEFINITIVE CONTRACT,7130,38.357605,9,1.5e-05,0.006685,,Reliable,606.03112,0.073347,Statistical deviation: significant AND practically material
+usaspending,Federal Contract Transactions,second,Award type (second digit),BPA CALL,5480,206.380679,9,0,0.016493,,Reliable,465.785489,0.194064,Statistical deviation: significant AND practically material
+creditcard,Credit-Card Fraud Benchmark,first,Amount by outcome class (context only),Genuine label,282517,10854.34326,8,0,0.021074,Nonconformity,Reliable,12927.268961,0.196011,Statistical deviation: significant AND practically material
+creditcard,Credit-Card Fraud Benchmark,first,Amount by outcome class (context only),Fraud label,465,122.740238,8,0,0.05294,Nonconformity,Reliable,21.277233,0.513768,Statistical deviation: significant AND practically material
+creditcard,Credit-Card Fraud Benchmark,first,Amount by 6-hour band (first digit),12-17,95845,2928.428872,8,0,0.018753,Nonconformity,Reliable,4385.626683,0.174796,Statistical deviation: significant AND practically material
+creditcard,Credit-Card Fraud Benchmark,first,Amount by 6-hour band (first digit),18-23,93083,4608.972655,8,0,0.023531,Nonconformity,Reliable,4259.244494,0.222519,Statistical deviation: significant AND practically material
+creditcard,Credit-Card Fraud Benchmark,first,Amount by 6-hour band (first digit),06-11,70314,2348.177322,8,0,0.019742,Nonconformity,Reliable,3217.392191,0.182745,Statistical deviation: significant AND practically material
+creditcard,Credit-Card Fraud Benchmark,first,Amount by 6-hour band (first digit),00-05,23740,1534.679979,8,0,0.026574,Nonconformity,Reliable,1086.282826,0.254254,Statistical deviation: significant AND practically material
+creditcard,Credit-Card Fraud Benchmark,first2,Amount by outcome class (first two digits),Genuine label,282517,157710.087007,89,0,0.004674,,Reliable,1233.131728,0.747149,Statistically significant but small deviation
+creditcard,Credit-Card Fraud Benchmark,first2,Amount by outcome class (first two digits),Fraud label,465,,89,,0.009323,,Not run,2.029635,,Not assessed - unsuitable data
+creditcard,Credit-Card Fraud Benchmark,second,Amount by outcome class (second digit),Genuine label,282517,58653.298518,9,0,0.034463,,Reliable,24013.196911,0.455642,Statistical deviation: significant AND practically material
+creditcard,Credit-Card Fraud Benchmark,second,Amount by outcome class (second digit),Fraud label,465,246.504166,9,0,0.052398,,Reliable,39.523769,0.728091,Statistical deviation: significant AND practically material
+paysim,PaySim Mobile-Money Benchmark,first,Transaction type (first digit),CASH_OUT,2237484,107210.062916,8,0,0.022241,Nonconformity,Reliable,102381.65301,0.218896,Statistical deviation: significant AND practically material
+paysim,PaySim Mobile-Money Benchmark,first,Transaction type (first digit),PAYMENT,2151495,21456.823524,8,0,0.009527,Acceptable conformity,Reliable,98447.012154,0.099865,Statistical deviation: significant AND practically material
+paysim,PaySim Mobile-Money Benchmark,first,Transaction type (first digit),CASH_IN,1399284,71123.942511,8,0,0.022844,Nonconformity,Reliable,64027.724422,0.225452,Statistical deviation: significant AND practically material
+paysim,PaySim Mobile-Money Benchmark,first,Transaction type (first digit),TRANSFER,532909,1835.052048,8,0,0.005427,Close conformity,Reliable,24384.578537,0.058681,Statistically significant but small deviation
+paysim,PaySim Mobile-Money Benchmark,first,Transaction type (first digit),DEBIT,41432,1033.58709,8,0,0.01636,Nonconformity,Reliable,1895.824349,0.157945,Statistical deviation: significant AND practically material
+paysim,PaySim Mobile-Money Benchmark,first,Amount by outcome class (context only),Genuine label,6354407,127556.789278,8,0,0.014247,Marginal conformity,Reliable,290761.718321,0.141682,Statistical deviation: significant AND practically material
+paysim,PaySim Mobile-Money Benchmark,first,Amount by outcome class (context only),Fraud label,8197,17.009681,8,0.030008,0.00414,Close conformity,Reliable,375.07415,0.045553,Statistically significant but small deviation
+paysim,PaySim Mobile-Money Benchmark,first2,Transaction type (first two digits),CASH_OUT,2237484,122094.070525,89,0,0.002336,,Reliable,9766.182251,0.233597,Statistically significant but small deviation
+paysim,PaySim Mobile-Money Benchmark,first2,Transaction type (first two digits),PAYMENT,2151495,22708.312058,89,0,0.001026,,Reliable,9390.856999,0.102736,Statistically significant but small deviation
+paysim,PaySim Mobile-Money Benchmark,first2,Transaction type (first two digits),CASH_IN,1399284,80523.731856,89,0,0.002384,,Reliable,6107.602363,0.239888,Statistically significant but small deviation
+paysim,PaySim Mobile-Money Benchmark,first2,Transaction type (first two digits),TRANSFER,532909,2946.425297,89,0,0.000701,,Reliable,2326.044082,0.074357,Statistically significant but small deviation
+paysim,PaySim Mobile-Money Benchmark,first2,Transaction type (first two digits),DEBIT,41432,1195.21426,89,0,0.0017,,Reliable,180.842617,0.169846,Statistically significant but small deviation
+paysim,PaySim Mobile-Money Benchmark,second,Transaction type (second digit),CASH_OUT,2237484,551.952508,9,0,0.001294,,Reliable,190180.215271,0.015706,Statistically significant but small deviation
+paysim,PaySim Mobile-Money Benchmark,second,Transaction type (second digit),PAYMENT,2151495,397.485486,9,0,0.001185,,Reliable,182871.377965,0.013592,Statistically significant but small deviation
+paysim,PaySim Mobile-Money Benchmark,second,Transaction type (second digit),CASH_IN,1399284,216.169847,9,0,0.001053,,Reliable,118935.434777,0.012429,Statistically significant but small deviation
+paysim,PaySim Mobile-Money Benchmark,second,Transaction type (second digit),TRANSFER,532909,227.251088,9,0,0.001311,,Reliable,45295.853888,0.02065,Statistically significant but small deviation
+paysim,PaySim Mobile-Money Benchmark,second,Transaction type (second digit),DEBIT,41432,29.345816,9,0.000566,0.002182,,Reliable,3521.61029,0.026614,Statistically significant but small deviation
+retail,Online Retail Transactions,first,Country (first digit),United Kingdom,485123,24056.907427,8,0,0.02169,Nonconformity,Reliable,22198.011093,0.222687,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Country (first digit),Germany,9040,3537.742431,8,0,0.062849,Nonconformity,Reliable,413.647715,0.625574,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Country (first digit),France,8407,2596.904753,8,0,0.055013,Nonconformity,Reliable,384.683223,0.555786,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Country (first digit),EIRE,7890,3129.784618,8,0,0.062551,Nonconformity,Reliable,361.026601,0.629823,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Country (first digit),Spain,2484,842.01607,8,0,0.057993,Nonconformity,Reliable,113.661607,0.582216,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Country (first digit),Netherlands,2359,282.279559,8,0,0.032588,Nonconformity,Reliable,107.94192,0.34592,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Country (first digit),Belgium,2031,1091.042869,8,0,0.073375,Nonconformity,Reliable,92.933463,0.732936,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Country (first digit),Switzerland,1966,558.058323,8,0,0.051831,Nonconformity,Reliable,89.959226,0.53278,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Country (first digit),Portugal,1501,313.88887,8,0,0.043697,Nonconformity,Reliable,68.681993,0.457296,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Country (first digit),Australia,1182,152.83957,8,0,0.034979,Nonconformity,Reliable,54.085354,0.359591,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Country (first digit),Norway,1071,256.632241,8,0,0.047224,Nonconformity,Reliable,49.006272,0.489509,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Country (first digit),Italy,758,380.558819,8,0,0.068255,Nonconformity,Reliable,34.684178,0.708559,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Country (first digit),Channel Islands,748,413.497208,8,0,0.070359,Nonconformity,Reliable,34.226603,0.743508,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Country (first digit),Finland,685,216.936026,8,0,0.055408,Nonconformity,Reliable,31.343881,0.562757,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Country (first digit),Cyprus,614,154.280963,8,0,0.049963,Nonconformity,Reliable,28.095099,0.50127,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Country (first digit),Sweden,451,129.653868,8,0,0.052804,Nonconformity,Reliable,20.636628,0.536172,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Country (first digit),Unspecified,446,89.484324,8,0,0.04703,Nonconformity,Reliable,20.407841,0.447926,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Country (first digit),Austria,398,227.039803,8,0,0.075483,Nonconformity,Reliable,18.211481,0.755283,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Country (first digit),Denmark,380,56.047932,8,0,0.038447,Nonconformity,Reliable,17.387846,0.38405,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Country (first digit),Poland,330,166.838926,8,0,0.067111,Nonconformity,Reliable,15.099972,0.711036,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Country (first digit),Japan,321,28.68496,8,0.00036,0.028627,Nonconformity,Reliable,14.688154,0.298934,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Country (first digit),Israel,295,27.364418,8,0.000611,0.028167,Nonconformity,Reliable,13.49846,0.304566,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Country (first digit),Hong Kong,284,18.386958,8,0.018505,0.02349,Nonconformity,Reliable,12.995127,0.254446,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Country (first digit),Singapore,222,14.301812,8,0.07423,0.01842,Nonconformity,Reliable,10.158163,0.253816,No significant deviation detected
+retail,Online Retail Transactions,first,Country (first digit),Iceland,182,87.441011,8,0,0.067733,Nonconformity,Reliable,8.327863,0.693141,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Country (first digit),USA,179,63.175811,8,0,0.057251,Nonconformity,Reliable,8.190591,0.594085,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Country (first digit),Canada,151,109.521541,8,0,0.084686,Nonconformity,Reliable,6.909381,0.85165,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Country (first digit),Greece,145,90.961997,8,0,0.079707,Nonconformity,Reliable,6.634836,0.792038,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Country (first digit),Malta,112,89.689482,8,0,0.08985,Nonconformity,Reliable,5.124839,0.894874,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Country (first digit),United Arab Emirates,68,,8,,0.04741,Nonconformity,Not run,3.111509,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first,Country (first digit),European Community,60,,8,,0.071751,Nonconformity,Not run,2.745449,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first,Country (first digit),RSA,57,,8,,0.100601,Nonconformity,Not run,2.608177,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first,Country (first digit),Lebanon,45,,8,,0.07046,Nonconformity,Not run,2.059087,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first,Country (first digit),Lithuania,35,,8,,0.062619,Nonconformity,Not run,1.601512,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first,Country (first digit),Brazil,32,,8,,0.073527,Nonconformity,Not run,1.46424,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first,Country (first digit),Czech Republic,25,,8,,0.053973,Nonconformity,Not run,1.143937,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first,Country (first digit),Bahrain,18,,8,,0.076085,Nonconformity,Not run,0.823635,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first,Country (first digit),Saudi Arabia,9,,8,,0.137731,Nonconformity,Not run,0.411817,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first,Month (first digit),2011-11,83369,3954.699261,8,0,0.021009,Nonconformity,Reliable,3814.756231,0.217798,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Month (first digit),2011-10,59304,3523.380531,8,0,0.0236,Nonconformity,Reliable,2713.60222,0.243746,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Month (first digit),2011-09,49261,3615.731219,8,0,0.026549,Nonconformity,Reliable,2254.059743,0.270923,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Month (first digit),2010-12,41480,2234.771126,8,0,0.021767,Nonconformity,Reliable,1898.020708,0.232112,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Month (first digit),2011-07,38645,2262.480868,8,0,0.02403,Nonconformity,Reliable,1768.298223,0.241961,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Month (first digit),2011-05,36164,2919.697345,8,0,0.028731,Nonconformity,Reliable,1654.773889,0.284139,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Month (first digit),2011-06,35977,1977.300626,8,0,0.023719,Nonconformity,Reliable,1646.217238,0.234436,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Month (first digit),2011-03,35803,3282.579679,8,0,0.030797,Nonconformity,Reliable,1638.255435,0.302794,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Month (first digit),2011-08,34483,2188.016418,8,0,0.02544,Nonconformity,Reliable,1577.855547,0.251897,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Month (first digit),2011-01,34306,1805.971009,8,0,0.02175,Nonconformity,Reliable,1569.756471,0.229441,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Month (first digit),2011-04,29096,2495.379834,8,0,0.029473,Nonconformity,Reliable,1331.359945,0.292854,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Month (first digit),2011-02,27105,2401.137065,8,0,0.03045,Nonconformity,Reliable,1240.256782,0.297635,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first,Month (first digit),2011-12,25111,1014.311361,8,0,0.019114,Nonconformity,Reliable,1149.016345,0.20098,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first2,Country (first two digits),United Kingdom,485123,355628.6278,89,0,0.007753,,Reliable,2117.467491,0.856194,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first2,Country (first two digits),Germany,9040,11584.461663,89,0,0.009054,,Reliable,39.457841,1.132019,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first2,Country (first two digits),France,8407,10513.25012,89,0,0.009414,,Reliable,36.694919,1.118273,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first2,Country (first two digits),EIRE,7890,10758.191303,89,0,0.008867,,Reliable,34.438315,1.1677,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first2,Country (first two digits),Spain,2484,3019.222813,89,0,0.008927,,Reliable,10.842177,1.102483,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first2,Country (first two digits),Netherlands,2359,1627.03801,89,0,0.007333,,Reliable,10.296576,0.830491,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first2,Country (first two digits),Belgium,2031,3738.228227,89,0,0.011214,,Reliable,8.86492,1.356682,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first2,Country (first two digits),Switzerland,1966,2183.256835,89,0,0.008979,,Reliable,8.581207,1.053806,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first2,Country (first two digits),Portugal,1501,1710.51405,89,0,0.00911,,Reliable,6.551573,1.067513,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first2,Country (first two digits),Australia,1182,770.915089,89,0,0.007348,,Reliable,5.1592,0.807597,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,first2,Country (first two digits),Norway,1071,,89,,0.008966,,Not run,4.674707,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first2,Country (first two digits),Italy,758,,89,,0.010341,,Not run,3.308522,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first2,Country (first two digits),Channel Islands,748,,89,,0.011277,,Not run,3.264874,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first2,Country (first two digits),Finland,685,,89,,0.009859,,Not run,2.989892,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first2,Country (first two digits),Cyprus,614,,89,,0.008696,,Not run,2.679991,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first2,Country (first two digits),Sweden,451,,89,,0.008697,,Not run,1.968527,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first2,Country (first two digits),Unspecified,446,,89,,0.009685,,Not run,1.946703,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first2,Country (first two digits),Austria,398,,89,,0.011321,,Not run,1.737193,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first2,Country (first two digits),Denmark,380,,89,,0.010684,,Not run,1.658626,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first2,Country (first two digits),Poland,330,,89,,0.011228,,Not run,1.440386,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first2,Country (first two digits),Japan,321,,89,,0.008906,,Not run,1.401103,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first2,Country (first two digits),Israel,295,,89,,0.008645,,Not run,1.287618,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first2,Country (first two digits),Hong Kong,284,,89,,0.009148,,Not run,1.239605,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first2,Country (first two digits),Singapore,222,,89,,0.010178,,Not run,0.968987,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first2,Country (first two digits),Iceland,182,,89,,0.01175,,Not run,0.794395,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first2,Country (first two digits),USA,179,,89,,0.011432,,Not run,0.7813,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first2,Country (first two digits),Canada,151,,89,,0.012057,,Not run,0.659086,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first2,Country (first two digits),Greece,145,,89,,0.012215,,Not run,0.632897,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first2,Country (first two digits),Malta,112,,89,,0.012644,,Not run,0.488858,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first2,Country (first two digits),United Arab Emirates,68,,89,,0.014276,,Not run,0.296807,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first2,Country (first two digits),European Community,60,,89,,0.013666,,Not run,0.261888,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first2,Country (first two digits),RSA,57,,89,,0.013848,,Not run,0.248794,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first2,Country (first two digits),Lebanon,45,,89,,0.01402,,Not run,0.196416,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first2,Country (first two digits),Lithuania,35,,89,,0.01743,,Not run,0.152768,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first2,Country (first two digits),Brazil,32,,89,,0.016821,,Not run,0.139674,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first2,Country (first two digits),Czech Republic,25,,89,,0.016494,,Not run,0.10912,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first2,Country (first two digits),Bahrain,18,,89,,0.018025,,Not run,0.078566,,Not assessed - unsuitable data
+retail,Online Retail Transactions,first2,Country (first two digits),Saudi Arabia,9,,89,,0.020065,,Not run,0.039283,,Not assessed - unsuitable data
+retail,Online Retail Transactions,second,Country (second digit),United Kingdom,485123,70537.545452,9,0,0.028394,,Reliable,41234.170422,0.381315,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,second,Country (second digit),Germany,9040,2809.678725,9,0,0.050951,,Reliable,768.376063,0.557499,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,second,Country (second digit),France,8407,2895.984041,9,0,0.050456,,Reliable,714.572739,0.586918,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,second,Country (second digit),EIRE,7890,2561.021701,9,0,0.052381,,Reliable,670.629108,0.569729,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,second,Country (second digit),Spain,2484,723.890877,9,0,0.048309,,Reliable,211.133423,0.539835,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,second,Country (second digit),Netherlands,2359,239.907522,9,0,0.026825,,Reliable,200.508754,0.318903,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,second,Country (second digit),Belgium,2031,893.472479,9,0,0.058572,,Reliable,172.629622,0.663263,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,second,Country (second digit),Switzerland,1966,704.38219,9,0,0.054416,,Reliable,167.104794,0.598567,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,second,Country (second digit),Portugal,1501,492.829895,9,0,0.047308,,Reliable,127.581025,0.573005,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,second,Country (second digit),Australia,1182,117.084319,9,0,0.02938,,Reliable,100.46687,0.314732,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,second,Country (second digit),Norway,1071,385.389676,9,0,0.053361,,Reliable,91.032164,0.599867,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,second,Country (second digit),Italy,758,257.393697,9,0,0.050683,,Reliable,64.427993,0.582726,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,second,Country (second digit),Channel Islands,748,301.884623,9,0,0.055925,,Reliable,63.578019,0.635287,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,second,Country (second digit),Finland,685,252.942804,9,0,0.057717,,Reliable,58.223186,0.607667,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,second,Country (second digit),Cyprus,614,182.698208,9,0,0.049346,,Reliable,52.188374,0.545485,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,second,Country (second digit),Sweden,451,135.995505,9,0,0.043919,,Reliable,38.333806,0.549129,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,second,Country (second digit),Unspecified,446,149.542671,9,0,0.046904,,Reliable,37.908819,0.579049,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,second,Country (second digit),Austria,398,133.62955,9,0,0.053557,,Reliable,33.828946,0.579442,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,second,Country (second digit),Denmark,380,175.954996,9,0,0.060442,,Reliable,32.298994,0.68047,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,second,Country (second digit),Poland,330,186.506173,9,0,0.061053,,Reliable,28.049126,0.751778,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,second,Country (second digit),Japan,321,135.321356,9,0,0.05566,,Reliable,27.28415,0.649278,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,second,Country (second digit),Israel,295,92.68254,9,0,0.048355,,Reliable,25.074219,0.560516,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,second,Country (second digit),Hong Kong,284,94.44586,9,0,0.050793,,Reliable,24.139248,0.576677,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,second,Country (second digit),Singapore,222,69.009613,9,0,0.044827,,Reliable,18.869412,0.557543,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,second,Country (second digit),Iceland,182,80.313994,9,0,0.056837,,Reliable,15.469518,0.664293,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,second,Country (second digit),USA,179,85.516338,9,0,0.055302,,Reliable,15.214526,0.691191,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,second,Country (second digit),Canada,151,64.005324,9,0,0.047487,,Reliable,12.8346,0.651058,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,second,Country (second digit),Greece,145,49.015958,9,0,0.052693,,Reliable,12.324616,0.581413,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,second,Country (second digit),Malta,112,84.8719,9,0,0.07238,,Reliable,9.519703,0.870508,Statistical deviation: significant AND practically material
+retail,Online Retail Transactions,second,Country (second digit),United Arab Emirates,68,,9,,0.084373,,Not run,5.77982,,Not assessed - unsuitable data
+retail,Online Retail Transactions,second,Country (second digit),European Community,60,,9,,0.078658,,Not run,5.099841,,Not assessed - unsuitable data
+retail,Online Retail Transactions,second,Country (second digit),RSA,57,,9,,0.05187,,Not run,4.844849,,Not assessed - unsuitable data
+retail,Online Retail Transactions,second,Country (second digit),Lebanon,45,,9,,0.073928,,Not run,3.824881,,Not assessed - unsuitable data
+retail,Online Retail Transactions,second,Country (second digit),Lithuania,35,,9,,0.08838,,Not run,2.974907,,Not assessed - unsuitable data
+retail,Online Retail Transactions,second,Country (second digit),Brazil,32,,9,,0.073477,,Not run,2.719915,,Not assessed - unsuitable data
+retail,Online Retail Transactions,second,Country (second digit),Czech Republic,25,,9,,0.076951,,Not run,2.124934,,Not assessed - unsuitable data
+retail,Online Retail Transactions,second,Country (second digit),Bahrain,18,,9,,0.10115,,Not run,1.529952,,Not assessed - unsuitable data
+retail,Online Retail Transactions,second,Country (second digit),Saudi Arabia,9,,9,,0.140994,,Not run,0.764976,,Not assessed - unsuitable data
+wdi,World Development Indicators,first,Indicator (first digit),"Population, total",14292,96.223531,8,0,0.007291,Acceptable conformity,Reliable,653.966055,0.082053,Statistical deviation: significant AND practically material
+wdi,World Development Indicators,first,Indicator (first digit),"Fertility rate, total (births per woman)",14073,2672.420893,8,0,0.033765,Nonconformity,Reliable,643.945165,0.435772,Statistical deviation: significant AND practically material
+wdi,World Development Indicators,first,Indicator (first digit),Life expectancy at birth (years),14071,43018.187173,8,0,0.139358,Nonconformity,Reliable,643.85365,1.748492,Statistical deviation: significant AND practically material
+wdi,World Development Indicators,first,Indicator (first digit),Land area (sq. km),12349,111.121697,8,0,0.00856,Acceptable conformity,Reliable,565.059251,0.09486,Statistical deviation: significant AND practically material
+wdi,World Development Indicators,first,Indicator (first digit),GDP (current USD),11764,6.429833,8,0.599201,0.001716,Close conformity,Reliable,538.291119,0.023379,No significant deviation detected
+wdi,World Development Indicators,first,Indicator (first digit),GNI (current USD),11234,5.749145,8,0.675308,0.001993,Close conformity,Reliable,514.039649,0.022622,No significant deviation detected
+wdi,World Development Indicators,first,Indicator (first digit),Total reserves incl. gold (current USD),9462,18.572838,8,0.017319,0.00438,Close conformity,Reliable,432.957376,0.044304,Statistically significant but small deviation
+wdi,World Development Indicators,first,Indicator (first digit),Imports of goods and services (current USD),9033,9.175765,8,0.327686,0.002683,Close conformity,Reliable,413.327412,0.031872,No significant deviation detected
+wdi,World Development Indicators,first,Indicator (first digit),Exports of goods and services (current USD),9024,12.847564,8,0.117203,0.003006,Close conformity,Reliable,412.915595,0.037732,No significant deviation detected
+wdi,World Development Indicators,first,GDP by region (first digit),Sub-Saharan Africa,2885,21.776303,8,0.005348,0.00869,Acceptable conformity,Reliable,132.01036,0.08688,Statistical deviation: significant AND practically material
+wdi,World Development Indicators,first,GDP by region (first digit),Europe & Central Asia,2737,28.153923,8,0.000446,0.007639,Acceptable conformity,Reliable,125.238252,0.101422,Statistical deviation: significant AND practically material
+wdi,World Development Indicators,first,GDP by region (first digit),Latin America & Caribbean,2301,16.364861,8,0.037446,0.00704,Acceptable conformity,Reliable,105.287986,0.084333,Statistical deviation: significant AND practically material
+wdi,World Development Indicators,first,GDP by region (first digit),East Asia & Pacific,1969,10.194702,8,0.251626,0.007172,Acceptable conformity,Reliable,90.096499,0.071956,No significant deviation detected
+wdi,World Development Indicators,first,GDP by region (first digit),Middle East & North Africa,1299,49.447592,8,0,0.013655,Marginal conformity,Reliable,59.43898,0.195105,Statistical deviation: significant AND practically material
+wdi,World Development Indicators,first,GDP by region (first digit),South Asia,376,11.129103,8,0.194491,0.017358,Nonconformity,Reliable,17.204816,0.172043,No significant deviation detected
+wdi,World Development Indicators,first,GDP by region (first digit),North America,197,22.213494,8,0.004535,0.024912,Nonconformity,Reliable,9.014226,0.335796,Statistical deviation: significant AND practically material
+wdi,World Development Indicators,first2,Indicator (first two digits),"Population, total",14292,461.838564,89,0,0.0015,,Reliable,62.381799,0.179762,Statistically significant but small deviation
+wdi,World Development Indicators,first2,Indicator (first two digits),"Fertility rate, total (births per woman)",14073,4157.626304,89,0,0.004613,,Reliable,61.425906,0.543537,Statistically significant but small deviation
+wdi,World Development Indicators,first2,Indicator (first two digits),Life expectancy at birth (years),14071,48575.478521,89,0,0.014702,,Reliable,61.417177,1.858002,Statistical deviation: significant AND practically material
+wdi,World Development Indicators,first2,Indicator (first two digits),Land area (sq. km),12349,5287.009429,89,0,0.005614,,Reliable,53.900982,0.654318,Statistically significant but small deviation
+wdi,World Development Indicators,first2,Indicator (first two digits),GDP (current USD),11764,76.57482,89,0.823285,0.000664,,Reliable,51.347571,0.08068,No significant deviation detected
+wdi,World Development Indicators,first2,Indicator (first two digits),GNI (current USD),11234,101.27616,89,0.176086,0.000806,,Reliable,49.034224,0.094948,No significant deviation detected
+wdi,World Development Indicators,first2,Indicator (first two digits),Total reserves incl. gold (current USD),9462,125.927806,89,0.006109,0.000988,,Reliable,41.299789,0.115364,Statistically significant but small deviation
+wdi,World Development Indicators,first2,Indicator (first two digits),Imports of goods and services (current USD),9033,84.303859,89,0.62102,0.000835,,Reliable,39.427287,0.096607,No significant deviation detected
+wdi,World Development Indicators,first2,Indicator (first two digits),Exports of goods and services (current USD),9024,82.471268,89,0.674202,0.000856,,Reliable,39.388004,0.095599,No significant deviation detected
+wdi,World Development Indicators,second,Indicator (second digit),"Population, total",14292,49.158073,9,0,0.00487,,Reliable,1214.782156,0.058648,Statistically significant but small deviation
+wdi,World Development Indicators,second,Indicator (second digit),"Fertility rate, total (births per woman)",14073,247.502417,9,0,0.011536,,Reliable,1196.167736,0.132616,Statistical deviation: significant AND practically material
+wdi,World Development Indicators,second,Indicator (second digit),Life expectancy at birth (years),14071,46.72478,9,0,0.004661,,Reliable,1195.997741,0.057625,Statistically significant but small deviation
+wdi,World Development Indicators,second,Indicator (second digit),Land area (sq. km),12349,661.987648,9,0,0.018303,,Reliable,1049.632301,0.231531,Statistical deviation: significant AND practically material
+wdi,World Development Indicators,second,Indicator (second digit),GDP (current USD),11764,8.895448,9,0.446981,0.00223,,Reliable,999.90885,0.027498,No significant deviation detected
+wdi,World Development Indicators,second,Indicator (second digit),GNI (current USD),11234,6.594924,9,0.679211,0.001871,,Reliable,954.860253,0.024229,No significant deviation detected
+wdi,World Development Indicators,second,Indicator (second digit),Total reserves incl. gold (current USD),9462,19.854544,9,0.018832,0.003984,,Reliable,804.244945,0.045808,Statistically significant but small deviation
+wdi,World Development Indicators,second,Indicator (second digit),Imports of goods and services (current USD),9033,5.88452,9,0.751418,0.002258,,Reliable,767.781081,0.025523,No significant deviation detected
+wdi,World Development Indicators,second,Indicator (second digit),Exports of goods and services (current USD),9024,13.046999,9,0.160491,0.003122,,Reliable,767.016105,0.038024,No significant deviation detected

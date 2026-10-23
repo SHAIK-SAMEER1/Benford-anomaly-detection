@@ -1,0 +1,25 @@
+"indicator_code","unit_type","unit_label","total_values","missing_NA_NaN","non_finite_Inf","invalid_non_numeric","zero_excluded","negative_used_as_magnitude","negative_excluded","eligible_values"
+"AG.LND.TOTL.K2","pooled","Land area (sq. km) | all country-years pooled",12349,0,0,0,0,0,0,12349
+"AG.LND.TOTL.K2","latest_year","Land area (sq. km) | latest complete year 2023",215,0,0,0,0,0,0,215
+"FI.RES.TOTL.CD","pooled","Total reserves incl. gold (current USD) | all country-years pooled",9464,0,0,0,0,0,0,9464
+"FI.RES.TOTL.CD","latest_year","Total reserves incl. gold (current USD) | latest complete year 2023",168,0,0,0,0,0,0,168
+"NE.EXP.GNFS.CD","pooled","Exports of goods and services (current USD) | all country-years pooled",9024,0,0,0,0,0,0,9024
+"NE.EXP.GNFS.CD","latest_year","Exports of goods and services (current USD) | latest complete year 2022",182,0,0,0,0,0,0,182
+"NE.IMP.GNFS.CD","pooled","Imports of goods and services (current USD) | all country-years pooled",9033,0,0,0,0,0,0,9033
+"NE.IMP.GNFS.CD","latest_year","Imports of goods and services (current USD) | latest complete year 2022",182,0,0,0,0,0,0,182
+"NY.GDP.MKTP.CD","pooled","GDP (current USD) | all country-years pooled",11764,0,0,0,0,0,0,11764
+"NY.GDP.MKTP.CD","latest_year","GDP (current USD) | latest complete year 2023",204,0,0,0,0,0,0,204
+"NY.GNP.MKTP.CD","pooled","GNI (current USD) | all country-years pooled",11234,0,0,0,0,0,0,11234
+"NY.GNP.MKTP.CD","latest_year","GNI (current USD) | latest complete year 2024",198,0,0,0,0,0,0,198
+"SP.DYN.LE00.IN","pooled","Life expectancy at birth (years) | all country-years pooled",14071,0,0,0,0,0,0,14071
+"SP.DYN.LE00.IN","latest_year","Life expectancy at birth (years) | latest complete year 2024",217,0,0,0,0,0,0,217
+"SP.DYN.TFRT.IN","pooled","Fertility rate, total (births per woman) | all country-years pooled",14073,0,0,0,0,0,0,14073
+"SP.DYN.TFRT.IN","latest_year","Fertility rate, total (births per woman) | latest complete year 2024",217,0,0,0,0,0,0,217
+"SP.POP.TOTL","pooled","Population, total | all country-years pooled",14292,0,0,0,0,0,0,14292
+"SP.POP.TOTL","latest_year","Population, total | latest complete year 2025",217,0,0,0,0,0,0,217
+"USASPEND.FEDERAL_ACTION_OBLIGATION","pooled","USASpending federal_action_obligation (usaspending.csv) | all country-years pooled",101381,0,0,0,0,0,0,101381
+"USASPEND.FEDERAL_ACTION_OBLIGATION","latest_year","USASpending federal_action_obligation (usaspending.csv) | latest complete year 2024",77326,0,0,0,0,0,0,77326
+"USASPEND.CURRENT_TOTAL_VALUE_OF_AWARD","pooled","USASpending current_total_value_of_award (usaspending.csv) | all country-years pooled",110044,0,0,0,0,0,0,110044
+"USASPEND.CURRENT_TOTAL_VALUE_OF_AWARD","latest_year","USASpending current_total_value_of_award (usaspending.csv) | latest complete year 2024",83980,0,0,0,0,0,0,83980
+"USASPEND.POTENTIAL_TOTAL_VALUE_OF_AWARD","pooled","USASpending potential_total_value_of_award (usaspending.csv) | all country-years pooled",110253,0,0,0,0,0,0,110253
+"USASPEND.POTENTIAL_TOTAL_VALUE_OF_AWARD","latest_year","USASpending potential_total_value_of_award (usaspending.csv) | latest complete year 2024",84128,0,0,0,0,0,0,84128

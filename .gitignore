@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+report_assets/extracted/
+report_assets/draft_text_dump.txt
+data/raw/
+WDI_CSV_2026_10_01/
+TEAM*.pdf
+.Rproj.user/
+.Rhistory

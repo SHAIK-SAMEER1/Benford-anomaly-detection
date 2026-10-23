@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="The Benford Field Kit — an explainable statistical screening case for transaction data. Benford's Law, robust peer outliers, duplicates, and honest validation.">
+<title>The Benford Field Kit — Statistical Screening Instruments</title>
+<link rel="stylesheet" href="assets/css/kit.css">
+</head>
+<body>
+<a class="skip-link" href="#view">Skip to the instrument</a>
+<div class="desk">
+  <div class="kit" id="kit">
+    <header class="lid">
+      <i class="rivet r1" aria-hidden="true"></i><i class="rivet r2" aria-hidden="true"></i>
+      <i class="rivet r3" aria-hidden="true"></i><i class="rivet r4" aria-hidden="true"></i>
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" role="img"><path d="M8 18h48v36H8z" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M8 18l8-8h40l-8 8M56 54l8-8V10" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M18 30h20M18 38h30M18 46h14" stroke="currentColor" stroke-width="2.4"/><circle cx="48" cy="29" r="3.5" fill="currentColor"/></svg>
+        </div>
+        <div class="brand-text">
+          <p class="eyebrow">Statistical instrument case <span class="dot">·</span> No. 01</p>
+          <h1>The Benford <em>Field Kit</em></h1>
+          <p class="tagline">Eight instruments for finding the numbers that do not behave like the rest — then explaining why, without pretending that unusual means guilty.</p>
+        </div>
+      </div>
+      <div class="lid-side">
+        <div class="active-source" id="activeSource" aria-live="polite"></div>
+        <div class="lid-actions">
+          <button class="btn ghost on-dark" id="openDataBtn" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10" /></svg>
+            Data desk <kbd>D</kbd>
+          </button>
+          <button class="btn brass" id="helpBtn" type="button" aria-label="Keyboard shortcuts and interpretation boundary">?</button>
+        </div>
+      </div>
+      <div class="lid-ruler" aria-hidden="true"></div>
+    </header>
+
+    <div class="case-body">
+      <nav class="tray" id="tray" aria-label="Instruments"></nav>
+      <main class="paper" id="view" tabindex="-1">
+        <div class="boot">
+          <div class="boot-spinner" aria-hidden="true"></div>
+          <p>Opening the case…</p>
+        </div>
+      </main>
+    </div>
+
+    <footer class="base">
+      <div class="base-note" id="auditLine">Loading the audit trail…</div>
+      <div class="base-links">
+        <button class="linklike" type="button" data-route="export">Audit &amp; export</button>
+        <span aria-hidden="true">·</span>
+        <button class="linklike" type="button" id="boundaryBtn">Interpretation boundary</button>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<div class="scrim" id="scrim" hidden></div>
+
+<aside class="drawer" id="drawer" aria-hidden="true" aria-labelledby="drawerTitle" role="dialog" aria-modal="true">
+  <div class="drawer-head">
+    <div>
+      <p class="eyebrow" id="drawerKicker">Data desk</p>
+      <h2 id="drawerTitle">Stage a dataset</h2>
+    </div>
+    <button class="icon-btn" type="button" id="drawerClose" aria-label="Close panel">×</button>
+  </div>
+  <div class="drawer-body" id="drawerBody"></div>
+</aside>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+  <div class="modal-card">
+    <div class="modal-head">
+      <p class="eyebrow" id="modalKicker">Field notes</p>
+      <h2 id="modalTitle">How to read this kit</h2>
+      <button class="icon-btn" type="button" id="modalClose" aria-label="Close">×</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/analysis.js"></script>
+<script src="assets/js/view-overview.js"></script>
+<script src="assets/js/view-data.js"></script>
+<script src="assets/js/view-quality.js"></script>
+<script src="assets/js/view-benford.js"></script>
+<script src="assets/js/view-review.js"></script>
+<script src="assets/js/view-peers.js"></script>
+<script src="assets/js/view-validation.js"></script>
+<script src="assets/js/view-export.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

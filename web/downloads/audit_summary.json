@@ -1,0 +1,99 @@
+{
+  "generated": "2026-10-19 12:14:24",
+  "rVersion": "R version 4.6.1 (2026-06-24 ucrt)",
+  "packages": {
+    "data.table": "1.18.6.1",
+    "jsonlite": "2.0.0",
+    "ranger": "0.18.0",
+    "readxl": "1.5.0",
+    "readr": "2.2.0"
+  },
+  "rawFiles": [
+    {
+      "path": "C:\\Users\\SAMEER\\OneDrive\\Desktop\\Prob_Proj/data/raw/PS_20174392719_1491204439457_log.csv/PS_20174392719_1491204439457_log.csv",
+      "bytes": 493534783,
+      "modified": "2026-10-19 10:44"
+    },
+    {
+      "path": "C:\\Users\\SAMEER\\OneDrive\\Desktop\\Prob_Proj/data/raw/PrimeTransactions_2026-10-19_H05M29S23704379/Contracts_PrimeTransactions_2026-10-19_H05M30S19_1.csv",
+      "bytes": 236980869,
+      "modified": "2026-10-19 11:12"
+    },
+    {
+      "path": "C:\\Users\\SAMEER\\OneDrive\\Desktop\\Prob_Proj/data/raw/creditcard.csv/creditcard.csv",
+      "bytes": 150828752,
+      "modified": "2026-10-19 10:45"
+    },
+    {
+      "path": "C:\\Users\\SAMEER\\OneDrive\\Desktop\\Prob_Proj/data/raw/online+retail/Online Retail.xlsx",
+      "bytes": 23715344,
+      "modified": "2026-10-19 10:45"
+    }
+  ],
+  "missing": [
+    {
+      "dataset": "BankSim",
+      "expected_file": "data/raw/banksim/bs140513_032310.csv",
+      "status": "not found",
+      "note": "Expected target column fraud; no file is present, so no BankSim model was trained."
+    }
+  ],
+  "datasetChecks": {
+    "usaspending": {
+      "id": "usaspending",
+      "rows": 111908,
+      "cols": 297,
+      "mapped": 18,
+      "file": "Contracts_PrimeTransactions_2026-10-19_H05M30S19_1.csv",
+      "size": 236980869,
+      "label": "none",
+      "candidates": 8056,
+      "model": "not applicable"
+    },
+    "creditcard": {
+      "id": "creditcard",
+      "rows": 284807,
+      "cols": 33,
+      "mapped": 5,
+      "file": "creditcard.csv",
+      "size": 150828752,
+      "label": "Class",
+      "candidates": 0,
+      "model": "trained"
+    },
+    "paysim": {
+      "id": "paysim",
+      "rows": 6362620,
+      "cols": 12,
+      "mapped": 9,
+      "file": "PS_20174392719_1491204439457_log.csv",
+      "size": 493534783,
+      "label": "isFraud",
+      "candidates": 0,
+      "model": "trained"
+    },
+    "retail": {
+      "id": "retail",
+      "rows": 541909,
+      "cols": 11,
+      "mapped": 8,
+      "file": "Online Retail.xlsx",
+      "size": 23715344,
+      "label": "none",
+      "candidates": 18392,
+      "model": "not applicable"
+    },
+    "wdi": {
+      "id": "wdi",
+      "rows": 105346,
+      "cols": 25,
+      "mapped": 25,
+      "file": "wdi_clean.csv",
+      "size": 17772959,
+      "label": "none",
+      "candidates": 879,
+      "model": "not applicable"
+    }
+  },
+  "notes": ["Original raw files are never modified by this build.", "Every Benford p-value is computed only when the expected-count validity condition is met.", "Unlabelled datasets receive no fabricated fraud labels.", "Review candidates are statistical screening prompts, not fraud determinations."]
+}

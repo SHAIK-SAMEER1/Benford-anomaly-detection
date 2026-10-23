@@ -1,0 +1,2 @@
+dataset,expected_file,status,note
+BankSim,data/raw/banksim/bs140513_032310.csv,not found,"Expected target column fraud; no file is present, so no BankSim model was trained."
